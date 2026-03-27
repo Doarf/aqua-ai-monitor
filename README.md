@@ -63,48 +63,6 @@ Sensors → ESP32 → Wi-Fi → PC → AI Model (GPU) → Analysis → GUI + LED
 | **LED 5V** | Visual alert indicator | System status |
 | **5V 2A power supply** | Powers the entire system | — |
 
-### Detectable anomalies
-
-| Anomaly | Detection source | Alert triggered |
-|---------|-----------------|-----------------|
-| Fish stress | Camera + AI | GUI + LED |
-| Overcrowding | Camera + AI | GUI + LED |
-| Mortality | Camera + AI | Critical GUI alert |
-| Abnormal pH | pH sensor | GUI + LED |
-| Critical temperature | DS18B20 | GUI + LED |
-| High turbidity | Turbidity sensor | GUI + LED |
-
----
-
-## Repository structure
-
-```
-aqua-ai-monitor/
-├── firmware/               # ESP32 code (C++ / Arduino)
-│   ├── main.cpp
-│   ├── sensors/
-│   └── wifi_sender/
-├── ai_model/               # AI model (Python)
-│   ├── train/
-│   ├── inference/
-│   └── models/
-├── gui/                    # Graphical interface (Python / C++)
-│   └── dashboard/
-├── docs/                   # Documentation & schematics
-└── README.md
-```
-
----
-
-## 🛠️ Tech stack
-
-| Side | Technology |
-|------|-----------|
-| Embedded firmware | C++ (Arduino / ESP-IDF) |
-| AI processing | Python (PyTorch / OpenCV) |
-| GUI | Python (PyQt5 / Tkinter) or C++ (Qt) |
-| Communication | Wi-Fi — TCP Socket / MQTT |
-| Acceleration | GPU (CUDA) |
 
 ---
 
