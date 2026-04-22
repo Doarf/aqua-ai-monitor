@@ -23,59 +23,38 @@ void ScreenOLED::showSplash() {
   delay(1500);
 }
 
-void ScreenOLED::showData(const SensorData& data, float ph) {
+void ScreenOLED::showData(const SensorData& data, float ph, float ntu) {
+  // ── Page 1 : Ambiance ─────────────────────
   _display.clearDisplay();
-
-  // ── Titre ─────────────────────────────────
   _display.setTextSize(2);
   _display.setCursor(0, 0);
   _display.print("Amb.");
-
-  // ── Ligne séparatrice ─────────────────────
   _display.drawLine(0, 18, SCREEN_WIDTH, 18, SSD1306_WHITE);
-
-  // ── Température ───────────────────────────
-  _display.setTextSize(2);
   _display.setCursor(0, 22);
   _display.print("T:");
   _display.print(data.temperature, 1);
   _display.print("C");
-
-  // ── Humidité ──────────────────────────────
-  _display.setTextSize(2);
   _display.setCursor(0, 44);
   _display.print("H:");
   _display.print(data.humidity, 1);
   _display.print("%");
-
   _display.display();
   delay(3000);
 
-  // ── Page 2 : pH ───────────────────────────
+  // ── Page 2 : Eau ──────────────────────────
   _display.clearDisplay();
-
   _display.setTextSize(2);
   _display.setCursor(0, 0);
   _display.print("Eau");
-
   _display.drawLine(0, 18, SCREEN_WIDTH, 18, SSD1306_WHITE);
-
-  _display.setTextSize(2);
   _display.setCursor(0, 22);
   _display.print("pH:");
   _display.print(ph, 1);
-
-  // Indication qualité
-  _display.setTextSize(2);
   _display.setCursor(0, 44);
-  if (ph < 6.5f)
-    _display.print("Acide");
-  else if (ph > 8.5f)
-    _display.print("Basique");
-  else
-    _display.print("Neutre");
-
+  _display.print("NTU:");
+  _display.print(ntu, 0);
   _display.display();
+  delay(3000);
 }
 
 void ScreenOLED::showError(const String& msg) {
@@ -85,5 +64,3 @@ void ScreenOLED::showError(const String& msg) {
   _display.print(msg);
   _display.display();
 }
-
-void ScreenOLED::_drawHeader() {}

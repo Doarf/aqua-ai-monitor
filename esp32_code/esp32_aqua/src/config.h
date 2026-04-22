@@ -13,8 +13,14 @@
 #define SCL_PIN        22
 
 // ── pH PH-4502C ──────────────────────────
-#define PH_PIN         34     
+#define PH_PIN               34
 #define PH_READ_INTERVAL_MS  2000
-#define PH_SAMPLES     10      
-#define PH_VREF        3.3f
-#define PH_OFFSET      1.0f  
+#define PH_SAMPLES           10
+#define PH_VREF              3.3f
+#define PH_OFFSET            1.00f
+
+// ── Turbidité Keyestudio V1.0 ─────────────
+#define TURB_PIN               35
+#define TURB_READ_INTERVAL_MS  2000
+#define TURB_SAMPLES           10
+#define TURB_VREF              3.3f

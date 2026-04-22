@@ -135,7 +135,7 @@
  C:/Users/doarf/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
  src/config.h src/dht_sensor.h \
  .pio/libdeps/esp32dev/DHT\ sensor\ library/DHT.h src/ph_sensor.h \
- src/screen_oled.h \
+ src/turbidity_sensor.h src/screen_oled.h \
  .pio/libdeps/esp32dev/Adafruit\ GFX\ Library/Adafruit_GFX.h \
  C:/Users/doarf/.platformio/packages/framework-arduinoespressif32/cores/esp32/Print.h \
  .pio/libdeps/esp32dev/Adafruit\ GFX\ Library/gfxfont.h \
