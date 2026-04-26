@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../esp32_cam_stream"
+		},
+		{
+			"name": "esp32_cam",
+			"path": ".."
+		},
+		{
+			"name": "esp32_aqua",
+			"path": "../../esp32_code/esp32_aqua"
+		}
+	],
+	"settings": {}
+}
