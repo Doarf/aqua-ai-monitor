@@ -23,7 +23,7 @@ void ScreenOLED::showSplash() {
   delay(1500);
 }
 
-void ScreenOLED::showData(const SensorData& data, float ph, float ntu) {
+void ScreenOLED::showData(const SensorData& data, float ph, float ntu, float waterTemp) {
   // ── Page 1 : Ambiance ─────────────────────
   _display.clearDisplay();
   _display.setTextSize(2);
@@ -48,9 +48,22 @@ void ScreenOLED::showData(const SensorData& data, float ph, float ntu) {
   _display.print("Eau");
   _display.drawLine(0, 18, SCREEN_WIDTH, 18, SSD1306_WHITE);
   _display.setCursor(0, 22);
+  _display.print("T:");
+  _display.print(waterTemp, 1);
+  _display.print("C");
+  _display.setCursor(0, 44);
   _display.print("pH:");
   _display.print(ph, 1);
-  _display.setCursor(0, 44);
+  _display.display();
+  delay(3000);
+
+  // ── Page 3 : Turbidité ────────────────────
+  _display.clearDisplay();
+  _display.setTextSize(2);
+  _display.setCursor(0, 0);
+  _display.print("Turb.");
+  _display.drawLine(0, 18, SCREEN_WIDTH, 18, SSD1306_WHITE);
+  _display.setCursor(0, 22);
   _display.print("NTU:");
   _display.print(ntu, 0);
   _display.display();
@@ -64,3 +77,5 @@ void ScreenOLED::showError(const String& msg) {
   _display.print(msg);
   _display.display();
 }
+
+void ScreenOLED::_drawHeader() {}

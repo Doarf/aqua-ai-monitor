@@ -6,7 +6,7 @@ void HttpSender::begin() {
   Serial.println("[HTTP] Sender initialisé");
 }
 
-void HttpSender::send(const SensorData& data, float ph, float ntu) {
+void HttpSender::send(const SensorData& data, float ph, float ntu, float waterTemp) {
   if (WiFi.status() != WL_CONNECTED) {
     Serial.println("[HTTP] WiFi non connecté");
     return;
@@ -17,10 +17,11 @@ void HttpSender::send(const SensorData& data, float ph, float ntu) {
   http.addHeader("Content-Type", "application/json");
 
   String json = "{";
-  json += "\"temperature\":" + String(data.temperature, 1) + ",";
-  json += "\"humidity\":"    + String(data.humidity, 1)    + ",";
-  json += "\"ph\":"          + String(ph, 2)               + ",";
-  json += "\"ntu\":"         + String(ntu, 1);
+  json += "\"temperature\":"  + String(data.temperature, 1) + ",";
+  json += "\"humidity\":"     + String(data.humidity, 1)    + ",";
+  json += "\"ph\":"           + String(ph, 2)               + ",";
+  json += "\"ntu\":"          + String(ntu, 1)              + ",";
+  json += "\"waterTemp\":"    + String(waterTemp, 2);
   json += "}";
 
   int code = http.POST(json);

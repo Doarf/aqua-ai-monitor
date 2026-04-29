@@ -195,7 +195,11 @@
  C:/Users/doarf/.platformio/packages/framework-arduinoespressif32/cores/esp32/cbuf.h \
  src/config.h src/dht_sensor.h \
  .pio/libdeps/esp32dev/DHT\ sensor\ library/DHT.h src/ph_sensor.h \
- src/turbidity_sensor.h src/screen_oled.h \
+ src/turbidity_sensor.h src/ds18b20_sensor.h \
+ .pio/libdeps/esp32dev/OneWire/OneWire.h \
+ .pio/libdeps/esp32dev/OneWire/util/OneWire_direct_regtype.h \
+ .pio/libdeps/esp32dev/DallasTemperature/DallasTemperature.h \
+ src/screen_oled.h \
  .pio/libdeps/esp32dev/Adafruit\ GFX\ Library/Adafruit_GFX.h \
  .pio/libdeps/esp32dev/Adafruit\ GFX\ Library/gfxfont.h \
  .pio/libdeps/esp32dev/Adafruit\ BusIO/Adafruit_I2CDevice.h \

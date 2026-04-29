@@ -30,3 +30,5 @@
 #define TURB_READ_INTERVAL_MS  2000
 #define TURB_SAMPLES           10
 #define TURB_VREF              3.3f
+
+#define DS18B20_PIN    4
