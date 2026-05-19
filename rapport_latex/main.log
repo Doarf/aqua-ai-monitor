@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.3)  19 MAY 2026 18:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.3)  19 MAY 2026 22:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -102,13 +102,34 @@ Package babel Info: Making ? an active character on input line 276.
 \FBfnindent=\dimen158
 )))
 (C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty)
-(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
-Package: geometry 2026/03/07 v6.0 Page Geometry
+(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
 (C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
 )
+(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
+)
+(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+
 (C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
@@ -118,14 +139,14 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@cnth=\count293
 \Gm@cntv=\count294
 \c@Gm@tempcnt=\count295
-\Gm@bindingoffset=\dimen159
-\Gm@wd@mp=\dimen160
-\Gm@odd@mp=\dimen161
-\Gm@even@mp=\dimen162
-\Gm@layoutwidth=\dimen163
-\Gm@layoutheight=\dimen164
-\Gm@layouthoffset=\dimen165
-\Gm@layoutvoffset=\dimen166
+\Gm@bindingoffset=\dimen161
+\Gm@wd@mp=\dimen162
+\Gm@odd@mp=\dimen163
+\Gm@even@mp=\dimen164
+\Gm@layoutwidth=\dimen165
+\Gm@layoutheight=\dimen166
+\Gm@layouthoffset=\dimen167
+\Gm@layoutvoffset=\dimen168
 \Gm@dimlist=\toks21
 
 (C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
@@ -149,7 +170,7 @@ LaTeX Info: Redefining \leftprotrusion on input line 1085.
 \MT@prot@toks=\toks23
 LaTeX Info: Redefining \rightprotrusion on input line 1104.
 LaTeX Info: Redefining \textls on input line 1449.
-\MT@outer@kern=\dimen167
+\MT@outer@kern=\dimen169
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
 \MT@listname@count=\count298
@@ -175,10 +196,6 @@ Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
-)
 (C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
@@ -199,9 +216,9 @@ Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
 
 (C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen168
+\col@sep=\dimen170
 \ar@mcellbox=\box54
-\extrarowheight=\dimen169
+\extrarowheight=\dimen171
 \NC@list=\toks24
 \extratabsurround=\skip52
 \backup@length=\skip53
@@ -210,24 +227,6 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \everycr=\toks25
 \minrowclearance=\skip54
 \rownum=\count299
-)
-(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
-Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
-Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
-Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-)
-(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
-fg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 106.
-)
-\Gin@req@height=\dimen170
-\Gin@req@width=\dimen171
 )
 (C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
 sty
@@ -1324,6 +1323,31 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 164.
 LaTeX Font Info:    ... okay on input line 164.
 LaTeX Info: Redefining \degres on input line 164.
 
+(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count503
+\scratchdimen=\dimen336
+\scratchbox=\box95
+\nofMPsegments=\count504
+\nofMParguments=\count505
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count506
+\MPscratchDim=\dimen337
+\MPnumerator=\count507
+\makeMPintoPDFobject=\count508
+\everyMPtoPDFconversion=\toks55
+)
+(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1375,34 +1399,10 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
-ii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count503
-\scratchdimen=\dimen336
-\scratchbox=\box95
-\nofMPsegments=\count504
-\nofMParguments=\count505
-\everyMPshowfont=\toks54
-\MPscratchCnt=\count506
-\MPscratchDim=\dimen337
-\MPnumerator=\count507
-\makeMPintoPDFobject=\count508
-\everyMPtoPDFconversion=\toks55
-)
-(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
-ase.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
-fg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
 \c@lstlisting=\count509
 Package hyperref Info: Link coloring ON on input line 164.
- (main.out) (main.out)
+
+(main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -1461,14 +1461,6 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 [1
 
 {C:/Users/doarf/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.216 ...age\thispagestyle{empty}\mbox{}\clearpage
-                                                   [1
-
-]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1476,10 +1468,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[2
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.243 \clearpage
+                 [1
 
-] (main.toc [3
+] (main.toc [2
 
 
 ]
@@ -1493,7 +1490,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4])
+[3])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
@@ -1505,33 +1502,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[5] (main.lof)
+[4] (main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [6
+ [5
 
 
 ] (main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [7
+ [6
 
 
 ]
 Chapitre 1.
 
-Overfull \hbox (2.202pt too wide) in paragraph at lines 283--285
+Overfull \hbox (2.202pt too wide) in paragraph at lines 274--276
 []\T1/cmr/bx/n/12 Arthur Do-go-taru \T1/cmr/m/n/12 ^^V Chef de pro-jet, res-pon
 -sable de l'in-ter-face gra-phique (GUI),
  []
 
-[8
+[7
 
 
 ]
-Overfull \hbox (25.27284pt too wide) in paragraph at lines 323--324
+Overfull \hbox (25.27284pt too wide) in paragraph at lines 314--315
 []\T1/cmr/m/n/12 Transmettre ces don-nées par Wi-Fi à un ser-veur cen-tral via 
 le pro-to-cole HTTP/JSON ; 
  []
@@ -1543,24 +1540,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9]
+[8]
 Chapitre 2.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 42
+<sch_fonctionnement.png, id=462, 622.57594pt x 794.2172pt>
+File: sch_fonctionnement.png Graphic file (type png)
+<use sch_fonctionnement.png>
+Package pdftex.def Info: sch_fonctionnement.png  used on input line 345.
+(pdftex.def)             Requested size: 350.53915pt x 447.18234pt.
+[9
+
+ <./sch_fonctionnement.png>]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 35
 7.
+
 (C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-[10
-
-{C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-Underfull \hbox (badness 10000) in alignment at lines 465--465
+Underfull \hbox (badness 10000) in alignment at lines 395--395
 [][][] 
  []
 
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 473.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 475.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1568,8 +1567,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[11]
-Overfull \hbox (62.0007pt too wide) in paragraph at lines 483--485
+[10{C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 403.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 405.
+
+Overfull \hbox (62.0007pt too wide) in paragraph at lines 413--415
 []\T1/cmr/m/n/12 L'ESP32-CAM en-voie quant à lui un flux HTTP chun-ked en [][][
 ][][][],
  []
@@ -1581,19 +1585,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[12]
+[11]
 Chapitre 3.
 
-Overfull \hbox (17.56888pt too wide) in paragraph at lines 489--489
+Overfull \hbox (17.56888pt too wide) in paragraph at lines 419--419
 |\T1/cmr/bx/n/24.88 Matériel élec-tro-nique et concep-tion PCB| 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 510--510
+Underfull \hbox (badness 10000) in alignment at lines 440--440
 [][][][] 
  []
 
-[13
+[12
 
 ]
 (C:\Users\doarf\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
@@ -1612,14 +1616,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[14]
-Overfull \hbox (6.81078pt too wide) in paragraph at lines 582--586
+[13]
+Overfull \hbox (6.81078pt too wide) in paragraph at lines 512--516
 []\T1/cmr/m/n/12 Le DS18B20 est un cap-teur de tem-pé-ra-ture nu-mé-rique à pro
 -to-cole One-Wire, étanche,
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 625--625
+Underfull \hbox (badness 10000) in alignment at lines 555--555
 [][] 
  []
 
@@ -1630,7 +1634,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[15]
+[14]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1638,12 +1642,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[16]
+[15]
 Chapitre 4.
-[17
+[16
 
 ]
-Overfull \hbox (4.47939pt too wide) in paragraph at lines 710--713
+Overfull \hbox (4.47939pt too wide) in paragraph at lines 640--643
 []\T1/cmr/m/n/12 La classe [][][][][][] uti-lise la bi-blio-thèque [][][][][][]
  d'Ar-duino pour ESP32.
  []
@@ -1655,8 +1659,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[18]
-Underfull \hbox (badness 10000) in alignment at lines 754--754
+[17]
+Underfull \hbox (badness 10000) in alignment at lines 684--684
 [][][] 
  []
 
@@ -1667,16 +1671,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[19]
+[18]
 Chapitre 5.
 
-Underfull \hbox (badness 10000) in alignment at lines 801--801
+Underfull \hbox (badness 10000) in alignment at lines 731--731
 [][][] 
  []
 
-[20
+[19
 
 ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[20]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1685,38 +1697,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [21]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[22]
 Chapitre 6.
 
-LaTeX Warning: Citation 'liu2008isolation' on page 23 undefined on input line 9
-19.
+LaTeX Warning: Citation 'liu2008isolation' on page 22 undefined on input line 8
+49.
 
-[23
+[22
 
 ]
-Overfull \hbox (5.67935pt too wide) in paragraph at lines 955--955
+Overfull \hbox (5.67935pt too wide) in paragraph at lines 885--885
  []|\T1/cmr/bx/n/12 Supervisé| 
  []
 
 
-Overfull \hbox (13.33163pt too wide) in paragraph at lines 955--955
+Overfull \hbox (13.33163pt too wide) in paragraph at lines 885--885
  []|\T1/cmr/bx/n/12 Interpréta- 
  []
 
 
-Overfull \hbox (7.70374pt too wide) in paragraph at lines 955--955
+Overfull \hbox (7.70374pt too wide) in paragraph at lines 885--885
  []|\T1/cmr/m/n/12 Complémen- 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 955--955
+Underfull \hbox (badness 10000) in alignment at lines 885--885
 [][][][][][] 
  []
 
@@ -1727,8 +1731,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[24]
-Overfull \hbox (3.50887pt too wide) in paragraph at lines 1036--1040
+[23]
+Overfull \hbox (3.50887pt too wide) in paragraph at lines 966--970
 []\T1/cmr/m/n/12 Le mo-dèle et le sca-ler sont sé-ria-li-sés via [][][][][][] d
 ans les fi-chiers [][][][][][]
  []
@@ -1740,7 +1744,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[25]
+[24]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1748,18 +1752,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[26]
+[25]
 Chapitre 7.
-[27
+[26
 
 ]
-Overfull \hbox (20.97807pt too wide) in paragraph at lines 1112--1116
+Overfull \hbox (20.97807pt too wide) in paragraph at lines 1042--1046
 []\T1/cmr/m/n/12 La zone d'upload sup-porte le drag & drop na-tif (évé-ne-ments
  [][][][][][], [][][][][][],
  []
 
 
-Overfull \hbox (13.82083pt too wide) in paragraph at lines 1112--1116
+Overfull \hbox (13.82083pt too wide) in paragraph at lines 1042--1046
 [][][][][][]\T1/cmr/m/n/12 ) et la sé-lec-tion par dia-logue. Le fi-chier est e
 n-voyé via [][][][][][] en [][][][][][]
  []
@@ -1771,22 +1775,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[28]
+[27]
 Chapitre 8.
 
-Overfull \hbox (8.16628pt too wide) in alignment at lines 1141--1141
+Overfull \hbox (8.16628pt too wide) in alignment at lines 1071--1071
 [][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1171--1171
+Underfull \hbox (badness 10000) in alignment at lines 1101--1101
 [][][][][] 
  []
 
-[29
+[28
 
 ]
-Underfull \hbox (badness 10000) in alignment at lines 1191--1191
+Underfull \hbox (badness 10000) in alignment at lines 1121--1121
 [][][] 
  []
 
@@ -1797,20 +1801,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[30]
+[29]
 Chapitre 9.
 
-Underfull \hbox (badness 10000) in alignment at lines 1225--1225
+Underfull \hbox (badness 10000) in alignment at lines 1155--1155
 [][][] 
  []
 
 
-Overfull \hbox (22.02031pt too wide) in paragraph at lines 1232--1234
+Overfull \hbox (22.02031pt too wide) in paragraph at lines 1162--1164
 []\T1/cmr/bx/n/12 Électronique em-bar-quée \T1/cmr/m/n/12 : pro-gram-ma-tion ES
 P32, pro-to-coles One-Wire/I\TS1/cmr/m/n/12 ²\T1/cmr/m/n/12 C/ADC,
  []
 
-[31
+[30
 
 ]
 
@@ -1820,34 +1824,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[32] [33
+[31] [32
 
 
 ]
-Underfull \hbox (badness 2608) in paragraph at lines 1293--1297
+Underfull \hbox (badness 2608) in paragraph at lines 1223--1227
 []\T1/cmr/m/n/12 Espressif Sys-tems, \T1/cmr/m/it/12 ESP32 Tech-ni-cal Re-fe-re
 nce Ma-nual\T1/cmr/m/n/12 , v5.2, 2023. [On-
+ []
+
+[33
+
+]
+Annexe A.
+
+Overfull \hbox (0.14218pt too wide) in paragraph at lines 1272--1272
+|\T1/cmr/bx/n/24.88 Annexe A ^^V Schéma de câ-blage ESP32| 
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 1303--1303
+[][][][] 
  []
 
 [34
 
 ]
-Annexe A.
-
-Overfull \hbox (0.14218pt too wide) in paragraph at lines 1342--1342
-|\T1/cmr/bx/n/24.88 Annexe A ^^V Schéma de câ-blage ESP32| 
- []
-
-
-Underfull \hbox (badness 10000) in alignment at lines 1373--1373
-[][][][] 
- []
-
-[35
-
-]
 Annexe B.
-[36
+[35
 
 ]
 
@@ -1857,9 +1861,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[37]
+[36]
 Annexe C.
-[38
+[37
 
 ] (main.aux)
  ***********
@@ -1886,52 +1890,47 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42913 strings out of 467871
- 832299 string characters out of 5418377
- 1968138 words of memory out of 5000000
- 70756 multiletter control sequences out of 15000+600000
- 656451 words of font info for 105 fonts, out of 8000000 for 9000
+ 42790 strings out of 467871
+ 830361 string characters out of 5418377
+ 1969161 words of memory out of 5000000
+ 70640 multiletter control sequences out of 15000+600000
+ 653664 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,94p,1199b,2374s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx
 1440.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcbx1728.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecxc1095.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecti1000.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\tcrm0600.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\tcbx1000.pk> <C:\Users\doarf\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\doarf\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\doarf\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\doarf\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\
-doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\
-Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk
+0\ecrm0600.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\tcbx1728.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecbx1095.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecxc1095.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\doarf\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\doarf\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\doarf\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\doarf\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\
+doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\
+Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk
 > <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
-095.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
-\ecrm1200.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
-dpi600\ecbx1200.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknapp
-en/ec/dpi600\ecrm1440.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/
-jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/l
-jfour/jknappen/ec/dpi600\ecbx2986.pk> <C:\Users\doarf\AppData\Local\MiKTeX\font
-s/pk/ljfour/jknappen/ec/dpi600\ecbx3583.pk><C:/Users/doarf/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/doarf/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/doarf/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/d
-oarf/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
-/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.
-pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmr6.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr8.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTe
-X/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/doarf/AppData/Local/Programs/MiK
-TeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/doarf/AppData/Local/Programs/M
-iKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/doarf/AppData/Local/Program
-s/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (39 pages, 595021 bytes).
+728.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\ecbx2986.pk> <C:\Users\doarf\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
+dpi600\ecbx3583.pk><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmmi12.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/doarf/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/doarf/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/doarf/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/doarf/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/doa
+rf/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8
+a.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucr
+r8a.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/u
+crro8a.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfdi
+ng/uzdr.pfb>
+Output written on main.pdf (38 pages, 612698 bytes).
 PDF statistics:
- 1798 PDF objects out of 2073 (max. 8388607)
- 409 named destinations out of 1000 (max. 500000)
- 621 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1652 PDF objects out of 1728 (max. 8388607)
+ 408 named destinations out of 1000 (max. 500000)
+ 626 words of extra memory for PDF output out of 10000 (max. 10000000)
 

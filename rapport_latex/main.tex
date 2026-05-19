@@ -9,7 +9,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
-
+\usepackage{graphicx}
 % ── Mise en page ─────────────────────────────────────────────
 \usepackage[top=2.5cm,bottom=2.5cm,left=2.8cm,right=2.8cm]{geometry}
 \usepackage{setspace}
@@ -191,7 +191,7 @@
   \begin{tabular}{ll}
     \textbf{Établissement} & CESI Nanterre \\[4pt]
     \textbf{Programme}     & FISA — Ingénierie des Systèmes Embarqués \\[4pt]
-    \textbf{Promotion}     & 2024--2026 \\[4pt]
+    \textbf{Promotion}     & 2024--2027 \\[4pt]
     \textbf{Encadrant}     & Kamel AIZI \\[4pt]
   \end{tabular}
 
@@ -203,17 +203,15 @@
 
   \vspace{0.4cm}
   \begin{tabular}{ll}
-    Arthur Dogotaru   & Chef de projet — GUI, IA \\[4pt]
-    Legall Maxence    & Capteurs, traitement de données \\[4pt]
-    Hammouda Nouhaila & PCB, schématique électronique \\[4pt]
+    DOGOTARU Arthur   & Chef de projet — GUI, IA \\[4pt]
+    LEGALL Maxence    & Capteurs, traitement de données \\[4pt]
+    HAMMOUDA Nouhaila & PCB, schématique électronique \\[4pt]
   \end{tabular}
 
   \vfill
   {\color{secondary}\today}
 \end{titlepage}
 
-% ── Page blanche ────────────────────────────────────────────
-\clearpage\thispagestyle{empty}\mbox{}\clearpage
 
 % ── Résumé ──────────────────────────────────────────────────
 \chapter*{Résumé}
@@ -241,13 +239,6 @@ incluant graphiques d'évolution temporelle, alertes colorées et module d'entra
 \textbf{Mots-clés :} ESP32, IoT, aquaculture, détection d'anomalies, Isolation Forest,
 Node.js, Flask, Chart.js, KiCad, PlatformIO.
 
-\vspace{0.5cm}
-\textbf{Abstract ---}
-The \textit{aqua-ai-monitor} project presents an autonomous embedded platform for real-time
-aquaculture basin monitoring. The system combines IoT sensor acquisition (pH, turbidity, temperature,
-humidity) via ESP32 microcontrollers, a Node.js relay server, and a Python-based Isolation Forest
-anomaly detection microservice. A web dashboard provides live sensor charts, AI anomaly scores,
-and an on-the-fly model training interface via CSV upload.
 
 \clearpage
 
@@ -347,76 +338,15 @@ présente le tableau de bord web. Le \textbf{chapitre~8} conclut et ouvre sur le
 
 Le système aqua-ai-monitor est structuré en trois couches fonctionnelles distinctes,
 conformément au modèle IoT classique :
+% À mettre dans le préambule (avant \begin{document})
 
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[
-  node distance=1.0cm and 1.6cm,
-  box/.style={rectangle,rounded corners=4pt,minimum width=3.0cm,minimum height=0.9cm,
-              align=center,font=\small\bfseries},
-  arrow/.style={-{Stealth[length=6pt]},thick,color=primary},
-  arrowgray/.style={-{Stealth[length=6pt]},thick,color=secondary,dashed},
-  label/.style={font=\footnotesize\itshape,color=secondary}
-]
-
-  %% ── Colonne gauche : chaîne capteurs ──────────────────────
-  % Capteurs
-  \node[box,fill=primary!15,draw=primary] (sens) {Capteurs\\{\footnotesize pH · NTU · T° · HR}};
-  % ESP32 Aqua
-  \node[box,fill=primary!20,draw=primary,below=1.1cm of sens] (esp32) {ESP32 Aqua};
-  % Flèche capteurs -> ESP32
-  \draw[arrow] (sens) -- node[right,font=\tiny,color=secondary]{OneWire/ADC/I$^2$C} (esp32);
-
-  %% ── Colonne droite : caméra ───────────────────────────────
-  \node[box,fill=primary!15,draw=primary,right=3.2cm of sens] (cam)
-        {Caméra OV2640\\{\footnotesize VGA JPEG}};
-  \node[box,fill=primary!20,draw=primary,below=1.1cm of cam] (espcam) {ESP32-CAM};
-  \draw[arrow] (cam) -- node[right,font=\tiny,color=secondary]{MIPI CSI} (espcam);
-
-  %% ── Transport Wi-Fi ───────────────────────────────────────
-  \node[box,fill=secondary!12,draw=secondary,
-        below=1.3cm of esp32, xshift=2.2cm] (wifi)
-        {Réseau Wi-Fi local\\{\footnotesize HTTP/JSON · MJPEG}};
-  \draw[arrow] (esp32.south)  -- ++(0,-0.35) -| (wifi.west);
-  \draw[arrow] (espcam.south) -- ++(0,-0.35) -| (wifi.east);
-
-  %% ── PC : Node.js + Flask ──────────────────────────────────
-  \node[box,fill=accent!15,draw=accent,
-        below=1.3cm of wifi] (node)
-        {PC — Node.js\\{\footnotesize :3000}};
-  \node[box,fill=accent!10,draw=accent,
-        right=1.6cm of node] (flask)
-        {Flask (IA)\\{\footnotesize :5001}};
-  \draw[arrow] (wifi)  -- node[right,font=\tiny,color=secondary]{POST /data ~ /stream} (node);
-  \draw[arrow] (node.east)  -- node[above,font=\tiny,color=secondary]{/predict} (flask.west);
-  \draw[arrow] (flask.south) -- ++(0,-0.3) -| (node.east);
-
-  %% ── Dashboard Web ─────────────────────────────────────────
-  \node[box,fill=warning!15,draw=warning,
-        below=1.3cm of node] (dash)
-        {Dashboard Web\\{\footnotesize localhost:3000}};
-  \draw[arrow] (node) -- node[right,font=\tiny,color=secondary]{GET /data · /ai · /video} (dash);
-
-  %% ── Accès distant via ngrok ───────────────────────────────
-  \node[box,fill=danger!10,draw=danger,
-        below=1.0cm of dash] (ngrok)
-        {Accès distant\\{\footnotesize ngrok tunnel HTTPS}};
-  \draw[arrowgray] (dash.south) -- (ngrok.north);
-  \node[right=0.15cm of ngrok,font=\footnotesize\itshape,color=secondary,text width=3cm]
-        {Exposition publique\\sur Internet};
-
-  %% ── Légendes couches ──────────────────────────────────────
-  \node[label,left=0.15cm of sens]  {Capteurs};
-  \node[label,left=0.15cm of esp32] {Embarqué};
-  \node[label,left=0.15cm of wifi]  {Transport};
-  \node[label,left=0.15cm of node]  {Traitement};
-  \node[label,left=0.15cm of dash]  {Présentation};
-  \node[label,left=0.15cm of ngrok] {Accès distant};
-
-\end{tikzpicture}
-\caption{Architecture réelle du système aqua-ai-monitor}
-\label{fig:architecture}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sch_fonctionnement.png}
+    \caption{Schéma de l'architecture du banc de test}
+    \label{fig:sch_fonctionnement}
 \end{figure}
+
 
 \section{Flux de données}
 
