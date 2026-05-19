@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.3)  19 MAY 2026 22:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.3)  19 MAY 2026 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1481,7 +1481,7 @@ l.243 \clearpage
 
 ]
 Package babel Info: 'french' activates 'french' shorthands.
-(babel)             Reported on input line 70.
+(babel)             Reported on input line 72.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1542,7 +1542,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [8]
 Chapitre 2.
-<sch_fonctionnement.png, id=483, 633.86812pt x 796.47563pt>
+<sch_fonctionnement.png, id=501, 633.86812pt x 796.47563pt>
 File: sch_fonctionnement.png Graphic file (type png)
 <use sch_fonctionnement.png>
 Package pdftex.def Info: sch_fonctionnement.png  used on input line 345.
@@ -1622,7 +1622,7 @@ Overfull \hbox (6.81078pt too wide) in paragraph at lines 512--516
 -to-cole One-Wire, étanche,
  []
 
-<sch_pcb.png, id=542, 1219.55624pt x 601.4972pt>
+<sch_pcb.png, id=560, 1219.55624pt x 601.4972pt>
 File: sch_pcb.png Graphic file (type png)
 <use sch_pcb.png>
 Package pdftex.def Info: sch_pcb.png  used on input line 548.
@@ -1635,7 +1635,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [14]
-<routage_pcb.png, id=555, 950.04938pt x 687.31781pt>
+<routage_pcb.png, id=573, 950.04938pt x 687.31781pt>
 File: routage_pcb.png Graphic file (type png)
 <use routage_pcb.png>
 Package pdftex.def Info: routage_pcb.png  used on input line 564.
@@ -1649,7 +1649,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [15 <./sch_pcb.png> <./routage_pcb.png>]
-<3d_pcb.png, id=563, 1198.4775pt x 890.5772pt>
+<3d_pcb.png, id=581, 1198.4775pt x 890.5772pt>
 File: 3d_pcb.png Graphic file (type png)
 <use 3d_pcb.png>
 Package pdftex.def Info: 3d_pcb.png  used on input line 579.
@@ -1789,13 +1789,32 @@ Chapitre 7.
 [28
 
 ]
-Overfull \hbox (20.97807pt too wide) in paragraph at lines 1087--1091
+<site_1.png, id=824, 1922.68312pt x 955.31906pt>
+File: site_1.png Graphic file (type png)
+<use site_1.png>
+Package pdftex.def Info: site_1.png  used on input line 1080.
+(pdftex.def)             Requested size: 438.17227pt x 217.70714pt.
+<site_2.png, id=826, 1924.18875pt x 953.81343pt>
+File: site_2.png Graphic file (type png)
+<use site_2.png>
+Package pdftex.def Info: site_2.png  used on input line 1097.
+(pdftex.def)             Requested size: 438.17227pt x 217.18936pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[29 <./site_1.png>]
+Overfull \hbox (20.97807pt too wide) in paragraph at lines 1123--1127
 []\T1/cmr/m/n/12 La zone d'upload sup-porte le drag & drop na-tif (évé-ne-ments
  [][][][][][], [][][][][][],
  []
 
 
-Overfull \hbox (13.82083pt too wide) in paragraph at lines 1087--1091
+Overfull \hbox (13.82083pt too wide) in paragraph at lines 1123--1127
 [][][][][][]\T1/cmr/m/n/12 ) et la sé-lec-tion par dia-logue. Le fi-chier est e
 n-voyé via [][][][][][] en [][][][][][]
  []
@@ -1807,22 +1826,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[29]
+[30 <./site_2.png>]
 Chapitre 8.
 
-Overfull \hbox (8.16628pt too wide) in alignment at lines 1116--1116
+Overfull \hbox (8.16628pt too wide) in alignment at lines 1152--1152
 [][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1146--1146
+Underfull \hbox (badness 10000) in alignment at lines 1182--1182
 [][][][][] 
  []
 
-[30
+[31
 
 ]
-Underfull \hbox (badness 10000) in alignment at lines 1166--1166
+Underfull \hbox (badness 10000) in alignment at lines 1202--1202
 [][][] 
  []
 
@@ -1833,20 +1852,41 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[31]
+[32]
+<pcb_irl.png, id=854, 646.66594pt x 644.4075pt>
+File: pcb_irl.png Graphic file (type png)
+<use pcb_irl.png>
+Package pdftex.def Info: pcb_irl.png  used on input line 1217.
+(pdftex.def)             Requested size: 175.26622pt x 174.65115pt.
+<pcb_irl_2.png, id=855, 453.94594pt x 810.02625pt>
+File: pcb_irl_2.png Graphic file (type png)
+<use pcb_irl_2.png>
+Package pdftex.def Info: pcb_irl_2.png  used on input line 1224.
+(pdftex.def)             Requested size: 219.08614pt x 390.9341pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[33
+
+ <./pcb_irl.png> <./pcb_irl_2.png>]
 Chapitre 9.
 
-Underfull \hbox (badness 10000) in alignment at lines 1200--1200
+Underfull \hbox (badness 10000) in alignment at lines 1259--1259
 [][][] 
  []
 
 
-Overfull \hbox (22.02031pt too wide) in paragraph at lines 1207--1209
+Overfull \hbox (22.02031pt too wide) in paragraph at lines 1266--1268
 []\T1/cmr/bx/n/12 Électronique em-bar-quée \T1/cmr/m/n/12 : pro-gram-ma-tion ES
 P32, pro-to-coles One-Wire/I\TS1/cmr/m/n/12 ²\T1/cmr/m/n/12 C/ADC,
  []
 
-[32
+[34
 
 ]
 
@@ -1856,34 +1896,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[33] [34
+[35] [36
 
 
 ]
-Underfull \hbox (badness 2608) in paragraph at lines 1268--1272
+Underfull \hbox (badness 2608) in paragraph at lines 1327--1331
 []\T1/cmr/m/n/12 Espressif Sys-tems, \T1/cmr/m/it/12 ESP32 Tech-ni-cal Re-fe-re
 nce Ma-nual\T1/cmr/m/n/12 , v5.2, 2023. [On-
  []
 
-[35
+[37
 
 ]
 Annexe A.
 
-Overfull \hbox (0.14218pt too wide) in paragraph at lines 1317--1317
+Overfull \hbox (0.14218pt too wide) in paragraph at lines 1376--1376
 |\T1/cmr/bx/n/24.88 Annexe A ^^V Schéma de câ-blage ESP32| 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1348--1348
+Underfull \hbox (badness 10000) in alignment at lines 1407--1407
 [][][][] 
  []
 
-[36
+[38
 
 ]
 Annexe B.
-[37
+[39
 
 ]
 
@@ -1893,9 +1933,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[38]
+[40]
 Annexe C.
-[39
+[41
 
 ] (main.aux)
  ***********
@@ -1914,7 +1954,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5FEE112F6D8CEF1BE035A0B060D4D7AF;13915.
+(rerunfilecheck)             Checksum: 4C4BE447D0B9322AC42BCFEB531596AD;14373.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
@@ -1925,10 +1965,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42826 strings out of 467871
- 830976 string characters out of 5418377
- 1968417 words of memory out of 5000000
- 70668 multiletter control sequences out of 15000+600000
+ 42872 strings out of 467871
+ 831754 string characters out of 5418377
+ 1969818 words of memory out of 5000000
+ 70704 multiletter control sequences out of 15000+600000
  653664 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,94p,1199b,2390s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1963,9 +2003,9 @@ a.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucr
 r8a.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/u
 crro8a.pfb><C:/Users/doarf/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfdi
 ng/uzdr.pfb>
-Output written on main.pdf (40 pages, 856800 bytes).
+Output written on main.pdf (42 pages, 3178191 bytes).
 PDF statistics:
- 1697 PDF objects out of 1728 (max. 8388607)
- 416 named destinations out of 1000 (max. 500000)
- 665 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1742 PDF objects out of 2073 (max. 8388607)
+ 426 named destinations out of 1000 (max. 500000)
+ 701 words of extra memory for PDF output out of 10000 (max. 10000000)
 

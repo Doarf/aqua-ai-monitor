@@ -1062,6 +1062,42 @@ pH, turbidité, température eau, température air et humidité. Un sélecteur p
 de choisir la fenêtre d'affichage (30, 60, 120 ou 300 points). Les données sont
 stockées en mémoire dans des buffers côté client (\code{history}) et mises à jour
 toutes les 2 secondes.
+\subsection{Captures d'écran du dashboard}
+
+\subsubsection{Onglet Dashboard — vue principale}
+
+La figure~\ref{fig:site_1} présente le dashboard en fonctionnement réel.
+On observe le flux vidéo live de l'ESP32-CAM en haut à gauche, le panneau
+d'alertes actives (pH hors plage et turbidité hors plage détectés simultanément
+par l'IA et les seuils métier), les cinq cartes métriques organisées par section
+\textit{Ambiance} et \textit{Eau}, ainsi que le panneau d'intelligence artificielle
+affichant un score d'anomalie à 100\,\% avec la raison détaillée. La date
+d'entraînement au 01/01/1970 indique que le modèle n'a pas encore été entraîné
+sur des données réelles — il opère uniquement sur les seuils métier.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{site_1.png}
+  \caption{Dashboard principal — détection d'anomalie active (pH~3,40, NTU~353)}
+  \label{fig:site_1}
+\end{figure}
+
+\subsubsection{Onglet Graphiques — courbes temps réel}
+
+La figure~\ref{fig:site_2} présente l'onglet graphiques avec les cinq
+courbes Chart.js mises à jour toutes les 2 secondes sur une fenêtre de 60~points.
+On constate la stabilité de la température eau (18,6°C) et de l'humidité (64,7\,\%),
+la variabilité de la turbidité autour de 398~NTU avec quelques décrochages,
+et la faible amplitude des oscillations de température air (20,10--20,20°C)
+révélant la précision du DHT22. Le pH reste anormalement bas à 3,36, confirmant
+l'absence de calibration du capteur PH-4502C.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{site_2.png}
+  \caption{Onglet graphiques — 5 courbes temps réel sur fenêtre 60~points}
+  \label{fig:site_2}
+\end{figure}
 
 \section{Système de polling}
 
@@ -1165,7 +1201,30 @@ Consommation ESP32 (mesure) & ~240~mA & En transmission continue \\
 \bottomrule
 \end{tabularx}
 \end{table}
+\clearpage
 
+\subsection{Réalisation physique du prototype}
+
+Les figures~\ref{fig:pcb_irl} et~\ref{fig:pcb_irl_2} présentent le prototype
+réalisé sur veroboard en boîtier plastique blanc. On identifie l'ESP32-WROOM-32
+au centre de la carte, l'écran OLED I²C à sa droite, le module pH PH-4502C en
+haut à gauche avec son connecteur BNC, et le capteur de turbidité Keyestudio V1.0
+en bas. Le câblage suit le code couleur standard (rouge~: VCC, noir~: GND,
+jaune/orange~: signal).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{pcb_irl.png}
+  \caption{Vue intérieure du boîtier — prototype sur veroboard}
+  \label{fig:pcb_irl}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth, angle=90, origin=c]{pcb_irl_2.png}
+  \caption{Vue d'ensemble du banc de test — boîtier positionné sur l'aquarium}
+  \label{fig:pcb_irl_2}
+\end{figure}
 % ============================================================
 %  CHAPITRE 9 — CONCLUSION ET PERSPECTIVES
 % ============================================================

@@ -55,26 +55,30 @@
 \contentsline {section}{\numberline {7.2}Organisation en onglets}{28}{section.7.2}%
 \contentsline {subsection}{\numberline {7.2.1}Onglet Dashboard}{28}{subsection.7.2.1}%
 \contentsline {subsection}{\numberline {7.2.2}Onglet Graphiques}{28}{subsection.7.2.2}%
-\contentsline {section}{\numberline {7.3}Système de polling}{28}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Gestion des alertes}{29}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Interface d'entraînement IA}{29}{section.7.5}%
-\contentsline {chapter}{\numberline {8}Résultats et validation}{30}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Tests du firmware}{30}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Lecture des capteurs}{30}{subsection.8.1.1}%
-\contentsline {section}{\numberline {8.2}Tests du modèle IA}{30}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Performance du système}{31}{section.8.3}%
-\contentsline {chapter}{\numberline {9}Conclusion et perspectives}{32}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Bilan du projet}{32}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Compétences développées}{32}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Perspectives d'amélioration}{33}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Court terme}{33}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}Moyen terme}{33}{subsection.9.3.2}%
-\contentsline {subsection}{\numberline {9.3.3}Long terme}{33}{subsection.9.3.3}%
-\contentsline {chapter}{Références bibliographiques}{34}{chapter*.19}%
-\contentsline {chapter}{\numberline {A}Annexe A — Schéma de câblage ESP32}{36}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Annexe B — Guide de démarrage rapide}{37}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Prérequis}{37}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Installation}{37}{section.B.2}%
-\contentsline {section}{\numberline {B.3}Flash du firmware ESP32}{37}{section.B.3}%
-\contentsline {section}{\numberline {B.4}Premier entraînement du modèle}{38}{section.B.4}%
-\contentsline {chapter}{\numberline {C}Annexe C — Structure du dépôt GitHub}{39}{appendix.C}%
+\contentsline {subsection}{\numberline {7.2.3}Captures d'écran du dashboard}{28}{subsection.7.2.3}%
+\contentsline {subsubsection}{Onglet Dashboard — vue principale}{29}{subsubsection*.15}%
+\contentsline {subsubsection}{Onglet Graphiques — courbes temps réel}{29}{subsubsection*.17}%
+\contentsline {section}{\numberline {7.3}Système de polling}{30}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Gestion des alertes}{30}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Interface d'entraînement IA}{30}{section.7.5}%
+\contentsline {chapter}{\numberline {8}Résultats et validation}{31}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Tests du firmware}{31}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Lecture des capteurs}{31}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}Tests du modèle IA}{31}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Performance du système}{32}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Réalisation physique du prototype}{33}{subsection.8.3.1}%
+\contentsline {chapter}{\numberline {9}Conclusion et perspectives}{34}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Bilan du projet}{34}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Compétences développées}{34}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Perspectives d'amélioration}{35}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Court terme}{35}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}Moyen terme}{35}{subsection.9.3.2}%
+\contentsline {subsection}{\numberline {9.3.3}Long terme}{35}{subsection.9.3.3}%
+\contentsline {chapter}{Références bibliographiques}{36}{chapter*.25}%
+\contentsline {chapter}{\numberline {A}Annexe A — Schéma de câblage ESP32}{38}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Annexe B — Guide de démarrage rapide}{39}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Prérequis}{39}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Installation}{39}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Flash du firmware ESP32}{39}{section.B.3}%
+\contentsline {section}{\numberline {B.4}Premier entraînement du modèle}{40}{section.B.4}%
+\contentsline {chapter}{\numberline {C}Annexe C — Structure du dépôt GitHub}{41}{appendix.C}%
