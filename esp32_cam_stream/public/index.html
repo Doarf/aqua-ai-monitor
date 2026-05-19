@@ -4,330 +4,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SPI Aquaculture</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: #f6f8fa;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      color: #24292f;
-    }
+    body { background:#f6f8fa; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; min-height:100vh; color:#24292f; }
 
     /* ── Nav ── */
-    nav {
-      background: #fff;
-      border-bottom: 1px solid #e1e4e8;
-      padding: 0 24px;
-      height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+    nav { background:#fff; border-bottom:1px solid #e1e4e8; padding:0 24px; height:52px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:10; }
+    .nav-left { display:flex; align-items:center; gap:10px; }
+    .nav-logo { width:28px;height:28px;background:#0969da;border-radius:6px;display:flex;align-items:center;justify-content:center; }
+    .nav-title { font-size:15px;font-weight:600;color:#24292f; }
+    .nav-badge { display:flex;align-items:center;gap:5px;background:#dafbe1;color:#1a7f37;font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px; }
+    .nav-badge-dot { width:6px;height:6px;border-radius:50%;background:#1a7f37;animation:pulse 1.5s infinite; }
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+    .nav-time { font-size:12px;color:#8c959f; }
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-logo {
-      width: 28px;
-      height: 28px;
-      background: #0969da;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: #24292f;
-    }
-
-    .nav-badge {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      background: #dafbe1;
-      color: #1a7f37;
-      font-size: 11px;
-      font-weight: 500;
-      padding: 3px 10px;
-      border-radius: 20px;
-    }
-
-    .nav-badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #1a7f37;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    .nav-time {
-      font-size: 12px;
-      color: #8c959f;
-    }
+    /* ── Tabs ── */
+    .tabs { max-width:1100px;margin:0 auto;padding:16px 24px 0;display:flex;gap:4px; }
+    .tab { padding:7px 16px;font-size:13px;font-weight:500;border-radius:6px 6px 0 0;cursor:pointer;color:#57606a;border:1px solid transparent;border-bottom:none;background:transparent;transition:all 0.15s; }
+    .tab:hover { color:#24292f;background:#eaeef2; }
+    .tab.active { color:#24292f;background:#fff;border-color:#e1e4e8; }
 
     /* ── Layout ── */
-    .container {
-      max-width: 1100px;
-      margin: 24px auto;
-      padding: 0 24px;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 20px;
-    }
+    .container { max-width:1100px;margin:0 auto;padding:0 24px 24px; }
+    .page { display:none; }
+    .page.active { display:block; }
 
-    /* ── Left panel ── */
-    .left-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+    /* ── Dashboard ── */
+    .dashboard-grid { display:grid;grid-template-columns:220px 1fr;gap:20px;padding-top:20px; }
+    .left-panel { display:flex;flex-direction:column;gap:14px; }
+    .cam-box { background:#1c2128;border-radius:10px;overflow:hidden;border:1px solid #e1e4e8; }
+    .cam-box img { display:block;width:100%;aspect-ratio:4/3;object-fit:cover; }
+    .cam-label { padding:8px 10px;background:#1c2128;display:flex;align-items:center;justify-content:space-between; }
+    .cam-label span { font-size:10px;color:#8c959f; }
+    .cam-live { display:flex;align-items:center;gap:4px;font-size:10px;color:#3fb950; }
+    .cam-live-dot { width:5px;height:5px;border-radius:50%;background:#3fb950;animation:pulse 1.5s infinite; }
+    .alert-box { background:#fff;border:1px solid #e1e4e8;border-radius:10px;overflow:hidden; }
+    .alert-header { padding:10px 12px;border-bottom:1px solid #e1e4e8;font-size:12px;font-weight:600; }
+    .alert-list { padding:8px;display:flex;flex-direction:column;gap:6px; }
+    .alert-item { display:flex;align-items:flex-start;gap:8px;padding:8px;border-radius:6px;background:#f6f8fa; }
+    .alert-item.warning { background:#fff8c5;border:1px solid #ffa657; }
+    .alert-item.ok      { background:#dafbe1;border:1px solid #56d364; }
+    .alert-item.danger  { background:#ffebe9;border:1px solid #ff7b72; }
+    .alert-dot { width:6px;height:6px;border-radius:50%;margin-top:3px;flex-shrink:0; }
+    .alert-txt { font-size:11px;color:#24292f;line-height:1.4; }
+    .right-panel { display:flex;flex-direction:column;gap:16px; }
+    .section-title { font-size:13px;font-weight:600;color:#57606a;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px; }
+    .metrics-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:12px; }
+    .metric-card { background:#fff;border:1px solid #e1e4e8;border-radius:10px;padding:16px;transition:box-shadow 0.2s; }
+    .metric-card:hover { box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+    .metric-card.warning { border-color:#ffa657; }
+    .metric-label { font-size:11px;color:#57606a;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between; }
+    .metric-label-icon { width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center; }
+    .metric-value { font-size:28px;font-weight:500;color:#0969da;line-height:1;margin-bottom:4px; }
+    .metric-card.warning .metric-value { color:#bc4c00; }
+    .metric-unit { font-size:11px;color:#8c959f;margin-bottom:10px; }
+    .metric-bar { height:3px;background:#eaeef2;border-radius:2px; }
+    .metric-bar-fill { height:100%;border-radius:2px;background:#0969da;transition:width 0.5s ease; }
+    .metric-card.warning .metric-bar-fill { background:#ffa657; }
 
-    .cam-box {
-      background: #1c2128;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid #e1e4e8;
-    }
-
-    .cam-box img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-    }
-
-    .cam-label {
-      padding: 8px 10px;
-      background: #1c2128;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .cam-label span {
-      font-size: 10px;
-      color: #8c959f;
-    }
-
-    .cam-live {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 10px;
-      color: #3fb950;
-    }
-
-    .cam-live-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #3fb950;
-      animation: pulse 1.5s infinite;
-    }
-
-    /* ── Alert box ── */
-    .alert-box {
-      background: #fff;
-      border: 1px solid #e1e4e8;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .alert-header {
-      padding: 10px 12px;
-      border-bottom: 1px solid #e1e4e8;
-      font-size: 12px;
-      font-weight: 600;
-      color: #24292f;
-    }
-
-    .alert-list {
-      padding: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .alert-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      padding: 8px;
-      border-radius: 6px;
-      background: #f6f8fa;
-    }
-
-    .alert-item.warning {
-      background: #fff8c5;
-      border: 1px solid #ffa657;
-    }
-
-    .alert-item.ok {
-      background: #dafbe1;
-      border: 1px solid #56d364;
-    }
-
-    .alert-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      margin-top: 3px;
-      flex-shrink: 0;
-    }
-
-    .alert-txt {
-      font-size: 11px;
-      color: #24292f;
-      line-height: 1.4;
-    }
-
-    .alert-time {
-      font-size: 10px;
-      color: #8c959f;
-      margin-left: auto;
-      flex-shrink: 0;
-    }
-
-    /* ── Right panel ── */
-    .right-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .section-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: #57606a;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 2px;
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .metric-card {
-      background: #fff;
-      border: 1px solid #e1e4e8;
-      border-radius: 10px;
-      padding: 16px;
-      transition: box-shadow 0.2s;
-    }
-
-    .metric-card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .metric-card.warning {
-      border-color: #ffa657;
-    }
-
-    .metric-label {
-      font-size: 11px;
-      color: #57606a;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .metric-label-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .metric-value {
-      font-size: 28px;
-      font-weight: 500;
-      color: #0969da;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .metric-card.warning .metric-value {
-      color: #bc4c00;
-    }
-
-    .metric-unit {
-      font-size: 11px;
-      color: #8c959f;
-      margin-bottom: 10px;
-    }
-
-    .metric-bar {
-      height: 3px;
-      background: #eaeef2;
-      border-radius: 2px;
-    }
-
-    .metric-bar-fill {
-      height: 100%;
-      border-radius: 2px;
-      background: #0969da;
-      transition: width 0.5s ease;
-    }
-
-    .metric-card.warning .metric-bar-fill {
-      background: #ffa657;
-    }
+    /* ── IA Panel ── */
+    .ai-panel { background:#fff;border:1px solid #e1e4e8;border-radius:10px;overflow:hidden; }
+    .ai-panel.anomalie { border-color:#ff7b72; }
+    .ai-header { padding:12px 16px;border-bottom:1px solid #e1e4e8;display:flex;align-items:center;justify-content:space-between; }
+    .ai-header-left { display:flex;align-items:center;gap:8px; }
+    .ai-badge-trained { font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:#dafbe1;color:#1a7f37; }
+    .ai-badge-untrained { font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:#f6f8fa;color:#57606a; }
+    .ai-body { padding:14px 16px;display:flex;flex-direction:column;gap:12px; }
+    .ai-score-row { display:flex;align-items:center;gap:12px; }
+    .ai-score-label { font-size:12px;color:#57606a;width:90px;flex-shrink:0; }
+    .ai-score-bar-bg { flex:1;height:8px;background:#eaeef2;border-radius:4px;overflow:hidden; }
+    .ai-score-bar-fill { height:100%;border-radius:4px;background:linear-gradient(90deg,#1a7f37,#ffa657,#cf222e);transition:width 0.6s ease; }
+    .ai-score-value { font-size:13px;font-weight:600;width:36px;text-align:right; }
+    .ai-status { display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:6px;background:#f6f8fa;font-size:12px;color:#24292f; }
+    .ai-status.ok     { background:#dafbe1; }
+    .ai-status.danger { background:#ffebe9; }
+    .ai-raison { font-size:12px;color:#57606a;font-style:italic; }
+    .ai-train-section { border-top:1px solid #e1e4e8;padding:12px 16px;display:flex;flex-direction:column;gap:8px; }
+    .ai-train-title { font-size:11px;font-weight:600;color:#57606a;text-transform:uppercase;letter-spacing:0.05em; }
+    .upload-zone { border:2px dashed #d0d7de;border-radius:8px;padding:14px;text-align:center;cursor:pointer;transition:border-color 0.2s,background 0.2s;position:relative; }
+    .upload-zone:hover,.upload-zone.dragover { border-color:#0969da;background:#ddf4ff22; }
+    .upload-zone input[type=file] { position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%; }
+    .upload-zone-text { font-size:12px;color:#57606a; }
+    .upload-zone-hint { font-size:10px;color:#8c959f;margin-top:2px; }
+    .upload-filename { font-size:11px;color:#0969da;margin-top:4px;font-weight:500; }
+    .train-feedback { font-size:11px;padding:6px 10px;border-radius:6px;display:none; }
+    .train-feedback.ok      { background:#dafbe1;color:#1a7f37;display:block; }
+    .train-feedback.error   { background:#ffebe9;color:#cf222e;display:block; }
+    .train-feedback.loading { background:#f6f8fa;color:#57606a;display:block; }
+    .ai-stats { display:flex;gap:16px;flex-wrap:wrap; }
+    .ai-stat { font-size:11px;color:#57606a; }
+    .ai-stat strong { color:#24292f; }
 
     /* ── Buttons ── */
-    .actions {
-      display: flex;
-      gap: 8px;
-    }
+    .actions { display:flex;gap:8px;align-items:center;flex-wrap:wrap; }
+    .btn { background:#f6f8fa;border:1px solid #d0d7de;border-radius:6px;padding:6px 14px;font-size:12px;color:#24292f;cursor:pointer;font-weight:500;transition:background 0.15s; }
+    .btn:hover { background:#eaeef2; }
+    .btn-primary { background:#0969da;border-color:#0969da;color:#fff; }
+    .btn-primary:hover { background:#0860ca; }
+    .update-info { font-size:11px;color:#8c959f;text-align:right; }
 
-    .btn {
-      background: #f6f8fa;
-      border: 1px solid #d0d7de;
-      border-radius: 6px;
-      padding: 6px 14px;
-      font-size: 12px;
-      color: #24292f;
-      cursor: pointer;
-      font-weight: 500;
-      transition: background 0.15s;
-    }
-
-    .btn:hover { background: #eaeef2; }
-
-    .btn-primary {
-      background: #0969da;
-      border-color: #0969da;
-      color: #fff;
-    }
-
-    .btn-primary:hover { background: #0860ca; }
-
-    /* ── Update info ── */
-    .update-info {
-      font-size: 11px;
-      color: #8c959f;
-      text-align: right;
-    }
+    /* ── Charts page ── */
+    .charts-page { padding-top:20px;display:flex;flex-direction:column;gap:16px; }
+    .chart-controls { background:#fff;border:1px solid #e1e4e8;border-radius:10px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px; }
+    .chart-controls-left { display:flex;align-items:center;gap:12px; }
+    .ctrl-label { font-size:12px;color:#57606a;font-weight:500; }
+    .ctrl-select { font-size:12px;padding:4px 10px;border:1px solid #d0d7de;border-radius:6px;background:#f6f8fa;color:#24292f;cursor:pointer; }
+    .ctrl-select:focus { outline:none;border-color:#0969da; }
+    .live-dot-wrap { display:flex;align-items:center;gap:6px;font-size:12px;color:#1a7f37; }
+    .charts-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:16px; }
+    .chart-card-wide { grid-column:1 / -1; }
+    .chart-card { background:#fff;border:1px solid #e1e4e8;border-radius:10px;padding:16px; }
+    .chart-card-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:12px; }
+    .chart-card-title { font-size:13px;font-weight:600;color:#24292f;display:flex;align-items:center;gap:6px; }
+    .chart-card-value { font-size:22px;font-weight:500;color:#0969da; }
+    .chart-card-unit { font-size:11px;color:#8c959f;margin-left:3px; }
+    .chart-wrap { position:relative;height:160px; }
+    .chart-card-wide .chart-wrap { height:200px; }
   </style>
 </head>
 <body>
@@ -342,191 +135,372 @@
       </div>
       <span class="nav-title">SPI Aquaculture</span>
     </div>
-    <div class="nav-badge">
-      <div class="nav-badge-dot"></div>
-      En ligne
-    </div>
+    <div class="nav-badge"><div class="nav-badge-dot"></div>En ligne</div>
     <span class="nav-time" id="clock">--:--:--</span>
   </nav>
 
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('dashboard',this)">📊 Dashboard</button>
+    <button class="tab"        onclick="switchTab('charts',this)">📈 Graphiques</button>
+  </div>
+
   <div class="container">
 
-    <!-- Left -->
-    <div class="left-panel">
-      <div class="cam-box">
-        <img src="/video" alt="Caméra">
-        <div class="cam-label">
-          <span>OV2640 · 320×240</span>
-          <div class="cam-live">
-            <div class="cam-live-dot"></div>
-            LIVE
+    <!-- ══ PAGE DASHBOARD ══ -->
+    <div id="page-dashboard" class="page active">
+      <div class="dashboard-grid">
+
+        <div class="left-panel">
+          <div class="cam-box">
+            <img src="/video" alt="Caméra">
+            <div class="cam-label">
+              <span>OV2640 · VGA</span>
+              <div class="cam-live"><div class="cam-live-dot"></div>LIVE</div>
+            </div>
+          </div>
+          <div class="alert-box">
+            <div class="alert-header">Alertes</div>
+            <div class="alert-list" id="alert-list">
+              <div class="alert-item ok">
+                <div class="alert-dot" style="background:#1a7f37;"></div>
+                <span class="alert-txt">Tous les capteurs nominaux</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="alert-box">
-        <div class="alert-header">Alertes</div>
-        <div class="alert-list" id="alert-list">
-          <div class="alert-item ok">
-            <div class="alert-dot" style="background:#1a7f37;"></div>
-            <span class="alert-txt">Tous les capteurs nominaux</span>
+        <div class="right-panel">
+
+          <div>
+            <div class="section-title">Ambiance</div>
+            <div class="metrics-grid" style="grid-template-columns:repeat(2,1fr);">
+              <div class="metric-card" id="card-temp">
+                <div class="metric-label">Température air<div class="metric-label-icon" style="background:#ddf4ff;">🌡️</div></div>
+                <div class="metric-value" id="temp">--</div><div class="metric-unit">°C</div>
+                <div class="metric-bar"><div class="metric-bar-fill" id="bar-temp" style="width:0%"></div></div>
+              </div>
+              <div class="metric-card" id="card-hum">
+                <div class="metric-label">Humidité<div class="metric-label-icon" style="background:#ddf4ff;">💧</div></div>
+                <div class="metric-value" id="hum">--</div><div class="metric-unit">%</div>
+                <div class="metric-bar"><div class="metric-bar-fill" id="bar-hum" style="width:0%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="section-title">Eau</div>
+            <div class="metrics-grid">
+              <div class="metric-card" id="card-waterTemp">
+                <div class="metric-label">Température eau<div class="metric-label-icon" style="background:#ddf4ff;">🌊</div></div>
+                <div class="metric-value" id="waterTemp">--</div><div class="metric-unit">°C</div>
+                <div class="metric-bar"><div class="metric-bar-fill" id="bar-waterTemp" style="width:0%"></div></div>
+              </div>
+              <div class="metric-card" id="card-ph">
+                <div class="metric-label">pH<div class="metric-label-icon" style="background:#fff8c5;">⚗️</div></div>
+                <div class="metric-value" id="ph">--</div><div class="metric-unit">pH</div>
+                <div class="metric-bar"><div class="metric-bar-fill" id="bar-ph" style="width:0%"></div></div>
+              </div>
+              <div class="metric-card" id="card-ntu">
+                <div class="metric-label">Turbidité<div class="metric-label-icon" style="background:#f6f8fa;">🔬</div></div>
+                <div class="metric-value" id="ntu">--</div><div class="metric-unit">NTU</div>
+                <div class="metric-bar"><div class="metric-bar-fill" id="bar-ntu" style="width:0%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="section-title">Intelligence artificielle</div>
+            <div class="ai-panel" id="ai-panel">
+              <div class="ai-header">
+                <div class="ai-header-left">
+                  <span style="font-size:13px;font-weight:600;">Détection d'anomalies</span>
+                  <span class="ai-badge-untrained" id="ai-trained-badge">Non entraîné</span>
+                </div>
+                <span style="font-size:11px;color:#8c959f;" id="ai-updated">--</span>
+              </div>
+              <div class="ai-body">
+                <div class="ai-score-row">
+                  <span class="ai-score-label">Score anomalie</span>
+                  <div class="ai-score-bar-bg"><div class="ai-score-bar-fill" id="ai-score-bar" style="width:0%"></div></div>
+                  <span class="ai-score-value" id="ai-score-val">--</span>
+                </div>
+                <div class="ai-status" id="ai-status-box">
+                  <span>🔄</span><span id="ai-status-text">En attente de données...</span>
+                </div>
+                <div class="ai-raison" id="ai-raison"></div>
+                <div class="ai-stats" id="ai-stats" style="display:none;">
+                  <div class="ai-stat">Entraîné sur <strong id="stat-n">--</strong> points</div>
+                  <div class="ai-stat">pH moyen <strong id="stat-ph">--</strong></div>
+                  <div class="ai-stat">NTU moyen <strong id="stat-ntu">--</strong></div>
+                  <div class="ai-stat">Le <strong id="stat-date">--</strong></div>
+                </div>
+              </div>
+              <div class="ai-train-section">
+                <div class="ai-train-title">Entraîner le modèle</div>
+                <div class="upload-zone" id="upload-zone">
+                  <input type="file" id="csv-input" accept=".csv">
+                  <div class="upload-zone-text">📂 Glisser un fichier CSV ou cliquer</div>
+                  <div class="upload-zone-hint">Colonnes requises : <code>ph</code> et <code>ntu</code></div>
+                  <div class="upload-filename" id="upload-filename"></div>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                  <button class="btn btn-primary" onclick="trainModel()">Entraîner</button>
+                  <div class="train-feedback" id="train-feedback"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div class="actions">
+              <button class="btn" onclick="window.location='/csv'">⬇ Télécharger CSV</button>
+              <button class="btn btn-primary">Calibrer pH</button>
+            </div>
+            <span class="update-info" id="update-info">En attente...</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Right -->
-    <div class="right-panel">
+    <!-- ══ PAGE GRAPHIQUES ══ -->
+    <div id="page-charts" class="page">
+      <div class="charts-page">
 
-      <div>
-        <div class="section-title">Ambiance</div>
-        <div class="metrics-grid" style="grid-template-columns: repeat(2,1fr);">
-          <div class="metric-card" id="card-temp">
-            <div class="metric-label">
-              Température air
-              <div class="metric-label-icon" style="background:#ddf4ff;">🌡️</div>
-            </div>
-            <div class="metric-value" id="temp">--</div>
-            <div class="metric-unit">°C</div>
-            <div class="metric-bar"><div class="metric-bar-fill" id="bar-temp" style="width:0%"></div></div>
+        <div class="chart-controls">
+          <div class="chart-controls-left">
+            <span class="ctrl-label">Fenêtre :</span>
+            <select class="ctrl-select" id="window-select" onchange="MAX_POINTS=parseInt(this.value)">
+              <option value="30">30 points</option>
+              <option value="60" selected>60 points</option>
+              <option value="120">120 points</option>
+              <option value="300">300 points</option>
+            </select>
           </div>
-          <div class="metric-card" id="card-hum">
-            <div class="metric-label">
-              Humidité
-              <div class="metric-label-icon" style="background:#ddf4ff;">💧</div>
-            </div>
-            <div class="metric-value" id="hum">--</div>
-            <div class="metric-unit">%</div>
-            <div class="metric-bar"><div class="metric-bar-fill" id="bar-hum" style="width:0%"></div></div>
+          <div class="live-dot-wrap">
+            <div class="nav-badge-dot"></div>
+            Mise à jour toutes les 2 s
           </div>
         </div>
-      </div>
 
-      <div>
-        <div class="section-title">Eau</div>
-        <div class="metrics-grid">
-          <div class="metric-card" id="card-waterTemp">
-            <div class="metric-label">
-              Température eau
-              <div class="metric-label-icon" style="background:#ddf4ff;">🌊</div>
+        <div class="charts-grid">
+
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">⚗️ pH</div>
+              <div><span class="chart-card-value" id="cv-ph">--</span><span class="chart-card-unit">pH</span></div>
             </div>
-            <div class="metric-value" id="waterTemp">--</div>
-            <div class="metric-unit">°C</div>
-            <div class="metric-bar"><div class="metric-bar-fill" id="bar-waterTemp" style="width:0%"></div></div>
+            <div class="chart-wrap"><canvas id="chart-ph"></canvas></div>
           </div>
-          <div class="metric-card" id="card-ph">
-            <div class="metric-label">
-              pH
-              <div class="metric-label-icon" style="background:#fff8c5;">⚗️</div>
+
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">🔬 Turbidité</div>
+              <div><span class="chart-card-value" id="cv-ntu">--</span><span class="chart-card-unit">NTU</span></div>
             </div>
-            <div class="metric-value" id="ph">--</div>
-            <div class="metric-unit">pH</div>
-            <div class="metric-bar"><div class="metric-bar-fill" id="bar-ph" style="width:0%"></div></div>
+            <div class="chart-wrap"><canvas id="chart-ntu"></canvas></div>
           </div>
-          <div class="metric-card" id="card-ntu">
-            <div class="metric-label">
-              Turbidité
-              <div class="metric-label-icon" style="background:#f6f8fa;">🔬</div>
+
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">🌊 Température eau</div>
+              <div><span class="chart-card-value" id="cv-waterTemp">--</span><span class="chart-card-unit">°C</span></div>
             </div>
-            <div class="metric-value" id="ntu">--</div>
-            <div class="metric-unit">NTU</div>
-            <div class="metric-bar"><div class="metric-bar-fill" id="bar-ntu" style="width:0%"></div></div>
+            <div class="chart-wrap"><canvas id="chart-waterTemp"></canvas></div>
           </div>
+
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">🌡️ Température air</div>
+              <div><span class="chart-card-value" id="cv-temp">--</span><span class="chart-card-unit">°C</span></div>
+            </div>
+            <div class="chart-wrap"><canvas id="chart-temp"></canvas></div>
+          </div>
+
+          <div class="chart-card chart-card-wide">
+            <div class="chart-card-header">
+              <div class="chart-card-title">💧 Humidité</div>
+              <div><span class="chart-card-value" id="cv-hum">--</span><span class="chart-card-unit">%</span></div>
+            </div>
+            <div class="chart-wrap"><canvas id="chart-hum"></canvas></div>
+          </div>
+
         </div>
       </div>
-
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <div class="actions">
-          <button class="btn">Historique</button>
-          <button class="btn">Exporter</button>
-          <button class="btn btn-primary">Calibrer pH</button>
-        </div>
-        <span class="update-info" id="update-info">En attente...</span>
-      </div>
-
     </div>
+
   </div>
 
   <script>
-    // Horloge
-    function updateClock() {
-      const now = new Date();
-      document.getElementById('clock').textContent = now.toLocaleTimeString('fr-FR');
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
+    // ── Horloge ───────────────────────────────────────────────────────────────
+    function updateClock(){ document.getElementById('clock').textContent = new Date().toLocaleTimeString('fr-FR'); }
+    setInterval(updateClock,1000); updateClock();
 
-    // Seuils d'alerte
-    const thresholds = {
-      ph:        { min: 6.5,  max: 8.5  },
-      ntu:       { min: 0,    max: 1000 },
-      temp:      { min: 15,   max: 35   },
-      waterTemp: { min: 10,   max: 30   },
-      hum:       { min: 0,    max: 100  }
+    // ── Tabs ──────────────────────────────────────────────────────────────────
+    function switchTab(name,btn){
+      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      document.getElementById('page-'+name).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    // ── Seuils ────────────────────────────────────────────────────────────────
+    const thresholds={ ph:{min:6.5,max:8.5},ntu:{min:0,max:1000},temp:{min:15,max:35},waterTemp:{min:10,max:30},hum:{min:0,max:100} };
+    function checkAlert(k,v){ if(v==null)return false; return v<thresholds[k].min||v>thresholds[k].max; }
+
+    // ── Historique ────────────────────────────────────────────────────────────
+    let MAX_POINTS = 60;
+    const H = {labels:[],ph:[],ntu:[],temp:[],waterTemp:[],hum:[]};
+
+    function pushHistory(d){
+      const t = d.updatedAt ? new Date(d.updatedAt).toLocaleTimeString('fr-FR') : new Date().toLocaleTimeString('fr-FR');
+      H.labels.push(t); H.ph.push(d.ph??null); H.ntu.push(d.ntu??null);
+      H.temp.push(d.temperature??null); H.waterTemp.push(d.waterTemp??null); H.hum.push(d.humidity??null);
+      ['labels','ph','ntu','temp','waterTemp','hum'].forEach(k=>{ if(H[k].length>MAX_POINTS) H[k].shift(); });
+    }
+
+    // ── Chart factory ─────────────────────────────────────────────────────────
+    Chart.defaults.font.family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif";
+    Chart.defaults.font.size=11; Chart.defaults.color='#57606a';
+
+    function makeChart(id,label,color,yMin,yMax){
+      return new Chart(document.getElementById(id).getContext('2d'),{
+        type:'line',
+        data:{ labels:[], datasets:[{ label, data:[], borderColor:color, backgroundColor:color+'18',
+          borderWidth:2, pointRadius:0, pointHoverRadius:4, tension:0.3, fill:true, spanGaps:true }]},
+        options:{
+          responsive:true, maintainAspectRatio:false, animation:{duration:200},
+          interaction:{mode:'index',intersect:false},
+          plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>` ${c.parsed.y!==null?c.parsed.y.toFixed(2):'--'}`}} },
+          scales:{
+            x:{ ticks:{maxTicksLimit:6,maxRotation:0}, grid:{color:'#eaeef2'} },
+            y:{ min:yMin, max:yMax, grid:{color:'#eaeef2'}, ticks:{maxTicksLimit:5} }
+          }
+        }
+      });
+    }
+
+    const charts={
+      ph:        makeChart('chart-ph',        'pH',            '#0969da', 0,   14),
+      ntu:       makeChart('chart-ntu',       'NTU',           '#8250df', 0,   null),
+      waterTemp: makeChart('chart-waterTemp', 'Temp. eau',     '#0ea5e9', 0,   null),
+      temp:      makeChart('chart-temp',      'Temp. air',     '#f97316', null,null),
+      hum:       makeChart('chart-hum',       'Humidité',      '#1a7f37', 0,   100),
     };
 
-    function checkAlert(key, value) {
-      if (value === null || value === undefined) return false;
-      const t = thresholds[key];
-      return value < t.min || value > t.max;
+    function updateCharts(){
+      [['ph','ph'],['ntu','ntu'],['waterTemp','waterTemp'],['temp','temp'],['hum','hum']].forEach(([c,k])=>{
+        charts[c].data.labels = [...H.labels];
+        charts[c].data.datasets[0].data = [...H[k]];
+        charts[c].update('none');
+      });
     }
 
-    function updateAlerts(data) {
-      const alerts = [];
-      if (checkAlert('ph', data.ph))
-        alerts.push({ msg: `pH anormal : ${data.ph} (seuil 6.5–8.5)`, type: 'warning' });
-      if (checkAlert('ntu', data.ntu))
-        alerts.push({ msg: `Turbidité élevée : ${data.ntu} NTU`, type: 'warning' });
-      if (checkAlert('temp', data.temperature))
-        alerts.push({ msg: `Temp. air hors plage : ${data.temperature}°C`, type: 'warning' });
-      if (checkAlert('waterTemp', data.waterTemp))
-        alerts.push({ msg: `Temp. eau hors plage : ${data.waterTemp}°C`, type: 'warning' });
-
-      const list = document.getElementById('alert-list');
-      if (alerts.length === 0) {
-        list.innerHTML = `<div class="alert-item ok">
-          <div class="alert-dot" style="background:#1a7f37;"></div>
-          <span class="alert-txt">Tous les capteurs nominaux</span>
-        </div>`;
-      } else {
-        list.innerHTML = alerts.map(a => `
-          <div class="alert-item ${a.type}">
-            <div class="alert-dot" style="background:#ffa657;"></div>
-            <span class="alert-txt">${a.msg}</span>
-          </div>
-        `).join('');
-      }
+    // ── Alertes ───────────────────────────────────────────────────────────────
+    let lastAiAnomalie=false, lastAiRaison='';
+    function updateAlerts(d){
+      const a=[];
+      if(lastAiAnomalie) a.push({msg:`⚠ IA : ${lastAiRaison}`,type:'danger'});
+      if(checkAlert('ph',d.ph))          a.push({msg:`pH anormal : ${d.ph} (seuil 6.5–8.5)`,type:'warning'});
+      if(checkAlert('ntu',d.ntu))        a.push({msg:`Turbidité élevée : ${d.ntu} NTU`,type:'warning'});
+      if(checkAlert('temp',d.temperature)) a.push({msg:`Temp. air hors plage : ${d.temperature}°C`,type:'warning'});
+      if(checkAlert('waterTemp',d.waterTemp)) a.push({msg:`Temp. eau hors plage : ${d.waterTemp}°C`,type:'warning'});
+      const list=document.getElementById('alert-list');
+      list.innerHTML=a.length===0
+        ?`<div class="alert-item ok"><div class="alert-dot" style="background:#1a7f37;"></div><span class="alert-txt">Tous les capteurs nominaux</span></div>`
+        :a.map(x=>`<div class="alert-item ${x.type}"><div class="alert-dot" style="background:${x.type==='danger'?'#cf222e':'#ffa657'};"></div><span class="alert-txt">${x.msg}</span></div>`).join('');
     }
 
-    function setMetric(id, value, barId, percent, warning) {
-      const el = document.getElementById(id);
-      const bar = document.getElementById(barId);
-      const card = document.getElementById('card-' + id);
-      if (el) el.textContent = value !== null ? value : '--';
-      if (bar) bar.style.width = percent + '%';
-      if (card) card.classList.toggle('warning', warning);
+    function setMetric(id,val,barId,pct,warn){
+      const el=document.getElementById(id),bar=document.getElementById(barId),card=document.getElementById('card-'+id);
+      if(el) el.textContent=val!=null?val:'--';
+      if(bar) bar.style.width=pct+'%';
+      if(card) card.classList.toggle('warning',warn);
     }
 
-    async function fetchData() {
-      try {
-        const res  = await fetch('/data');
-        const data = await res.json();
-
-        setMetric('temp',      data.temperature?.toFixed(1), 'bar-temp',      Math.min((data.temperature / 40) * 100, 100), checkAlert('temp', data.temperature));
-        setMetric('hum',       data.humidity?.toFixed(1),    'bar-hum',       Math.min(data.humidity, 100),                false);
-        setMetric('waterTemp', data.waterTemp?.toFixed(1),   'bar-waterTemp', Math.min((data.waterTemp / 40) * 100, 100),  checkAlert('waterTemp', data.waterTemp));
-        setMetric('ph',        data.ph?.toFixed(2),          'bar-ph',        Math.min((data.ph / 14) * 100, 100),         checkAlert('ph', data.ph));
-        setMetric('ntu',       data.ntu?.toFixed(0),         'bar-ntu',       Math.min((data.ntu / 3000) * 100, 100),      checkAlert('ntu', data.ntu));
-
-        updateAlerts(data);
-
-        const updated = data.updatedAt ? new Date(data.updatedAt).toLocaleTimeString('fr-FR') : '--';
-        document.getElementById('update-info').textContent = `Dernière MAJ : ${updated}`;
-      } catch(e) {}
+    // ── Fetch data ────────────────────────────────────────────────────────────
+    async function fetchData(){
+      try{
+        const d=await (await fetch('/data')).json();
+        setMetric('temp',     d.temperature?.toFixed(1),'bar-temp',     Math.min((d.temperature/40)*100,100),checkAlert('temp',d.temperature));
+        setMetric('hum',      d.humidity?.toFixed(1),   'bar-hum',      Math.min(d.humidity,100),false);
+        setMetric('waterTemp',d.waterTemp?.toFixed(1),  'bar-waterTemp',Math.min((d.waterTemp/40)*100,100),checkAlert('waterTemp',d.waterTemp));
+        setMetric('ph',       d.ph?.toFixed(2),         'bar-ph',       Math.min((d.ph/14)*100,100),checkAlert('ph',d.ph));
+        setMetric('ntu',      d.ntu?.toFixed(0),        'bar-ntu',      Math.min((d.ntu/3000)*100,100),checkAlert('ntu',d.ntu));
+        updateAlerts(d);
+        const upd=d.updatedAt?new Date(d.updatedAt).toLocaleTimeString('fr-FR'):'--';
+        document.getElementById('update-info').textContent=`Dernière MAJ : ${upd}`;
+        // Valeurs courantes graphiques
+        document.getElementById('cv-ph').textContent       =d.ph?.toFixed(2)?? '--';
+        document.getElementById('cv-ntu').textContent      =d.ntu?.toFixed(0)?? '--';
+        document.getElementById('cv-temp').textContent     =d.temperature?.toFixed(1)?? '--';
+        document.getElementById('cv-waterTemp').textContent=d.waterTemp?.toFixed(1)?? '--';
+        document.getElementById('cv-hum').textContent      =d.humidity?.toFixed(1)?? '--';
+        pushHistory(d); updateCharts();
+      }catch(e){}
     }
 
-    fetchData();
-    setInterval(fetchData, 2000);
+    async function fetchAI(){
+      try{
+        const d=await (await fetch('/ai')).json();
+        lastAiAnomalie=d.anomalie; lastAiRaison=d.raison||'';
+        const badge=document.getElementById('ai-trained-badge');
+        if(d.trained){badge.textContent='Modèle actif';badge.className='ai-badge-trained';}
+        else{badge.textContent='Non entraîné';badge.className='ai-badge-untrained';}
+        const sp=d.score!=null?Math.round(d.score*100):0;
+        document.getElementById('ai-score-bar').style.width=sp+'%';
+        document.getElementById('ai-score-val').textContent=d.score!=null?sp+'%':'--';
+        const box=document.getElementById('ai-status-box'),txt=document.getElementById('ai-status-text'),panel=document.getElementById('ai-panel');
+        if(!d.trained){box.className='ai-status';txt.textContent='Modèle non entraîné — uploadez un CSV ci-dessous';panel.classList.remove('anomalie');}
+        else if(d.anomalie){box.className='ai-status danger';txt.textContent='⚠ Anomalie détectée';panel.classList.add('anomalie');}
+        else{box.className='ai-status ok';txt.textContent='✓ Paramètres normaux';panel.classList.remove('anomalie');}
+        document.getElementById('ai-raison').textContent=(d.raison&&d.raison!=='Paramètres normaux')?d.raison:'';
+        if(d.updatedAt) document.getElementById('ai-updated').textContent=new Date(d.updatedAt).toLocaleTimeString('fr-FR');
+      }catch(e){}
+    }
+
+    async function fetchModelStatus(){
+      try{
+        const d=await (await fetch('/ai/status')).json();
+        if(d.trained){
+          document.getElementById('ai-stats').style.display='flex';
+          document.getElementById('stat-n').textContent   =d.n_samples;
+          document.getElementById('stat-ph').textContent  =d.ph_mean;
+          document.getElementById('stat-ntu').textContent =d.ntu_mean;
+          document.getElementById('stat-date').textContent=new Date(d.trained_at).toLocaleString('fr-FR');
+        }
+      }catch(e){}
+    }
+
+    // ── Upload ────────────────────────────────────────────────────────────────
+    const zone=document.getElementById('upload-zone'),input=document.getElementById('csv-input'),fname=document.getElementById('upload-filename');
+    ['dragenter','dragover'].forEach(ev=>zone.addEventListener(ev,e=>{e.preventDefault();zone.classList.add('dragover');}));
+    ['dragleave','drop'].forEach(ev=>zone.addEventListener(ev,e=>{e.preventDefault();zone.classList.remove('dragover');}));
+    zone.addEventListener('drop',e=>{const f=e.dataTransfer.files[0];if(f){fname.textContent=f.name;zone._file=f;}});
+    input.addEventListener('change',()=>{if(input.files[0])fname.textContent=input.files[0].name;});
+
+    async function trainModel(){
+      const file=zone._file||input.files[0],fb=document.getElementById('train-feedback');
+      if(!file){fb.textContent='Sélectionnez d\'abord un fichier CSV.';fb.className='train-feedback error';return;}
+      fb.textContent='⏳ Entraînement en cours...';fb.className='train-feedback loading';
+      const form=new FormData();form.append('file',file);
+      try{
+        const res=await fetch('/train',{method:'POST',body:form});
+        const d=await res.json();
+        if(res.ok){
+          fb.textContent=`✓ Modèle entraîné sur ${d.n_samples} points · pH moy. ${d.ph_mean} · NTU moy. ${d.ntu_mean}`;
+          fb.className='train-feedback ok';
+          document.getElementById('ai-stats').style.display='flex';
+          document.getElementById('stat-n').textContent  =d.n_samples;
+          document.getElementById('stat-ph').textContent =d.ph_mean;
+          document.getElementById('stat-ntu').textContent=d.ntu_mean;
+          document.getElementById('stat-date').textContent=new Date().toLocaleString('fr-FR');
+        }else{fb.textContent=`✗ ${d.error}`;fb.className='train-feedback error';}
+      }catch(e){fb.textContent=`✗ ${e.message}`;fb.className='train-feedback error';}
+    }
+
+    // ── Polling ───────────────────────────────────────────────────────────────
+    fetchData(); fetchAI(); fetchModelStatus();
+    setInterval(fetchData,2000); setInterval(fetchAI,2000);
   </script>
 </body>
 </html>
