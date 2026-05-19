@@ -351,40 +351,70 @@ conformément au modèle IoT classique :
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
-  node distance=1.2cm and 2cm,
-  box/.style={rectangle,rounded corners=4pt,minimum width=3.2cm,minimum height=1cm,
+  node distance=1.0cm and 1.6cm,
+  box/.style={rectangle,rounded corners=4pt,minimum width=3.0cm,minimum height=0.9cm,
               align=center,font=\small\bfseries},
-  arrow/.style={-{Stealth[length=6pt]},thick,color=primary}
+  arrow/.style={-{Stealth[length=6pt]},thick,color=primary},
+  arrowgray/.style={-{Stealth[length=6pt]},thick,color=secondary,dashed},
+  label/.style={font=\footnotesize\itshape,color=secondary}
 ]
-  % Couche acquisition
-  \node[box,fill=primary!15,draw=primary] (esp32) {ESP32\\Aqua};
-  \node[box,fill=primary!15,draw=primary,right=1.8cm of esp32] (cam)  {ESP32\\CAM};
 
-  % Couche transport
-  \node[box,fill=secondary!15,draw=secondary,below=1.4cm of esp32,xshift=2cm] (wifi) {Wi-Fi\\HTTP/JSON};
+  %% ── Colonne gauche : chaîne capteurs ──────────────────────
+  % Capteurs
+  \node[box,fill=primary!15,draw=primary] (sens) {Capteurs\\{\footnotesize pH · NTU · T° · HR}};
+  % ESP32 Aqua
+  \node[box,fill=primary!20,draw=primary,below=1.1cm of sens] (esp32) {ESP32 Aqua};
+  % Flèche capteurs -> ESP32
+  \draw[arrow] (sens) -- node[right,font=\tiny,color=secondary]{OneWire/ADC/I$^2$C} (esp32);
 
-  % Couche traitement
-  \node[box,fill=accent!15,draw=accent,below=1.4cm of wifi] (node) {Serveur\\Node.js};
-  \node[box,fill=accent!15,draw=accent,right=1.8cm of node] (flask) {Microservice\\Flask (IA)};
+  %% ── Colonne droite : caméra ───────────────────────────────
+  \node[box,fill=primary!15,draw=primary,right=3.2cm of sens] (cam)
+        {Caméra OV2640\\{\footnotesize VGA JPEG}};
+  \node[box,fill=primary!20,draw=primary,below=1.1cm of cam] (espcam) {ESP32-CAM};
+  \draw[arrow] (cam) -- node[right,font=\tiny,color=secondary]{MIPI CSI} (espcam);
 
-  % Couche présentation
-  \node[box,fill=warning!15,draw=warning,below=1.4cm of node,xshift=0.9cm] (dash) {Dashboard\\Web};
+  %% ── Transport Wi-Fi ───────────────────────────────────────
+  \node[box,fill=secondary!12,draw=secondary,
+        below=1.3cm of esp32, xshift=2.2cm] (wifi)
+        {Réseau Wi-Fi local\\{\footnotesize HTTP/JSON · MJPEG}};
+  \draw[arrow] (esp32.south)  -- ++(0,-0.35) -| (wifi.west);
+  \draw[arrow] (espcam.south) -- ++(0,-0.35) -| (wifi.east);
 
-  % Flèches
-  \draw[arrow] (esp32.south) -- ++(0,-0.4) -| (wifi.north);
-  \draw[arrow] (cam.south)   -- ++(0,-0.4) -| (wifi.north);
-  \draw[arrow] (wifi) -- (node);
-  \draw[arrow] (node) -- (flask);
-  \draw[arrow] (flask) -- ++(0,-0.5) -| (node.east);
-  \draw[arrow] (node) -- (dash);
+  %% ── PC : Node.js + Flask ──────────────────────────────────
+  \node[box,fill=accent!15,draw=accent,
+        below=1.3cm of wifi] (node)
+        {PC — Node.js\\{\footnotesize :3000}};
+  \node[box,fill=accent!10,draw=accent,
+        right=1.6cm of node] (flask)
+        {Flask (IA)\\{\footnotesize :5001}};
+  \draw[arrow] (wifi)  -- node[right,font=\tiny,color=secondary]{POST /data ~ /stream} (node);
+  \draw[arrow] (node.east)  -- node[above,font=\tiny,color=secondary]{/predict} (flask.west);
+  \draw[arrow] (flask.south) -- ++(0,-0.3) -| (node.east);
 
-  % Labels couches
-  \node[color=secondary,font=\footnotesize\itshape,left=0.1cm of esp32] {Acquisition};
-  \node[color=secondary,font=\footnotesize\itshape,left=0.3cm of wifi] {Transport};
-  \node[color=secondary,font=\footnotesize\itshape,left=0.2cm of node] {Traitement};
-  \node[color=secondary,font=\footnotesize\itshape,left=0.2cm of dash] {Présentation};
+  %% ── Dashboard Web ─────────────────────────────────────────
+  \node[box,fill=warning!15,draw=warning,
+        below=1.3cm of node] (dash)
+        {Dashboard Web\\{\footnotesize localhost:3000}};
+  \draw[arrow] (node) -- node[right,font=\tiny,color=secondary]{GET /data · /ai · /video} (dash);
+
+  %% ── Accès distant via ngrok ───────────────────────────────
+  \node[box,fill=danger!10,draw=danger,
+        below=1.0cm of dash] (ngrok)
+        {Accès distant\\{\footnotesize ngrok tunnel HTTPS}};
+  \draw[arrowgray] (dash.south) -- (ngrok.north);
+  \node[right=0.15cm of ngrok,font=\footnotesize\itshape,color=secondary,text width=3cm]
+        {Exposition publique\\sur Internet};
+
+  %% ── Légendes couches ──────────────────────────────────────
+  \node[label,left=0.15cm of sens]  {Capteurs};
+  \node[label,left=0.15cm of esp32] {Embarqué};
+  \node[label,left=0.15cm of wifi]  {Transport};
+  \node[label,left=0.15cm of node]  {Traitement};
+  \node[label,left=0.15cm of dash]  {Présentation};
+  \node[label,left=0.15cm of ngrok] {Accès distant};
+
 \end{tikzpicture}
-\caption{Architecture en couches du système aqua-ai-monitor}
+\caption{Architecture réelle du système aqua-ai-monitor}
 \label{fig:architecture}
 \end{figure}
 
