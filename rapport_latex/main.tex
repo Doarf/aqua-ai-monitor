@@ -535,6 +535,51 @@ objectif de regrouper sur un circuit imprimé les connecteurs nécessaires à l'
 des capteurs, l'alimentation et l'ESP32-WROOM-32 DevKit V1. Elle supprime le câblage
 sur breadboard pour un déploiement fiable en environnement humide.
 
+\subsection{Schématique électronique}
+
+La figure~\ref{fig:sch_pcb} présente le schéma électronique complet de la carte
+\textit{carte\_aqua}, réalisé sous KiCad~7. On y retrouve les six connecteurs
+(J1~à~J6) reliés aux capteurs DS18B20, DHT22, pH, turbidité, écran OLED et
+alimentation Jack-DC, ainsi que la résistance de pull-up R1 sur la ligne OneWire
+du DS18B20, et le microcontrôleur central U1 (DEVKIT\_V1\_ESP32-WROOM-32).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{sch_pcb.png}
+  \caption{Schématique électronique de la carte aqua-ai-monitor (KiCad 7)}
+  \label{fig:sch_pcb}
+\end{figure}
+
+\subsection{Routage PCB}
+
+La figure~\ref{fig:routage_pcb} présente la vue de routage en couche F\_Cu
+(rouge). Les pistes relient les headers de l'ESP32 DevKit aux connecteurs
+périphériques disposés sur les bords gauche et droit de la carte. Les quatre
+trous de fixation (vias bleus) assurent le maintien mécanique du module.
+Les pistes d'alimentation (5~V et GND) sont routées en priorité avec une
+largeur supérieure aux pistes signal.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{routage_pcb.png}
+  \caption{Vue de routage PCB — couche F\_Cu (KiCad 7)}
+  \label{fig:routage_pcb}
+\end{figure}
+
+\subsection{Visualisation 3D}
+
+La figure~\ref{fig:3d_pcb} présente le rendu 3D de la carte généré par le
+visualiseur intégré de KiCad~7. On distingue clairement l'empreinte du
+module ESP32-WROOM-32 au centre (U1), les connecteurs JST-XH à gauche
+(J2, J5) et à droite (J1, J3, J4), la résistance CMS R1, et le connecteur
+d'alimentation Jack-DC (J6) en haut à droite.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{3d_pcb.png}
+  \caption{Rendu 3D de la carte aqua-ai-monitor (KiCad 7)}
+  \label{fig:3d_pcb}
+\end{figure}
 \subsection{Caractéristiques techniques}
 
 \begin{table}[H]

@@ -52,94 +52,103 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}{\ignorespaces Lecture DS18B20 -- ds18b20\_sensor.cpp}}{14}{lstlisting.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}Conception PCB — KiCad}{14}{section.3.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Objectifs de la carte}{14}{subsection.3.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Caractéristiques techniques}{15}{subsection.3.5.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Caractéristiques de la carte PCB carte\_aqua}}{15}{table.caption.8}\protected@file@percent }
-\newlabel{tab:pcb}{{3.2}{15}{Caractéristiques de la carte PCB carte\_aqua}{table.caption.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Fichiers de fabrication}{15}{subsection.3.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Firmware ESP32}{16}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Schématique électronique}{14}{subsection.3.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Schématique électronique de la carte aqua-ai-monitor (KiCad 7)}}{15}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:sch_pcb}{{3.1}{15}{Schématique électronique de la carte aqua-ai-monitor (KiCad 7)}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Routage PCB}{15}{subsection.3.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Vue de routage PCB — couche F\_Cu (KiCad 7)}}{15}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:routage_pcb}{{3.2}{15}{Vue de routage PCB — couche F\_Cu (KiCad 7)}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Visualisation 3D}{16}{subsection.3.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Rendu 3D de la carte aqua-ai-monitor (KiCad 7)}}{16}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:3d_pcb}{{3.3}{16}{Rendu 3D de la carte aqua-ai-monitor (KiCad 7)}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.5}Caractéristiques techniques}{16}{subsection.3.5.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Caractéristiques de la carte PCB carte\_aqua}}{16}{table.caption.11}\protected@file@percent }
+\newlabel{tab:pcb}{{3.2}{16}{Caractéristiques de la carte PCB carte\_aqua}{table.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.6}Fichiers de fabrication}{17}{subsection.3.5.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Firmware ESP32}{18}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Organisation du projet PlatformIO}{16}{section.4.1}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}{\ignorespaces Structure du firmware esp32\_aqua}}{16}{lstlisting.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Boucle principale non-bloquante}{16}{section.4.2}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.2}{\ignorespaces Boucle principale non-bloquante -- main.cpp}}{16}{lstlisting.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Configuration centralisée}{17}{section.4.3}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.3}{\ignorespaces Extrait de config.h}}{17}{lstlisting.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Envoi HTTP}{17}{section.4.4}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.4}{\ignorespaces Construction et envoi du JSON -- http\_sender.cpp}}{17}{lstlisting.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Firmware ESP32-CAM}{18}{section.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Initialisation de la caméra OV2640}{18}{subsection.4.5.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Paramètres de configuration de la caméra OV2640}}{18}{table.caption.9}\protected@file@percent }
-\newlabel{tab:camera}{{4.1}{18}{Paramètres de configuration de la caméra OV2640}{table.caption.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Streaming MJPEG par chunks HTTP}{18}{subsection.4.5.2}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.5}{\ignorespaces Envoi d'une frame en chunked -- streamer.cpp}}{18}{lstlisting.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Serveur Node.js}{19}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Organisation du projet PlatformIO}{18}{section.4.1}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}{\ignorespaces Structure du firmware esp32\_aqua}}{18}{lstlisting.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Boucle principale non-bloquante}{18}{section.4.2}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.2}{\ignorespaces Boucle principale non-bloquante -- main.cpp}}{18}{lstlisting.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Configuration centralisée}{19}{section.4.3}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.3}{\ignorespaces Extrait de config.h}}{19}{lstlisting.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Envoi HTTP}{19}{section.4.4}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.4}{\ignorespaces Construction et envoi du JSON -- http\_sender.cpp}}{19}{lstlisting.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Firmware ESP32-CAM}{20}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Initialisation de la caméra OV2640}{20}{subsection.4.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Paramètres de configuration de la caméra OV2640}}{20}{table.caption.12}\protected@file@percent }
+\newlabel{tab:camera}{{4.1}{20}{Paramètres de configuration de la caméra OV2640}{table.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Streaming MJPEG par chunks HTTP}{20}{subsection.4.5.2}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.5}{\ignorespaces Envoi d'une frame en chunked -- streamer.cpp}}{20}{lstlisting.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Serveur Node.js}{21}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Architecture du serveur}{19}{section.5.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Endpoints du serveur Node.js}}{19}{table.caption.10}\protected@file@percent }
-\newlabel{tab:endpoints}{{5.1}{19}{Endpoints du serveur Node.js}{table.caption.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Enregistrement CSV automatique}{19}{section.5.2}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.1}{\ignorespaces Écriture CSV en mode append -- server.js}}{19}{lstlisting.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Intégration du microservice IA}{20}{section.5.3}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.2}{\ignorespaces Appel asynchrone au microservice IA}}{20}{lstlisting.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Proxy MJPEG}{21}{section.5.4}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.3}{\ignorespaces Extraction des frames JPEG}}{21}{lstlisting.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Architecture du serveur}{21}{section.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Endpoints du serveur Node.js}}{21}{table.caption.13}\protected@file@percent }
+\newlabel{tab:endpoints}{{5.1}{21}{Endpoints du serveur Node.js}{table.caption.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Enregistrement CSV automatique}{21}{section.5.2}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.1}{\ignorespaces Écriture CSV en mode append -- server.js}}{21}{lstlisting.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Intégration du microservice IA}{22}{section.5.3}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.2}{\ignorespaces Appel asynchrone au microservice IA}}{22}{lstlisting.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Proxy MJPEG}{23}{section.5.4}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.3}{\ignorespaces Extraction des frames JPEG}}{23}{lstlisting.5.3}\protected@file@percent }
 \abx@aux@cite{0}{liu2008isolation}
 \abx@aux@segm{0}{0}{liu2008isolation}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Module d'intelligence artificielle}{22}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Module d'intelligence artificielle}{24}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Problématique de la détection d'anomalies}{22}{section.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Choix de l'algorithme : Isolation Forest}{22}{section.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Principe}{22}{subsection.6.2.1}\protected@file@percent }
-\newlabel{eq:iforest}{{6.1}{22}{Principe}{equation.6.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Comparaison avec les alternatives}{23}{subsection.6.2.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaison des algorithmes de détection d'anomalies}}{23}{table.caption.11}\protected@file@percent }
-\newlabel{tab:algos}{{6.1}{23}{Comparaison des algorithmes de détection d'anomalies}{table.caption.11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Architecture du microservice Flask}{23}{section.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Pipeline d'entraînement}{23}{section.6.4}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.1}{\ignorespaces Pipeline d'entraînement -- ai\_service.py}}{23}{lstlisting.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Pipeline d'inférence}{24}{section.6.5}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.2}{\ignorespaces Pipeline d'inférence -- ai\_service.py}}{24}{lstlisting.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.6}Persistance du modèle}{25}{section.6.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.7}Workflow d'utilisation}{25}{section.6.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Tableau de bord web}{26}{chapter.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Problématique de la détection d'anomalies}{24}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Choix de l'algorithme : Isolation Forest}{24}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Principe}{24}{subsection.6.2.1}\protected@file@percent }
+\newlabel{eq:iforest}{{6.1}{24}{Principe}{equation.6.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Comparaison avec les alternatives}{25}{subsection.6.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaison des algorithmes de détection d'anomalies}}{25}{table.caption.14}\protected@file@percent }
+\newlabel{tab:algos}{{6.1}{25}{Comparaison des algorithmes de détection d'anomalies}{table.caption.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Architecture du microservice Flask}{25}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Pipeline d'entraînement}{25}{section.6.4}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.1}{\ignorespaces Pipeline d'entraînement -- ai\_service.py}}{25}{lstlisting.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Pipeline d'inférence}{26}{section.6.5}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.2}{\ignorespaces Pipeline d'inférence -- ai\_service.py}}{26}{lstlisting.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}Persistance du modèle}{27}{section.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.7}Workflow d'utilisation}{27}{section.6.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Tableau de bord web}{28}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Architecture frontend}{26}{section.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Organisation en onglets}{26}{section.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Onglet Dashboard}{26}{subsection.7.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Onglet Graphiques}{26}{subsection.7.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Système de polling}{26}{section.7.3}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.1}{\ignorespaces Polling double -- données + IA}}{27}{lstlisting.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.4}Gestion des alertes}{27}{section.7.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.5}Interface d'entraînement IA}{27}{section.7.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Résultats et validation}{28}{chapter.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Architecture frontend}{28}{section.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Organisation en onglets}{28}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Onglet Dashboard}{28}{subsection.7.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Onglet Graphiques}{28}{subsection.7.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Système de polling}{28}{section.7.3}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.1}{\ignorespaces Polling double -- données + IA}}{29}{lstlisting.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Gestion des alertes}{29}{section.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.5}Interface d'entraînement IA}{29}{section.7.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Résultats et validation}{30}{chapter.8}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}Tests du firmware}{28}{section.8.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Lecture des capteurs}{28}{subsection.8.1.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8.1}{\ignorespaces Résultats de validation des capteurs}}{28}{table.caption.12}\protected@file@percent }
-\newlabel{tab:validation}{{8.1}{28}{Résultats de validation des capteurs}{table.caption.12}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}Tests du modèle IA}{28}{section.8.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8.2}{\ignorespaces Résultats de prédiction du modèle IA sur données test}}{29}{table.caption.13}\protected@file@percent }
-\newlabel{tab:ia_test}{{8.2}{29}{Résultats de prédiction du modèle IA sur données test}{table.caption.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.3}Performance du système}{29}{section.8.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8.3}{\ignorespaces Métriques de performance du système complet}}{29}{table.caption.14}\protected@file@percent }
-\newlabel{tab:perf}{{8.3}{29}{Métriques de performance du système complet}{table.caption.14}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusion et perspectives}{30}{chapter.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Tests du firmware}{30}{section.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Lecture des capteurs}{30}{subsection.8.1.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8.1}{\ignorespaces Résultats de validation des capteurs}}{30}{table.caption.15}\protected@file@percent }
+\newlabel{tab:validation}{{8.1}{30}{Résultats de validation des capteurs}{table.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Tests du modèle IA}{30}{section.8.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8.2}{\ignorespaces Résultats de prédiction du modèle IA sur données test}}{31}{table.caption.16}\protected@file@percent }
+\newlabel{tab:ia_test}{{8.2}{31}{Résultats de prédiction du modèle IA sur données test}{table.caption.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.3}Performance du système}{31}{section.8.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8.3}{\ignorespaces Métriques de performance du système complet}}{31}{table.caption.17}\protected@file@percent }
+\newlabel{tab:perf}{{8.3}{31}{Métriques de performance du système complet}{table.caption.17}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusion et perspectives}{32}{chapter.9}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {9.1}Bilan du projet}{30}{section.9.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {9.1}{\ignorespaces Bilan des objectifs}}{30}{table.caption.15}\protected@file@percent }
-\newlabel{tab:bilan}{{9.1}{30}{Bilan des objectifs}{table.caption.15}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.2}Compétences développées}{30}{section.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9.3}Perspectives d'amélioration}{31}{section.9.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.1}Court terme}{31}{subsection.9.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.2}Moyen terme}{31}{subsection.9.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.3}Long terme}{31}{subsection.9.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Références bibliographiques}{32}{chapter*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9.1}Bilan du projet}{32}{section.9.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9.1}{\ignorespaces Bilan des objectifs}}{32}{table.caption.18}\protected@file@percent }
+\newlabel{tab:bilan}{{9.1}{32}{Bilan des objectifs}{table.caption.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.2}Compétences développées}{32}{section.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9.3}Perspectives d'amélioration}{33}{section.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.1}Court terme}{33}{subsection.9.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.2}Moyen terme}{33}{subsection.9.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.3}Long terme}{33}{subsection.9.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Références bibliographiques}{34}{chapter*.19}\protected@file@percent }
 \bibcite{liu2008isolation}{1}
 \bibcite{espressif_esp32}{2}
 \bibcite{platformio}{3}
@@ -150,24 +159,24 @@
 \bibcite{ph4502c}{8}
 \bibcite{chartjs}{9}
 \bibcite{nodejs_express}{10}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Annexe A — Schéma de câblage ESP32}{34}{appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Annexe A — Schéma de câblage ESP32}{36}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Câblage complet ESP32 -- capteurs}}{34}{table.caption.18}\protected@file@percent }
-\newlabel{tab:wiring}{{A.1}{34}{Câblage complet ESP32 -- capteurs}{table.caption.18}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Annexe B — Guide de démarrage rapide}{35}{appendix.B}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Câblage complet ESP32 -- capteurs}}{36}{table.caption.21}\protected@file@percent }
+\newlabel{tab:wiring}{{A.1}{36}{Câblage complet ESP32 -- capteurs}{table.caption.21}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Annexe B — Guide de démarrage rapide}{37}{appendix.B}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {B.1}Prérequis}{35}{section.B.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B.2}Installation}{35}{section.B.2}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.1}{\ignorespaces Installation et démarrage du serveur}}{35}{lstlisting.B.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B.3}Flash du firmware ESP32}{35}{section.B.3}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.2}{\ignorespaces Flash via PlatformIO CLI}}{35}{lstlisting.B.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B.4}Premier entraînement du modèle}{36}{section.B.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {C}Annexe C — Structure du dépôt GitHub}{37}{appendix.C}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B.1}Prérequis}{37}{section.B.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B.2}Installation}{37}{section.B.2}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.1}{\ignorespaces Installation et démarrage du serveur}}{37}{lstlisting.B.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B.3}Flash du firmware ESP32}{37}{section.B.3}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.2}{\ignorespaces Flash via PlatformIO CLI}}{37}{lstlisting.B.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B.4}Premier entraînement du modèle}{38}{section.B.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Annexe C — Structure du dépôt GitHub}{39}{appendix.C}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {C.1}{\ignorespaces Arborescence du dépôt aqua-ai-monitor}}{37}{lstlisting.C.1}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {C.1}{\ignorespaces Arborescence du dépôt aqua-ai-monitor}}{39}{lstlisting.C.1}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{nobblfile}
 \abx@aux@read@bblrerun
-\gdef \@abspage@last{38}
+\gdef \@abspage@last{40}

@@ -22,56 +22,59 @@
 \contentsline {section}{\numberline {3.4}Capteur DS18B20}{14}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Conception PCB — KiCad}{14}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Objectifs de la carte}{14}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Caractéristiques techniques}{15}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Fichiers de fabrication}{15}{subsection.3.5.3}%
-\contentsline {chapter}{\numberline {4}Firmware ESP32}{16}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Organisation du projet PlatformIO}{16}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Boucle principale non-bloquante}{16}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Configuration centralisée}{17}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Envoi HTTP}{17}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Firmware ESP32-CAM}{18}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Initialisation de la caméra OV2640}{18}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Streaming MJPEG par chunks HTTP}{18}{subsection.4.5.2}%
-\contentsline {chapter}{\numberline {5}Serveur Node.js}{19}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Architecture du serveur}{19}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Enregistrement CSV automatique}{19}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Intégration du microservice IA}{20}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Proxy MJPEG}{21}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Module d'intelligence artificielle}{22}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Problématique de la détection d'anomalies}{22}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Choix de l'algorithme : Isolation Forest}{22}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Principe}{22}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Comparaison avec les alternatives}{23}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Architecture du microservice Flask}{23}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Pipeline d'entraînement}{23}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Pipeline d'inférence}{24}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Persistance du modèle}{25}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Workflow d'utilisation}{25}{section.6.7}%
-\contentsline {chapter}{\numberline {7}Tableau de bord web}{26}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Architecture frontend}{26}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Organisation en onglets}{26}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Onglet Dashboard}{26}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Onglet Graphiques}{26}{subsection.7.2.2}%
-\contentsline {section}{\numberline {7.3}Système de polling}{26}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Gestion des alertes}{27}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Interface d'entraînement IA}{27}{section.7.5}%
-\contentsline {chapter}{\numberline {8}Résultats et validation}{28}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Tests du firmware}{28}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Lecture des capteurs}{28}{subsection.8.1.1}%
-\contentsline {section}{\numberline {8.2}Tests du modèle IA}{28}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Performance du système}{29}{section.8.3}%
-\contentsline {chapter}{\numberline {9}Conclusion et perspectives}{30}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Bilan du projet}{30}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Compétences développées}{30}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Perspectives d'amélioration}{31}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Court terme}{31}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}Moyen terme}{31}{subsection.9.3.2}%
-\contentsline {subsection}{\numberline {9.3.3}Long terme}{31}{subsection.9.3.3}%
-\contentsline {chapter}{Références bibliographiques}{32}{chapter*.16}%
-\contentsline {chapter}{\numberline {A}Annexe A — Schéma de câblage ESP32}{34}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Annexe B — Guide de démarrage rapide}{35}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Prérequis}{35}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Installation}{35}{section.B.2}%
-\contentsline {section}{\numberline {B.3}Flash du firmware ESP32}{35}{section.B.3}%
-\contentsline {section}{\numberline {B.4}Premier entraînement du modèle}{36}{section.B.4}%
-\contentsline {chapter}{\numberline {C}Annexe C — Structure du dépôt GitHub}{37}{appendix.C}%
+\contentsline {subsection}{\numberline {3.5.2}Schématique électronique}{14}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Routage PCB}{15}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Visualisation 3D}{16}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Caractéristiques techniques}{16}{subsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.5.6}Fichiers de fabrication}{17}{subsection.3.5.6}%
+\contentsline {chapter}{\numberline {4}Firmware ESP32}{18}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Organisation du projet PlatformIO}{18}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Boucle principale non-bloquante}{18}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Configuration centralisée}{19}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Envoi HTTP}{19}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Firmware ESP32-CAM}{20}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Initialisation de la caméra OV2640}{20}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Streaming MJPEG par chunks HTTP}{20}{subsection.4.5.2}%
+\contentsline {chapter}{\numberline {5}Serveur Node.js}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Architecture du serveur}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Enregistrement CSV automatique}{21}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Intégration du microservice IA}{22}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Proxy MJPEG}{23}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Module d'intelligence artificielle}{24}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Problématique de la détection d'anomalies}{24}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Choix de l'algorithme : Isolation Forest}{24}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Principe}{24}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Comparaison avec les alternatives}{25}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Architecture du microservice Flask}{25}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Pipeline d'entraînement}{25}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Pipeline d'inférence}{26}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Persistance du modèle}{27}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Workflow d'utilisation}{27}{section.6.7}%
+\contentsline {chapter}{\numberline {7}Tableau de bord web}{28}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Architecture frontend}{28}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Organisation en onglets}{28}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Onglet Dashboard}{28}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Onglet Graphiques}{28}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Système de polling}{28}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Gestion des alertes}{29}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Interface d'entraînement IA}{29}{section.7.5}%
+\contentsline {chapter}{\numberline {8}Résultats et validation}{30}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Tests du firmware}{30}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Lecture des capteurs}{30}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}Tests du modèle IA}{30}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Performance du système}{31}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Conclusion et perspectives}{32}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Bilan du projet}{32}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Compétences développées}{32}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Perspectives d'amélioration}{33}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Court terme}{33}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}Moyen terme}{33}{subsection.9.3.2}%
+\contentsline {subsection}{\numberline {9.3.3}Long terme}{33}{subsection.9.3.3}%
+\contentsline {chapter}{Références bibliographiques}{34}{chapter*.19}%
+\contentsline {chapter}{\numberline {A}Annexe A — Schéma de câblage ESP32}{36}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Annexe B — Guide de démarrage rapide}{37}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Prérequis}{37}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Installation}{37}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Flash du firmware ESP32}{37}{section.B.3}%
+\contentsline {section}{\numberline {B.4}Premier entraînement du modèle}{38}{section.B.4}%
+\contentsline {chapter}{\numberline {C}Annexe C — Structure du dépôt GitHub}{39}{appendix.C}%

@@ -4,21 +4,21 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces Tableau des choix technologiques}}{10}{table.caption.6}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Inventaire des composants matériels}}{12}{table.caption.7}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Caractéristiques de la carte PCB carte\_aqua}}{15}{table.caption.8}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Caractéristiques de la carte PCB carte\_aqua}}{16}{table.caption.11}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Paramètres de configuration de la caméra OV2640}}{18}{table.caption.9}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Paramètres de configuration de la caméra OV2640}}{20}{table.caption.12}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Endpoints du serveur Node.js}}{19}{table.caption.10}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Endpoints du serveur Node.js}}{21}{table.caption.13}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaison des algorithmes de détection d'anomalies}}{23}{table.caption.11}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaison des algorithmes de détection d'anomalies}}{25}{table.caption.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Résultats de validation des capteurs}}{28}{table.caption.12}%
-\contentsline {table}{\numberline {8.2}{\ignorespaces Résultats de prédiction du modèle IA sur données test}}{29}{table.caption.13}%
-\contentsline {table}{\numberline {8.3}{\ignorespaces Métriques de performance du système complet}}{29}{table.caption.14}%
+\contentsline {table}{\numberline {8.1}{\ignorespaces Résultats de validation des capteurs}}{30}{table.caption.15}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Résultats de prédiction du modèle IA sur données test}}{31}{table.caption.16}%
+\contentsline {table}{\numberline {8.3}{\ignorespaces Métriques de performance du système complet}}{31}{table.caption.17}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {9.1}{\ignorespaces Bilan des objectifs}}{30}{table.caption.15}%
+\contentsline {table}{\numberline {9.1}{\ignorespaces Bilan des objectifs}}{32}{table.caption.18}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Câblage complet ESP32 -- capteurs}}{34}{table.caption.18}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Câblage complet ESP32 -- capteurs}}{36}{table.caption.21}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
