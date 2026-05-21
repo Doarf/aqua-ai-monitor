@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.31)  21 MAY 2026 09:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.31)  21 MAY 2026 09:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1032,10 +1032,7 @@ Package french3.ldf Info: Setting StandardEnumerateEnv=true for
 tex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count374
-) (main.aux
-Package babel Info: 'french' activates 'french' shorthands.
-(babel)             Reported on input line 11.
-)
+) (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 161.
@@ -1056,6 +1053,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 161.
 LaTeX Font Info:    ... okay on input line 161.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 161.
 LaTeX Font Info:    ... okay on input line 161.
+Package babel Info: 'french' activates 'french' shorthands.
+(babel)             Reported on input line 161.
 LaTeX Info: Redefining \degres on input line 161.
 
 *geometry* driver: auto-detecting
@@ -1176,9 +1175,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (C:\Users\arthu\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 21
+4.
+
+(C:\Users\arthu\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
 [1
 
-{C:/Users/arthu/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+{C:/Users/arthu/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/arth
+u/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1191,7 +1197,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.237 \clearpage
+l.246 \clearpage
                  [1
 
 ] (main.toc [2
@@ -1237,16 +1243,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 Chapitre 1.
 
-Overfull \hbox (2.202pt too wide) in paragraph at lines 268--270
+Overfull \hbox (2.202pt too wide) in paragraph at lines 277--279
 []\T1/cmr/bx/n/12 Arthur Do-go-taru \T1/cmr/m/n/12 ^^V Chef de pro-jet, res-pon
 -sable de l'in-ter-face gra-phique (GUI),
  []
+
+
+LaTeX Warning: Citation `fao_aquaculture' on page 7 undefined on input line 288
+.
 
 [7
 
 
 ]
-Overfull \hbox (25.27284pt too wide) in paragraph at lines 308--309
+Overfull \hbox (25.27284pt too wide) in paragraph at lines 317--318
 []\T1/cmr/m/n/12 Transmettre ces don-nées par Wi-Fi à un ser-veur cen-tral via 
 le pro-to-cole HTTP/JSON ; 
  []
@@ -1260,15 +1270,58 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [8]
 Chapitre 2.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 36
-7.
-(C:\Users\arthu\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
+
+LaTeX Warning: Citation `lin2021aqua' on page 9 undefined on input line 355.
+
+
+LaTeX Warning: Citation `camargo2023lowcost' on page 9 undefined on input line 
+368.
+
+
+LaTeX Warning: Reference `sec:ph' on page 9 undefined on input line 375.
+
+
+LaTeX Warning: Reference `tab:validation' on page 9 undefined on input line 375
+.
+
 [9
 
-{C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-Underfull \hbox (badness 10000) in alignment at lines 422--422
+]
+
+LaTeX Warning: Citation `elshafeiy2023anomaly' on page 10 undefined on input li
+ne 381.
+
+
+LaTeX Warning: Citation `zhuang2023bsiforest' on page 10 undefined on input lin
+e 395.
+
+
+LaTeX Warning: Citation `liu2008isolation' on page 10 undefined on input line 3
+96.
+
+
+LaTeX Warning: Citation `elshafeiy2023anomaly' on page 10 undefined on input li
+ne 408.
+
+
+LaTeX Warning: Reference `tab:algos' on page 10 undefined on input line 414.
+
+
+LaTeX Warning: Reference `chap:ia' on page 10 undefined on input line 414.
+
+
+LaTeX Warning: Citation `lin2021aqua' on page 10 undefined on input line 431.
+
+
+LaTeX Warning: Citation `elshafeiy2023anomaly' on page 10 undefined on input li
+ne 431.
+
+
+LaTeX Warning: Citation `zhuang2023bsiforest' on page 10 undefined on input lin
+e 431.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 431--431
 [][][][][] 
  []
 
@@ -1281,6 +1334,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [10]
 
+LaTeX Warning: Reference `tab:etat_art' on page 11 undefined on input line 434.
+
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1289,15 +1346,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [11]
 Chapitre 3.
-<sch_fonctionnement.png, id=592, 633.86812pt x 796.47563pt>
+<sch_fonctionnement.png, id=299, 633.86812pt x 796.47563pt>
 File: sch_fonctionnement.png Graphic file (type png)
 <use sch_fonctionnement.png>
-Package pdftex.def Info: sch_fonctionnement.png  used on input line 445.
+Package pdftex.def Info: sch_fonctionnement.png  used on input line 454.
 (pdftex.def)             Requested size: 350.53915pt x 440.4693pt.
 [12
 
  <./sch_fonctionnement.png>]
-Underfull \hbox (badness 10000) in alignment at lines 494--494
+
+LaTeX Warning: Citation `lin2021aqua' on page 13 undefined on input line 503.
+
+
+LaTeX Warning: Citation `liu2008isolation' on page 13 undefined on input line 5
+03.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 503--503
 [][][] 
  []
 
@@ -1310,11 +1375,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [13]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 502.
+nput line 511.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 504.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 513.
 
-Overfull \hbox (62.0007pt too wide) in paragraph at lines 512--514
+Overfull \hbox (62.0007pt too wide) in paragraph at lines 521--523
 []\T1/cmr/m/n/12 L'ESP32-CAM en-voie quant à lui un flux HTTP chun-ked en [][][
 ][][][],
  []
@@ -1329,14 +1394,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [14]
 Chapitre 4.
 
-Overfull \hbox (17.56888pt too wide) in paragraph at lines 518--518
+Overfull \hbox (17.56888pt too wide) in paragraph at lines 527--527
 |\T1/cmr/bx/n/24.88 Matériel élec-tro-nique et concep-tion PCB| 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 539--539
+Underfull \hbox (badness 10000) in alignment at lines 548--548
 [][][][] 
  []
+
+
+LaTeX Warning: Citation `ph4502c' on page 15 undefined on input line 557.
+
+
+LaTeX Warning: Citation `camargo2023lowcost' on page 15 undefined on input line
+ 571.
 
 [15
 
@@ -1351,6 +1423,10 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 
+LaTeX Warning: Citation `camargo2023lowcost' on page 16 undefined on input line
+ 618.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1358,15 +1434,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [16]
-Overfull \hbox (6.81078pt too wide) in paragraph at lines 614--618
+
+LaTeX Warning: Citation `ds18b20' on page 17 undefined on input line 625.
+
+
+Overfull \hbox (6.81078pt too wide) in paragraph at lines 623--627
 []\T1/cmr/m/n/12 Le DS18B20 est un cap-teur de tem-pé-ra-ture nu-mé-rique à pro
 -to-cole One-Wire, étanche,
  []
 
-<sch_pcb.png, id=655, 1219.55624pt x 601.4972pt>
+
+LaTeX Warning: Reference `fig:sch_pcb' on page 17 undefined on input line 651.
+
+
+LaTeX Warning: Citation `kicad' on page 17 undefined on input line 652.
+
+<sch_pcb.png, id=351, 1219.55624pt x 601.4972pt>
 File: sch_pcb.png Graphic file (type png)
 <use sch_pcb.png>
-Package pdftex.def Info: sch_pcb.png  used on input line 650.
+Package pdftex.def Info: sch_pcb.png  used on input line 659.
 (pdftex.def)             Requested size: 438.17227pt x 216.10745pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1376,11 +1462,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [17]
-<routage_pcb.png, id=670, 950.04938pt x 687.31781pt>
+
+LaTeX Warning: Reference `fig:routage_pcb' on page 18 undefined on input line 6
+66.
+
+<routage_pcb.png, id=363, 950.04938pt x 687.31781pt>
 File: routage_pcb.png Graphic file (type png)
 <use routage_pcb.png>
-Package pdftex.def Info: routage_pcb.png  used on input line 666.
+Package pdftex.def Info: routage_pcb.png  used on input line 675.
 (pdftex.def)             Requested size: 306.71924pt x 221.89688pt.
+
+LaTeX Warning: Reference `fig:3d_pcb' on page 18 undefined on input line 682.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1390,13 +1482,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [18 <./sch_pcb.png> <./routage_pcb.png>]
-<3d_pcb.png, id=679, 1198.4775pt x 890.5772pt>
+<3d_pcb.png, id=371, 1198.4775pt x 890.5772pt>
 File: 3d_pcb.png Graphic file (type png)
 <use 3d_pcb.png>
-Package pdftex.def Info: 3d_pcb.png  used on input line 681.
+Package pdftex.def Info: 3d_pcb.png  used on input line 690.
 (pdftex.def)             Requested size: 372.4491pt x 276.75554pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 703--703
+Underfull \hbox (badness 10000) in alignment at lines 712--712
 [][] 
  []
 
@@ -1417,10 +1509,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [20]
 Chapitre 5.
+
+LaTeX Warning: Citation `platformio' on page 21 undefined on input line 729.
+
+
+LaTeX Warning: Citation `espressif_esp32' on page 21 undefined on input line 73
+0.
+
 [21
 
 ]
-Overfull \hbox (4.47939pt too wide) in paragraph at lines 789--792
+
+LaTeX Warning: Citation `espressif_esp32' on page 22 undefined on input line 79
+3.
+
+
+Overfull \hbox (4.47939pt too wide) in paragraph at lines 798--801
 []\T1/cmr/m/n/12 La classe [][][][][][] uti-lise la bi-blio-thèque [][][][][][]
  d'Ar-duino pour ESP32.
  []
@@ -1433,7 +1537,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [22]
-Underfull \hbox (badness 10000) in alignment at lines 833--833
+Underfull \hbox (badness 10000) in alignment at lines 842--842
 [][][] 
  []
 
@@ -1447,7 +1551,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [23]
 Chapitre 6.
 
-Underfull \hbox (badness 10000) in alignment at lines 880--880
+LaTeX Warning: Citation `nodejs_express' on page 24 undefined on input line 868
+.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 889--889
 [][][] 
  []
 
@@ -1471,25 +1579,41 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [26]
 Chapitre 7.
+
+LaTeX Warning: Citation `liu2008isolation' on page 27 undefined on input line 1
+008.
+
+
+LaTeX Warning: Citation `zhuang2023bsiforest' on page 27 undefined on input lin
+e 1012.
+
 [27
 
 ]
-Overfull \hbox (5.67935pt too wide) in paragraph at lines 1037--1037
+Overfull \hbox (5.67935pt too wide) in paragraph at lines 1046--1046
  []|\T1/cmr/bx/n/12 Supervisé| 
  []
 
 
-Overfull \hbox (13.33163pt too wide) in paragraph at lines 1037--1037
+Overfull \hbox (13.33163pt too wide) in paragraph at lines 1046--1046
  []|\T1/cmr/bx/n/12 Interpréta- 
  []
 
 
-Overfull \hbox (7.70374pt too wide) in paragraph at lines 1037--1037
+Overfull \hbox (7.70374pt too wide) in paragraph at lines 1046--1046
  []|\T1/cmr/m/n/12 Complémen- 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1037--1037
+LaTeX Warning: Citation `liu2008isolation' on page 28 undefined on input line 1
+046.
+
+
+LaTeX Warning: Citation `elshafeiy2023anomaly' on page 28 undefined on input li
+ne 1046.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 1046--1046
 [][][][][][] 
  []
 
@@ -1509,7 +1633,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [29]
-Overfull \hbox (18.51907pt too wide) in paragraph at lines 1117--1121
+
+LaTeX Warning: Citation `sklearn' on page 30 undefined on input line 1126.
+
+
+Overfull \hbox (19.01895pt too wide) in paragraph at lines 1126--1130
 []\T1/cmr/m/n/12 Le mo-dèle et le sca-ler sont sé-ria-li-sés via [][][][][][] [
 []] dans les fi-chiers [][][][][][]
  []
@@ -1523,20 +1651,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [30]
 Chapitre 8.
+
+LaTeX Warning: Citation `chartjs' on page 31 undefined on input line 1152.
+
+
+LaTeX Warning: Reference `fig:site_1' on page 31 undefined on input line 1185.
+
 [31
 
 ]
-<site_1.png, id=937, 1922.68312pt x 955.31906pt>
+<site_1.png, id=611, 1922.68312pt x 955.31906pt>
 File: site_1.png Graphic file (type png)
 <use site_1.png>
-Package pdftex.def Info: site_1.png  used on input line 1187.
+Package pdftex.def Info: site_1.png  used on input line 1196.
 (pdftex.def)             Requested size: 438.17227pt x 217.70714pt.
-<site_2.png, id=939, 1924.18875pt x 953.81343pt>
+
+
+LaTeX Warning: Reference `fig:site_2' on page 32 undefined on input line 1203.
+
+<site_2.png, id=612, 1924.18875pt x 953.81343pt>
 File: site_2.png Graphic file (type png)
 <use site_2.png>
-Package pdftex.def Info: site_2.png  used on input line 1204.
+Package pdftex.def Info: site_2.png  used on input line 1213.
 (pdftex.def)             Requested size: 438.17227pt x 217.18936pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1545,13 +1682,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [32 <./site_1.png>]
-Overfull \hbox (20.97807pt too wide) in paragraph at lines 1231--1235
+Overfull \hbox (20.97807pt too wide) in paragraph at lines 1240--1244
 []\T1/cmr/m/n/12 La zone d'upload sup-porte le drag & drop na-tif (évé-ne-ments
  [][][][][][], [][][][][][],
  []
 
 
-Overfull \hbox (13.82083pt too wide) in paragraph at lines 1231--1235
+Overfull \hbox (13.82083pt too wide) in paragraph at lines 1240--1244
 [][][][][][]\T1/cmr/m/n/12 ) et la sé-lec-tion par dia-logue. Le fi-chier est e
 n-voyé via [][][][][][] en [][][][][][]
  []
@@ -1566,19 +1703,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [33 <./site_2.png>]
 Chapitre 9.
 
-Overfull \hbox (8.16628pt too wide) in alignment at lines 1260--1260
+Overfull \hbox (8.16628pt too wide) in alignment at lines 1269--1269
 [][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1291--1291
+LaTeX Warning: Citation `camargo2023lowcost' on page 34 undefined on input line
+ 1275.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 1300--1300
 [][][][][] 
  []
 
 [34
 
 ]
-Underfull \hbox (badness 10000) in alignment at lines 1311--1311
+Underfull \hbox (badness 10000) in alignment at lines 1320--1320
 [][][] 
  []
 
@@ -1590,17 +1731,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [35]
-<pcb_irl.png, id=967, 646.66594pt x 644.4075pt>
+
+LaTeX Warning: Reference `fig:pcb_irl' on page 36 undefined on input line 1327.
+
+
+
+LaTeX Warning: Reference `fig:pcb_irl_2' on page 36 undefined on input line 132
+7.
+
+<pcb_irl.png, id=637, 646.66594pt x 644.4075pt>
 File: pcb_irl.png Graphic file (type png)
 <use pcb_irl.png>
-Package pdftex.def Info: pcb_irl.png  used on input line 1327.
+Package pdftex.def Info: pcb_irl.png  used on input line 1336.
 (pdftex.def)             Requested size: 175.26622pt x 174.65115pt.
-<pcb_irl_2.png, id=968, 453.94594pt x 810.02625pt>
+<pcb_irl_2.png, id=638, 453.94594pt x 810.02625pt>
 File: pcb_irl_2.png Graphic file (type png)
 <use pcb_irl_2.png>
-Package pdftex.def Info: pcb_irl_2.png  used on input line 1334.
+Package pdftex.def Info: pcb_irl_2.png  used on input line 1343.
 (pdftex.def)             Requested size: 219.08614pt x 390.9341pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1613,12 +1761,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
  <./pcb_irl.png> <./pcb_irl_2.png>]
 Chapitre 10.
 
-Underfull \hbox (badness 10000) in alignment at lines 1374--1374
+LaTeX Warning: Citation `lin2021aqua' on page 37 undefined on input line 1359.
+
+
+LaTeX Warning: Citation `camargo2023lowcost' on page 37 undefined on input line
+ 1359.
+
+
+LaTeX Warning: Citation `liu2008isolation' on page 37 undefined on input line 1
+360.
+
+
+LaTeX Warning: Citation `zhuang2023bsiforest' on page 37 undefined on input lin
+e 1360.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 1383--1383
 [][][] 
  []
 
 
-Overfull \hbox (22.02031pt too wide) in paragraph at lines 1381--1383
+Overfull \hbox (22.02031pt too wide) in paragraph at lines 1390--1392
 []\T1/cmr/bx/n/12 Électronique em-bar-quée \T1/cmr/m/n/12 : pro-gram-ma-tion ES
 P32, pro-to-coles One-Wire/I\TS1/cmr/m/n/12 ²\T1/cmr/m/n/12 C/ADC,
  []
@@ -1645,7 +1808,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Underfull \hbox (badness 2608) in paragraph at lines 1466--1470
+Underfull \hbox (badness 2608) in paragraph at lines 1475--1479
 []\T1/cmr/m/n/12 Espressif Sys-tems, \T1/cmr/m/it/12 ESP32 Tech-ni-cal Re-fe-re
 nce Ma-nual\T1/cmr/m/n/12 , v5.2, 2023. [On-
  []
@@ -1655,12 +1818,12 @@ nce Ma-nual\T1/cmr/m/n/12 , v5.2, 2023. [On-
 ]
 Annexe A.
 
-Overfull \hbox (0.14218pt too wide) in paragraph at lines 1515--1515
+Overfull \hbox (0.14218pt too wide) in paragraph at lines 1524--1524
 |\T1/cmr/bx/n/24.88 Annexe A ^^V Schéma de câ-blage ESP32| 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1546--1546
+Underfull \hbox (badness 10000) in alignment at lines 1555--1555
 [][][][] 
  []
 
@@ -1692,14 +1855,26 @@ L3 programming layer <2026-01-19>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.17pt have occurred.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1456A97C1E65909DFAB6415D09B65C30;17123.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  1456A97C1E65909DFAB6415D09B65C30;17123.
  ) 
 Here is how much of TeX's memory you used:
- 35553 strings out of 467867
- 682750 string characters out of 5418334
- 1589850 words of memory out of 5000000
- 63435 multiletter control sequences out of 15000+600000
+ 35462 strings out of 467867
+ 681467 string characters out of 5418334
+ 1573204 words of memory out of 5000000
+ 63344 multiletter control sequences out of 15000+600000
  653664 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,94p,1003b,2114s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1734,9 +1909,9 @@ a.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucr
 r8a.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/u
 crro8a.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfdi
 ng/uzdr.pfb>
-Output written on main.pdf (46 pages, 3211003 bytes).
+Output written on main.pdf (46 pages, 3169012 bytes).
 PDF statistics:
- 1875 PDF objects out of 2073 (max. 8388607)
+ 1556 PDF objects out of 1728 (max. 8388607)
  443 named destinations out of 1000 (max. 500000)
- 773 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

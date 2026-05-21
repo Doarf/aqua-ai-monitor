@@ -183,19 +183,6 @@ aqua-ai-monitor/
 └── rapport_aqua_ai_monitor.pdf
 ```
 
----
-
-## Team
-
-| Member | Role |
-|--------|------|
-| **Arthur Dogotaru** | Project lead — GUI, AI, software integration |
-| **Legall Maxence** | Sensors, embedded data processing |
-| **Hammouda Nouhaila** | PCB design, electronics (KiCad) |
-
-*Supervised by Kamel AIZI — CESI Nanterre, FISA Program, 2024–2026*
-
----
 
 <div align="center">
   <sub>SPI Project · aqua-ai-monitor · IoT & AI for aquaculture</sub>
