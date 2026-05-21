@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.31)  21 MAY 2026 10:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.31)  21 MAY 2026 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1268,8 +1268,54 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 [9
 
 {C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-Underfull \hbox (badness 10000) in alignment at lines 425--425
-[][][][][] 
+<PlatformIO_logo.png, id=608, 3854.4pt x 3854.4pt>
+File: PlatformIO_logo.png Graphic file (type png)
+<use PlatformIO_logo.png>
+Package pdftex.def Info: PlatformIO_logo.png  used on input line 416.
+(pdftex.def)             Requested size: 51.21504pt x 51.16759pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--417
+[]\T1/cmr/bx/n/10 (a) |\T1/cmr/m/n/10 Plat-for-
+ []
+
+<vscode_logo.png, id=610, 501.875pt x 501.875pt>
+File: vscode_logo.png Graphic file (type png)
+<use vscode_logo.png>
+Package pdftex.def Info: vscode_logo.png  used on input line 422.
+(pdftex.def)             Requested size: 51.21504pt x 51.20894pt.
+<nodejs_logo.png, id=611, 963.6pt x 259.97125pt>
+File: nodejs_logo.png Graphic file (type png)
+<use nodejs_logo.png>
+Package pdftex.def Info: nodejs_logo.png  used on input line 428.
+(pdftex.def)             Requested size: 99.58464pt x 26.8634pt.
+
+Overfull \hbox (3.18622pt too wide) in paragraph at lines 428--429
+ [][] 
+ []
+
+<BambuLab_logo.png, id=612, 3854.4pt x 1392.20125pt>
+File: BambuLab_logo.png Graphic file (type png)
+<use BambuLab_logo.png>
+Package pdftex.def Info: BambuLab_logo.png  used on input line 434.
+(pdftex.def)             Requested size: 71.13188pt x 25.68309pt.
+
+Overfull \hbox (5.40872pt too wide) in paragraph at lines 434--435
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
+[]\T1/cmr/bx/n/10 (d) |\T1/cmr/m/n/10 Bambu
+ []
+
+<ngrok_logo.png, id=613, 332.24126pt x 152.57pt>
+File: ngrok_logo.png Graphic file (type png)
+<use ngrok_logo.png>
+Package pdftex.def Info: ngrok_logo.png  used on input line 440.
+(pdftex.def)             Requested size: 71.13188pt x 32.66455pt.
+
+Overfull \hbox (5.40872pt too wide) in paragraph at lines 440--441
+ [][] 
  []
 
 
@@ -1280,6 +1326,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [10]
+Underfull \hbox (badness 10000) in alignment at lines 488--488
+[][][][][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1287,19 +1337,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[11]
+[11 <./PlatformIO_logo.png> <./vscode_logo.png> <./nodejs_logo.png> <./BambuLab
+_logo.png> <./ngrok_logo.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[12]
 Chapitre 3.
-<sch_fonctionnement.png, id=624, 633.86812pt x 796.47563pt>
+<sch_fonctionnement.png, id=654, 633.86812pt x 796.47563pt>
 File: sch_fonctionnement.png Graphic file (type png)
 <use sch_fonctionnement.png>
-Package pdftex.def Info: sch_fonctionnement.png  used on input line 462.
+Package pdftex.def Info: sch_fonctionnement.png  used on input line 526.
 (pdftex.def)             Requested size: 350.53915pt x 440.4693pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 520--520
+Underfull \hbox (badness 10000) in alignment at lines 584--584
 [][][] 
  []
 
-[12
+[13
 
 ]
 
@@ -1309,11 +1368,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[13 <./sch_fonctionnement.png>]
+[14 <./sch_fonctionnement.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 528.
+nput line 592.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 530.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 594.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1322,8 +1381,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[14]
-Overfull \hbox (62.0007pt too wide) in paragraph at lines 538--540
+[15]
+Overfull \hbox (62.0007pt too wide) in paragraph at lines 602--604
 []\T1/cmr/m/n/12 L'ESP32-CAM en-voie quant à lui un flux HTTP chun-ked en [][][
 ][][][],
  []
@@ -1335,30 +1394,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[15]
+[16]
 Chapitre 4.
 
-Overfull \hbox (17.56888pt too wide) in paragraph at lines 544--544
+Overfull \hbox (17.56888pt too wide) in paragraph at lines 608--608
 |\T1/cmr/bx/n/24.88 Matériel élec-tro-nique et concep-tion PCB| 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 565--565
+Underfull \hbox (badness 10000) in alignment at lines 629--629
 [][][][] 
  []
 
-<esp32_pinout.png, id=661, 1054.6903pt x 623.32875pt>
+<esp32_pinout.png, id=689, 1054.6903pt x 623.32875pt>
 File: esp32_pinout.png Graphic file (type png)
 <use esp32_pinout.png>
-Package pdftex.def Info: esp32_pinout.png  used on input line 584.
+Package pdftex.def Info: esp32_pinout.png  used on input line 648.
 (pdftex.def)             Requested size: 438.17227pt x 258.96194pt.
-[16
+[17
 
 ]
-<esp32_cam_pinout.png, id=667, 904.88063pt x 402.75468pt>
+<esp32_cam_pinout.png, id=695, 904.88063pt x 402.75468pt>
 File: esp32_cam_pinout.png Graphic file (type png)
 <use esp32_cam_pinout.png>
-Package pdftex.def Info: esp32_cam_pinout.png  used on input line 603.
+Package pdftex.def Info: esp32_cam_pinout.png  used on input line 667.
 (pdftex.def)             Requested size: 350.53915pt x 156.01665pt.
 
 
@@ -1368,7 +1427,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[17 <./esp32_pinout.png> <./esp32_cam_pinout.png>]
+[18 <./esp32_pinout.png> <./esp32_cam_pinout.png>]
 (C:\Users\arthu\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
@@ -1385,8 +1444,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[18]
-Overfull \hbox (6.81078pt too wide) in paragraph at lines 680--684
+[19]
+Overfull \hbox (6.81078pt too wide) in paragraph at lines 744--748
 []\T1/cmr/m/n/12 Le DS18B20 est un cap-teur de tem-pé-ra-ture nu-mé-rique à pro
 -to-cole One-Wire, étanche,
  []
@@ -1398,16 +1457,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[19]
-<sch_pcb.png, id=714, 1219.55624pt x 601.4972pt>
+[20]
+<sch_pcb.png, id=742, 1219.55624pt x 601.4972pt>
 File: sch_pcb.png Graphic file (type png)
 <use sch_pcb.png>
-Package pdftex.def Info: sch_pcb.png  used on input line 716.
+Package pdftex.def Info: sch_pcb.png  used on input line 780.
 (pdftex.def)             Requested size: 438.17227pt x 216.10745pt.
-<routage_pcb.png, id=716, 950.04938pt x 687.31781pt>
+<routage_pcb.png, id=744, 950.04938pt x 687.31781pt>
 File: routage_pcb.png Graphic file (type png)
 <use routage_pcb.png>
-Package pdftex.def Info: routage_pcb.png  used on input line 732.
+Package pdftex.def Info: routage_pcb.png  used on input line 796.
 (pdftex.def)             Requested size: 306.71924pt x 221.89688pt.
 
 
@@ -1417,14 +1476,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[20 <./sch_pcb.png>]
-<3d_pcb.png, id=724, 1198.4775pt x 890.5772pt>
+[21 <./sch_pcb.png>]
+<3d_pcb.png, id=752, 1198.4775pt x 890.5772pt>
 File: 3d_pcb.png Graphic file (type png)
 <use 3d_pcb.png>
-Package pdftex.def Info: 3d_pcb.png  used on input line 747.
+Package pdftex.def Info: 3d_pcb.png  used on input line 811.
 (pdftex.def)             Requested size: 372.4491pt x 276.75554pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 769--769
+Underfull \hbox (badness 10000) in alignment at lines 833--833
 [][] 
  []
 
@@ -1435,7 +1494,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[21 <./routage_pcb.png> <./3d_pcb.png>]
+[22 <./routage_pcb.png> <./3d_pcb.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1443,12 +1502,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[22]
+[23]
 Chapitre 5.
-[23
+[24
 
 ]
-Overfull \hbox (4.47939pt too wide) in paragraph at lines 855--858
+Overfull \hbox (4.47939pt too wide) in paragraph at lines 919--922
 []\T1/cmr/m/n/12 La classe [][][][][][] uti-lise la bi-blio-thèque [][][][][][]
  d'Ar-duino pour ESP32.
  []
@@ -1460,19 +1519,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[24]
-Underfull \hbox (badness 10000) in alignment at lines 916--916
+[25]
+Underfull \hbox (badness 10000) in alignment at lines 980--980
 [][][] 
  []
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[25]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1481,13 +1532,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [26]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[27]
 Chapitre 6.
 
-Underfull \hbox (badness 10000) in alignment at lines 963--963
+Underfull \hbox (badness 10000) in alignment at lines 1027--1027
 [][][] 
  []
 
-[27
+[28
 
 ]
 
@@ -1497,11 +1556,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[28]
-<ngrok_logo.png, id=870, 332.24126pt x 152.57pt>
+[29]
 File: ngrok_logo.png Graphic file (type png)
 <use ngrok_logo.png>
-Package pdftex.def Info: ngrok_logo.png  used on input line 1064.
+Package pdftex.def Info: ngrok_logo.png  used on input line 1128.
 (pdftex.def)             Requested size: 99.58464pt x 45.72945pt.
 
 
@@ -1511,7 +1569,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[29]
+[30]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1519,27 +1577,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[30 <./ngrok_logo.png>]
+[31]
 Chapitre 7.
-[31
+[32
 
 ]
-Overfull \hbox (5.67935pt too wide) in paragraph at lines 1158--1158
+Overfull \hbox (5.67935pt too wide) in paragraph at lines 1222--1222
  []|\T1/cmr/bx/n/12 Supervisé| 
  []
 
 
-Overfull \hbox (13.33163pt too wide) in paragraph at lines 1158--1158
+Overfull \hbox (13.33163pt too wide) in paragraph at lines 1222--1222
  []|\T1/cmr/bx/n/12 Interpréta- 
  []
 
 
-Overfull \hbox (7.70374pt too wide) in paragraph at lines 1158--1158
+Overfull \hbox (7.70374pt too wide) in paragraph at lines 1222--1222
  []|\T1/cmr/m/n/12 Complémen- 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1158--1158
+Underfull \hbox (badness 10000) in alignment at lines 1222--1222
 [][][][][][] 
  []
 
@@ -1550,7 +1608,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[32]
+[33]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1558,8 +1616,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[33]
-Overfull \hbox (18.51907pt too wide) in paragraph at lines 1238--1242
+[34]
+Overfull \hbox (18.51907pt too wide) in paragraph at lines 1302--1306
 []\T1/cmr/m/n/12 Le mo-dèle et le sca-ler sont sé-ria-li-sés via [][][][][][] [
 []] dans les fi-chiers [][][][][][]
  []
@@ -1571,20 +1629,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[34]
+[35]
 Chapitre 8.
-[35
+[36
 
 ]
-<site_1.png, id=1002, 1922.68312pt x 955.31906pt>
+<site_1.png, id=1028, 1922.68312pt x 955.31906pt>
 File: site_1.png Graphic file (type png)
 <use site_1.png>
-Package pdftex.def Info: site_1.png  used on input line 1308.
+Package pdftex.def Info: site_1.png  used on input line 1372.
 (pdftex.def)             Requested size: 438.17227pt x 217.70714pt.
-<site_2.png, id=1004, 1924.18875pt x 953.81343pt>
+<site_2.png, id=1030, 1924.18875pt x 953.81343pt>
 File: site_2.png Graphic file (type png)
 <use site_2.png>
-Package pdftex.def Info: site_2.png  used on input line 1325.
+Package pdftex.def Info: site_2.png  used on input line 1389.
 (pdftex.def)             Requested size: 438.17227pt x 217.18936pt.
 
 
@@ -1594,14 +1652,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[36 <./site_1.png>]
-Overfull \hbox (20.97807pt too wide) in paragraph at lines 1352--1356
+[37 <./site_1.png>]
+Overfull \hbox (20.97807pt too wide) in paragraph at lines 1416--1420
 []\T1/cmr/m/n/12 La zone d'upload sup-porte le drag & drop na-tif (évé-ne-ments
  [][][][][][], [][][][][][],
  []
 
 
-Overfull \hbox (13.82083pt too wide) in paragraph at lines 1352--1356
+Overfull \hbox (13.82083pt too wide) in paragraph at lines 1416--1420
 [][][][][][]\T1/cmr/m/n/12 ) et la sé-lec-tion par dia-logue. Le fi-chier est e
 n-voyé via [][][][][][] en [][][][][][]
  []
@@ -1613,22 +1671,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[37 <./site_2.png>]
+[38 <./site_2.png>]
 Chapitre 9.
 
-Overfull \hbox (8.16628pt too wide) in alignment at lines 1381--1381
+Overfull \hbox (8.16628pt too wide) in alignment at lines 1445--1445
 [][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1412--1412
+Underfull \hbox (badness 10000) in alignment at lines 1476--1476
 [][][][][] 
  []
 
-[38
+[39
 
 ]
-Underfull \hbox (badness 10000) in alignment at lines 1442--1442
+Underfull \hbox (badness 10000) in alignment at lines 1506--1506
 [][][] 
  []
 
@@ -1639,16 +1697,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[39]
-<pcb_irl.png, id=1034, 646.66594pt x 644.4075pt>
+[40]
+<pcb_irl.png, id=1059, 646.66594pt x 644.4075pt>
 File: pcb_irl.png Graphic file (type png)
 <use pcb_irl.png>
-Package pdftex.def Info: pcb_irl.png  used on input line 1458.
+Package pdftex.def Info: pcb_irl.png  used on input line 1522.
 (pdftex.def)             Requested size: 175.26622pt x 174.65115pt.
-<pcb_irl_2.png, id=1035, 453.94594pt x 810.02625pt>
+<pcb_irl_2.png, id=1060, 453.94594pt x 810.02625pt>
 File: pcb_irl_2.png Graphic file (type png)
 <use pcb_irl_2.png>
-Package pdftex.def Info: pcb_irl_2.png  used on input line 1465.
+Package pdftex.def Info: pcb_irl_2.png  used on input line 1529.
 (pdftex.def)             Requested size: 219.08614pt x 390.9341pt.
 
 
@@ -1658,22 +1716,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[40
+[41
 
  <./pcb_irl.png> <./pcb_irl_2.png>]
 Chapitre 10.
 
-Underfull \hbox (badness 10000) in alignment at lines 1506--1506
+Underfull \hbox (badness 10000) in alignment at lines 1570--1570
 [][][] 
  []
 
 
-Overfull \hbox (22.02031pt too wide) in paragraph at lines 1513--1515
+Overfull \hbox (22.02031pt too wide) in paragraph at lines 1577--1579
 []\T1/cmr/bx/n/12 Électronique em-bar-quée \T1/cmr/m/n/12 : pro-gram-ma-tion ES
 P32, pro-to-coles One-Wire/I\TS1/cmr/m/n/12 ²\T1/cmr/m/n/12 C/ADC,
  []
 
-[41
+[42
 
 ]
 
@@ -1683,7 +1741,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[42]
+[43]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1691,34 +1749,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[43] [44
+[44] [45
 
 
 ]
-Underfull \hbox (badness 2608) in paragraph at lines 1598--1602
+Underfull \hbox (badness 2608) in paragraph at lines 1662--1666
 []\T1/cmr/m/n/12 Espressif Sys-tems, \T1/cmr/m/it/12 ESP32 Tech-ni-cal Re-fe-re
 nce Ma-nual\T1/cmr/m/n/12 , v5.2, 2023. [On-
- []
-
-[45
-
-]
-Annexe A.
-
-Overfull \hbox (0.14218pt too wide) in paragraph at lines 1647--1647
-|\T1/cmr/bx/n/24.88 Annexe A ^^V Schéma de câ-blage ESP32| 
- []
-
-
-Underfull \hbox (badness 10000) in alignment at lines 1678--1678
-[][][][] 
  []
 
 [46
 
 ]
-Annexe B.
+Annexe A.
+
+Overfull \hbox (0.14218pt too wide) in paragraph at lines 1711--1711
+|\T1/cmr/bx/n/24.88 Annexe A ^^V Schéma de câ-blage ESP32| 
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 1742--1742
+[][][][] 
+ []
+
 [47
+
+]
+Annexe B.
+[48
 
 ]
 
@@ -1728,9 +1786,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[48]
+[49]
 Annexe C.
-[49
+[50
 
 ] (main.aux)
  ***********
@@ -1743,14 +1801,14 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.17pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 944C3CCBCF3E97B06B822E9AD6C9A898;18236.
+(rerunfilecheck)             Checksum: B3E60FA5A3EEA0410CB2803BA325AAFC;18573.
  ) 
 Here is how much of TeX's memory you used:
- 35643 strings out of 467867
- 684056 string characters out of 5418334
- 1591034 words of memory out of 5000000
- 63501 multiletter control sequences out of 15000+600000
- 653664 words of font info for 98 fonts, out of 8000000 for 9000
+ 35688 strings out of 467867
+ 685026 string characters out of 5418334
+ 1591531 words of memory out of 5000000
+ 63542 multiletter control sequences out of 15000+600000
+ 654440 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,95p,1003b,2114s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
@@ -1758,35 +1816,37 @@ Here is how much of TeX's memory you used:
 0\tcbx1728.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
 /dpi600\ecbx1095.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
 pen/ec/dpi600\ecxc1095.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\arthu\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\arthu\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\arthu\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\arthu\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\
-arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\
-Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk
-> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
-728.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
-\ecbx2986.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
-dpi600\ecbx3583.pk><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmmi12.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/arthu/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/arthu/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/arthu/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/arthu/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/art
-hu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8
-a.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucr
-r8a.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/u
-crro8a.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfdi
-ng/uzdr.pfb>
-Output written on main.pdf (50 pages, 3889596 bytes).
+/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\arthu\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\arthu\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\arthu\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\arthu\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\
+arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\
+Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk
+> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1
+200.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\ecrm1440.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
+dpi600\ecrm1728.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknapp
+en/ec/dpi600\ecbx2986.pk> <C:\Users\arthu\AppData\Local\MiKTeX\fonts/pk/ljfour/
+jknappen/ec/dpi600\ecbx3583.pk><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/arthu/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/arthu/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/arthu/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/arthu
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/User
+s/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cms
+y10.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/urw/c
+ourier/ucrb8a.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/urw
+/courier/ucrr8a.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type1/u
+rw/courier/ucrro8a.pfb><C:/Users/arthu/AppData/Local/Programs/MiKTeX/fonts/type
+1/urw/zapfding/uzdr.pfb>
+Output written on main.pdf (51 pages, 4290348 bytes).
 PDF statistics:
- 1958 PDF objects out of 2073 (max. 8388607)
- 467 named destinations out of 1000 (max. 500000)
- 828 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2025 PDF objects out of 2073 (max. 8388607)
+ 470 named destinations out of 1000 (max. 500000)
+ 856 words of extra memory for PDF output out of 10000 (max. 10000000)
 

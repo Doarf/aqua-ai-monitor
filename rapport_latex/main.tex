@@ -379,7 +379,70 @@ plusieurs approches de détection sur des flux multi-capteurs et concluent que
 les méthodes d'apprentissage non supervisé détectent des dégradations progressives
 que les seuils manquent systématiquement. Cette observation motive directement
 le couplage seuils métier + Isolation Forest retenu dans aqua-ai-monitor.
+\section{Outils de développement pour systèmes IoT embarqués}
 
+Les systèmes IoT embarqués modernes s'appuient sur des environnements de
+développement spécialisés. PlatformIO~\cite{platformio}, associé à l'éditeur
+VS Code, s'est imposé comme la référence pour le développement sur
+microcontrôleurs ESP32 : il unifie la gestion des bibliothèques, la compilation
+et le flashage dans un seul outil, là où l'IDE Arduino classique montrait ses
+limites sur des projets multi-fichiers. Lin \textit{et al.}~\cite{lin2021aqua}
+utilisent également ce type d'environnement intégré pour leur système
+multi-capteurs aquacole.
+
+Côté serveur, Node.js s'est largement imposé pour les applications IoT temps
+réel grâce à son modèle événementiel non bloquant, particulièrement adapté à la
+gestion de nombreuses connexions simultanées à faible latence. La revue de
+de~Camargo \textit{et al.}~\cite{camargo2023lowcost} recense Node.js parmi les
+plateformes serveur les plus utilisées dans les architectures IoT de surveillance
+environnementale.
+
+Pour le prototypage mécanique, les imprimantes 3D de type \textbf{Bambu Lab}
+permettent la fabrication rapide de boîtiers sur mesure adaptés aux contraintes
+environnementales (humidité, câblage, fixation). Cette approche est cohérente
+avec la tendance recensée dans la littérature IoT de réduire le temps entre
+prototype logiciel et déploiement physique.
+
+Enfin, l'accès distant aux dashboards IoT sans infrastructure réseau dédiée
+est rendu possible par des outils de tunneling comme \textbf{ngrok}, qui créent
+un tunnel HTTPS sécurisé entre un serveur local et internet. Cette approche
+est particulièrement adaptée aux petites exploitations ne disposant pas
+d'adresse IP fixe ni de configuration réseau avancée.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.15\textwidth}
+    \centering
+    \includegraphics[width=1.8cm]{PlatformIO_logo.png}
+    \caption{PlatformIO}
+  \end{subfigure}
+  \hspace{0.8cm}
+  \begin{subfigure}[b]{0.15\textwidth}
+    \centering
+    \includegraphics[width=1.8cm]{vscode_logo.png}
+    \caption{VS Code}
+  \end{subfigure}
+  \hspace{0.8cm}
+  \begin{subfigure}[b]{0.22\textwidth}
+    \centering
+    \includegraphics[width=3.5cm]{nodejs_logo.png}
+    \caption{Node.js}
+  \end{subfigure}
+  \hspace{0.8cm}
+  \begin{subfigure}[b]{0.15\textwidth}
+    \centering
+    \includegraphics[width=2.5cm]{BambuLab_logo.png}
+    \caption{Bambu Lab}
+  \end{subfigure}
+  \hspace{0.8cm}
+  \begin{subfigure}[b]{0.15\textwidth}
+    \centering
+    \includegraphics[width=2.5cm]{ngrok_logo.png}
+    \caption{ngrok}
+  \end{subfigure}
+  \caption{Outils logiciels et matériels de référence pour le développement IoT embarqué}
+  \label{fig:logos_outils}
+\end{figure}
 \section{Détection d'anomalies par apprentissage automatique non supervisé}
 
 \subsection{Isolation Forest appliqué aux réseaux de capteurs IoT}
@@ -432,6 +495,7 @@ vidéo sous-marin. \textbf{aqua-ai-monitor} se positionne donc comme une intégr
 originale de composants validés séparément dans la littérature, adaptée aux
 contraintes opérationnelles et économiques des petites et moyennes exploitations
 aquacoles.
+
 
 % ============================================================
 %  CHAPITRE 3 — ARCHITECTURE GÉNÉRALE

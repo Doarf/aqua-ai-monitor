@@ -1,24 +1,25 @@
 \babel@toc {french}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Outils logiciels et matériels de référence pour le développement IoT embarqué}}{11}{figure.caption.5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Schéma de l'architecture du système aqua-ai-monitor}}{13}{figure.caption.6}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schéma de l'architecture du système aqua-ai-monitor}}{14}{figure.caption.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Brochage de l'ESP32 DEVKIT V1 — ESP-WROOM-32 (30 GPIO)}}{17}{figure.caption.9}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Brochage de l'ESP32-CAM}}{17}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Schématique électronique de la carte aqua-ai-monitor (KiCad 7)}}{20}{figure.caption.11}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Vue de routage PCB — couche F\_Cu (KiCad 7)}}{21}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Rendu 3D de la carte aqua-ai-monitor (KiCad 7)}}{21}{figure.caption.13}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces ngrok — outil de tunnel HTTPS pour l'accès distant}}{30}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Brochage de l'ESP32 DEVKIT V1 — ESP-WROOM-32 (30 GPIO)}}{18}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Brochage de l'ESP32-CAM}}{18}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Schématique électronique de la carte aqua-ai-monitor (KiCad 7)}}{21}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Vue de routage PCB — couche F\_Cu (KiCad 7)}}{22}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Rendu 3D de la carte aqua-ai-monitor (KiCad 7)}}{22}{figure.caption.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Dashboard principal — détection d'anomalie active (pH~3,40, NTU~353)}}{36}{figure.caption.20}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Onglet graphiques — 5 courbes temps réel sur fenêtre 60~points}}{37}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces ngrok — outil de tunnel HTTPS pour l'accès distant}}{31}{figure.caption.18}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Vue intérieure du boîtier — prototype sur veroboard}}{40}{figure.caption.26}%
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Vue d'ensemble du banc de test — boîtier positionné sur l'aquarium}}{40}{figure.caption.27}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Dashboard principal — détection d'anomalie active (pH~3,40, NTU~353)}}{37}{figure.caption.21}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Onglet graphiques — 5 courbes temps réel sur fenêtre 60~points}}{38}{figure.caption.23}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Vue intérieure du boîtier — prototype sur veroboard}}{41}{figure.caption.27}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Vue d'ensemble du banc de test — boîtier positionné sur l'aquarium}}{41}{figure.caption.28}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
