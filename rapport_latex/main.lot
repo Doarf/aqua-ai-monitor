@@ -3,24 +3,24 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {2.1}{\ignorespaces Positionnement d'aqua-ai-monitor par rapport aux travaux de l'état de l'art}}{11}{table.caption.5}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Tableau des choix technologiques}}{13}{table.caption.7}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tableau des choix technologiques}}{14}{table.caption.7}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Inventaire des composants matériels}}{15}{table.caption.8}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Caractéristiques de la carte PCB carte\_aqua}}{19}{table.caption.12}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Inventaire des composants matériels}}{16}{table.caption.8}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Caractéristiques de la carte PCB carte\_aqua}}{22}{table.caption.14}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Paramètres de configuration de la caméra OV2640}}{23}{table.caption.13}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Paramètres de configuration de la caméra OV2640}}{25}{table.caption.15}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Endpoints du serveur Node.js}}{24}{table.caption.14}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Endpoints du serveur Node.js}}{27}{table.caption.16}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Comparaison des algorithmes de détection d'anomalies}}{28}{table.caption.15}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Comparaison des algorithmes de détection d'anomalies}}{32}{table.caption.18}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {9.1}{\ignorespaces Résultats de validation des capteurs}}{34}{table.caption.20}%
-\contentsline {table}{\numberline {9.2}{\ignorespaces Résultats de prédiction du modèle IA sur données test}}{35}{table.caption.21}%
-\contentsline {table}{\numberline {9.3}{\ignorespaces Métriques de performance du système complet}}{35}{table.caption.22}%
+\contentsline {table}{\numberline {9.1}{\ignorespaces Résultats de validation des capteurs}}{38}{table.caption.23}%
+\contentsline {table}{\numberline {9.2}{\ignorespaces Résultats de prédiction du modèle IA sur données test}}{39}{table.caption.24}%
+\contentsline {table}{\numberline {9.3}{\ignorespaces Métriques de performance du système complet}}{39}{table.caption.25}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {10.1}{\ignorespaces Bilan des objectifs}}{37}{table.caption.25}%
+\contentsline {table}{\numberline {10.1}{\ignorespaces Bilan des objectifs}}{41}{table.caption.28}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Câblage complet ESP32 -- capteurs}}{42}{table.caption.28}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Câblage complet ESP32 -- capteurs}}{46}{table.caption.31}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

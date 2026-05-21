@@ -192,7 +192,6 @@
   \end{tabular}
 
   \vspace{1cm}
-  
   \textcolor{secondary!60}{\rule{0.6\textwidth}{0.4pt}}
 
   \vspace{0.8cm}
@@ -203,17 +202,9 @@
     DOGOTARU Arthur   & Chef de projet — GUI, IA \\[4pt]
     LEGALL Maxence    & Capteurs, traitement de données \\[4pt]
     HAMMOUDA Nouhaila & PCB, schématique électronique \\[4pt]
-\end{tabular}   % <-- fin du tableau équipe existant
+  \end{tabular}
 
-  \vspace{0.6cm}
-  \textcolor{secondary!60}{\rule{0.6\textwidth}{0.4pt}}
-
-  \vspace{0.4cm}
-  {\small\color{secondary} Code source disponible sur GitHub :}\\[4pt]
-  \href{https://github.com/Doarf/aqua_ai_monitor}{%
-    \texttt{\color{primary}https://github.com/Doarf/aqua\_ai\_monitor}}
-
-  \vfill              % <-- déjà présent
+  \vfill
   {\color{secondary}\today}
 \end{titlepage}
 
@@ -320,19 +311,22 @@ capable de :
         (Isolation Forest) pour détecter les anomalies sans nécessiter de labellisation préalable ;
   \item Présenter les résultats en temps réel sur un tableau de bord web accessible depuis
         n'importe quel navigateur sur le réseau local ;
+  \item Permettre un accès distant au tableau de bord via un tunnel sécurisé ngrok,
+        sans configuration réseau spécifique ;
   \item Capturer un flux vidéo sous-marin pour l'observation comportementale des poissons.
 \end{itemize}
 
 \section{Structure du rapport}
 
-Ce rapport est organisé en neuf chapitres. Le \textbf{chapitre~2} présente l'état de l'art
+Ce rapport est organisé en dix chapitres. Le \textbf{chapitre~2} présente l'état de l'art
 des systèmes IoT de surveillance aquacole et des méthodes de détection d'anomalies. Le
 \textbf{chapitre~3} décrit l'architecture générale du système et les choix technologiques.
 Le \textbf{chapitre~4} présente le matériel électronique et la carte PCB. Le
 \textbf{chapitre~5} détaille les firmwares ESP32. Le \textbf{chapitre~6} présente le serveur
 Node.js et l'infrastructure logicielle. Le \textbf{chapitre~7} développe le module
 d'intelligence artificielle. Le \textbf{chapitre~8} présente le tableau de bord web. Le
-\textbf{chapitre~9} conclut et ouvre sur les perspectives.
+\textbf{chapitre~9} présente les résultats et la validation du système. Le
+\textbf{chapitre~10} conclut et ouvre sur les perspectives.
 
 % ============================================================
 %  CHAPITRE 2 — ÉTAT DE L'ART
@@ -449,6 +443,20 @@ aquacoles.
 Le système aqua-ai-monitor est structuré en trois couches fonctionnelles distinctes,
 conformément au modèle IoT classique :
 
+\begin{itemize}
+  \item \textbf{Couche perception} : deux microcontrôleurs ESP32 assurent l'acquisition
+        des données physicochimiques (température, pH, turbidité, humidité) et la capture
+        vidéo sous-marine via la caméra OV2640 ;
+  \item \textbf{Couche réseau et traitement} : un serveur Node.js reçoit les données par
+        Wi-Fi en HTTP/JSON, les enregistre en CSV, et les transmet à un microservice
+        Python Flask hébergeant le modèle de détection d'anomalies Isolation Forest ;
+  \item \textbf{Couche application} : un tableau de bord web (Chart.js) présente les
+        mesures en temps réel, les alertes et le flux vidéo MJPEG, accessible localement
+        ou à distance via un tunnel ngrok.
+\end{itemize}
+
+Ces trois couches sont illustrées dans la figure~\ref{fig:sch_fonctionnement}.
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{sch_fonctionnement.png}
@@ -474,6 +482,13 @@ En parallèle, le flux vidéo emprunte :
 \code{Node.js} $\longrightarrow$ \code{GET /video (MJPEG)} $\longrightarrow$ \code{Dashboard}
 \end{center}
 
+Pour l'accès distant, un tunnel optionnel est ajouté en sortie du serveur :
+
+\begin{center}
+\small
+\code{Node.js :3000} $\longrightarrow$ \code{ngrok tunnel} $\longrightarrow$ \code{https://xxxx.ngrok-free.app} $\longrightarrow$ \code{Navigateur distant}
+\end{center}
+
 \section{Choix technologiques}
 
 \begin{table}[H]
@@ -497,6 +512,8 @@ IA & Python/Flask & Écosystème scikit-learn mature, Flask léger pour microser
 Modèle IA & Isolation Forest & Non supervisé, efficace sur peu de variables, interprétable~\cite{liu2008isolation} \\
 \addlinespace
 Dashboard & HTML/JS vanilla + Chart.js & Pas de dépendance framework, déploiement immédiat \\
+\addlinespace
+Accès distant & ngrok & Tunnel HTTPS local → internet, sans configuration réseau \\
 \addlinespace
 PCB & KiCad 7 & Open-source, export Gerber standard, bibliothèques communautaires \\
 \bottomrule
@@ -547,6 +564,46 @@ Caméra & OV2640 & MIPI CSI & Image JPEG VGA \\
 \bottomrule
 \end{tabularx}
 \end{table}
+
+\section{Microcontrôleurs}
+
+\subsection{ESP32-WROOM-32 — microcontrôleur principal}
+
+L'ESP32-WROOM-32 est le microcontrôleur central du système. Il assure l'acquisition
+de tous les paramètres physicochimiques et la transmission Wi-Fi vers le serveur
+Node.js. La figure~\ref{fig:esp32_pinout} présente son brochage complet (30 GPIO).
+Les broches utilisées dans le projet sont : GPIO~34 (ADC1\_CH6) pour le capteur
+pH, GPIO~35 (ADC1\_CH7) pour la turbidité — toutes deux en entrée analogique
+uniquement — GPIO~4 pour le bus OneWire du DS18B20, GPIO~15 pour le DHT22, et
+le bus I²C sur GPIO~21 (SDA) et GPIO~22 (SCL) pour l'écran OLED. Les broches
+GPIO~6 à GPIO~11 sont réservées à la mémoire Flash interne et ne doivent pas
+être utilisées.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{esp32_pinout.png}
+  \caption{Brochage de l'ESP32 DEVKIT V1 — ESP-WROOM-32 (30 GPIO)}
+  \label{fig:esp32_pinout}
+\end{figure}
+
+\subsection{ESP32-CAM — microcontrôleur caméra}
+
+L'ESP32-CAM est un module compact intégrant un microcontrôleur ESP32-S et un
+connecteur MIPI CSI pour la caméra OV2640. Son brochage est présenté en
+figure~\ref{fig:esp32_cam_pinout}. Les broches GPIO~12 à GPIO~15 et GPIO~2
+sont monopolisées par le bus SDIO de la caméra (\code{HS2\_DATA},
+\code{HS2\_CLK}, \code{HS2\_CMD}) et ne sont pas disponibles pour d'autres
+usages. L'alimentation est 5~V sur la broche \code{5V}, le régulateur interne
+fournissant le 3,3~V à l'ensemble du module. La broche \code{GPIO~0} contrôle
+le mode de démarrage : reliée à GND lors du flashage, elle doit être libérée
+pour l'exécution normale du firmware.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{esp32_cam_pinout.png}
+  \caption{Brochage de l'ESP32-CAM}
+  \label{fig:esp32_cam_pinout}
+\end{figure}
 
 \section{Capteur de pH — PH-4502C}
 \label{sec:ph}
@@ -819,6 +876,23 @@ void HttpSender::send(const SensorData& data,
 }
 \end{lstlisting}
 
+\section{Affichage local — écran OLED SSD1306}
+
+L'écran OLED SSD1306 (128$\times$64 pixels, I²C) assure un retour visuel local
+sans nécessiter d'ordinateur connecté. La classe \code{ScreenOLED} implémente
+un affichage rotatif en \textbf{trois pages}, chacune affichée pendant 3 secondes :
+
+\begin{enumerate}
+  \item \textbf{Page Ambiance} : température air et humidité (DHT22) ;
+  \item \textbf{Page Eau} : température eau (DS18B20) et pH (PH-4502C) ;
+  \item \textbf{Page Turbidité} : valeur NTU (Keyestudio V1.0).
+\end{enumerate}
+
+Ce cycle permet de surveiller visuellement les cinq paramètres sans interaction,
+utile lors des phases de calibration ou de débogage sur le terrain. En cas
+d'erreur de lecture du DHT22, un message \code{"DHT22 KO"} s'affiche à la place
+du cycle normal, signalant immédiatement un problème matériel.
+
 \section{Firmware ESP32-CAM}
 
 \subsection{Initialisation de la caméra OV2640}
@@ -976,6 +1050,44 @@ req.on('data', chunk => {
   }
 });
 \end{lstlisting}
+
+\section{Accès distant via ngrok}
+
+Par défaut, le serveur Node.js n'est accessible que sur le réseau local (LAN)
+de l'exploitation aquacole. Pour permettre une surveillance à distance depuis
+n'importe quel navigateur, sans configuration de routeur ni adresse IP fixe,
+l'outil \textbf{ngrok} a été utilisé. Ngrok crée un tunnel sécurisé HTTPS entre
+le port local~3000 et un sous-domaine public généré automatiquement.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=3.5cm]{ngrok_logo.png}
+  \caption{ngrok — outil de tunnel HTTPS pour l'accès distant}
+  \label{fig:ngrok_logo}
+\end{figure}
+
+Le lancement se fait en une seule commande dans un terminal séparé, sans modifier
+le code du serveur :
+
+\begin{lstlisting}[caption={Lancement du tunnel ngrok vers le serveur Node.js}]
+# Exposer le serveur local sur internet
+ngrok http 3000
+
+# ngrok fournit une URL publique de type :
+# https://xxxx-xx-xx-xxx-xx.ngrok-free.app
+\end{lstlisting}
+
+Le dashboard devient alors accessible depuis un smartphone ou un ordinateur
+distant via l'URL générée. Cette approche est particulièrement adaptée aux
+petites exploitations aquacoles qui ne disposent pas d'une infrastructure réseau
+avancée, car elle ne nécessite aucune ouverture de port sur le routeur.
+
+\begin{warningbox}[Sécurité de l'accès distant]
+L'URL ngrok est publique et accessible par quiconque la connaît. Pour un
+déploiement en production, il est recommandé d'activer une authentification
+basique : \code{ngrok http -{}-auth="user:password" 3000}, ou d'utiliser un
+tunnel ngrok authentifié avec un compte enregistré.
+\end{warningbox}
 
 % ============================================================
 %  CHAPITRE 7 — MODULE IA
@@ -1302,20 +1414,30 @@ montrent le comportement attendu :
 
 \section{Performance du système}
 
+Les métriques présentées dans le tableau~\ref{tab:perf} ont été relevées lors des
+sessions de test du prototype en conditions réelles. La latence ESP32 → dashboard
+a été estimée en observant le décalage entre l'horodatage \code{updatedAt} généré
+côté serveur et l'affichage dans le navigateur, tenant compte du cycle de polling
+de 2~s. La consommation du module a été mesurée en série avec un multimètre
+numérique sur la ligne d'alimentation 5~V en mode transmission continue. Le débit
+vidéo MJPEG a été évalué visuellement sur le flux \code{GET /video} en comptant
+les frames par seconde sur une durée de 10~secondes. Les temps d'entraînement et
+d'inférence ont été chronométrés avec \code{time.time()} côté Python Flask.
+
 \begin{table}[H]
 \centering
 \caption{Métriques de performance du système complet}
 \label{tab:perf}
 \begin{tabularx}{\textwidth}{@{}L{6cm}L{3cm}L{5cm}@{}}
 \toprule
-\textbf{Métrique} & \textbf{Valeur} & \textbf{Commentaire} \\
+\textbf{Métrique} & \textbf{Valeur} & \textbf{Méthode de mesure} \\
 \midrule
-Fréquence d'acquisition & 2~s & Paramétrable dans \code{config.h} \\
-Latence ESP32 → dashboard & < 3~s & Envoi + appel IA + polling \\
-Temps d'entraînement IA (20 pts) & < 0,5~s & Sur PC standard \\
-Temps d'inférence IA & < 50~ms & Appel HTTP local \\
-Débit vidéo MJPEG & $\approx$10~fps & Dépend du réseau Wi-Fi \\
-Consommation ESP32 (mesure) & $\approx$240~mA & En transmission continue \\
+Fréquence d'acquisition & 2~s & Définie dans \code{config.h} \\
+Latence ESP32 → dashboard & < 3~s & Horodatage \code{updatedAt} + polling \\
+Temps d'entraînement IA (20 pts) & < 0,5~s & \code{time.time()} Python \\
+Temps d'inférence IA & < 50~ms & \code{time.time()} Python \\
+Débit vidéo MJPEG & $\approx$10~fps & Comptage visuel sur 10~s \\
+Consommation ESP32 & $\approx$240~mA & Multimètre en série, ligne 5~V \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -1376,6 +1498,7 @@ Enregistrement CSV automatique & \cmark & Fonctionnel \\
 Détection d'anomalies IA & \cmark & Modèle IF opérationnel \\
 Dashboard temps réel avec graphiques & \cmark & 5 courbes + alertes \\
 Flux vidéo MJPEG & \cmark & ESP32-CAM → dashboard \\
+Accès distant ngrok & \cmark & Tunnel HTTPS opérationnel \\
 Conception PCB & \cmark & Gerbers exportés \\
 Calibration pH & \xmark & À finaliser en conditions réelles \\
 Module IA embarqué (TFLite ESP32) & \xmark & Perspective future \\
@@ -1563,6 +1686,7 @@ OLED SSD1306 & GND & GND     & \\
   \item Node.js $\geq$ 18 (\url{https://nodejs.org})
   \item Python $\geq$ 3.11 (\url{https://python.org}) — port du service IA : 5001
   \item PlatformIO (\url{https://platformio.org})
+  \item ngrok (optionnel, pour l'accès distant) (\url{https://ngrok.com})
 \end{itemize}
 
 \section{Installation}
@@ -1577,6 +1701,9 @@ python ai_service.py
 cd esp32_cam_stream
 npm install multer form-data node-fetch@2
 node server.js
+
+# Terminal 3 -- Acces distant (optionnel)
+ngrok http 3000   # -> https://xxxx.ngrok-free.app
 \end{lstlisting}
 
 \section{Flash du firmware ESP32}
