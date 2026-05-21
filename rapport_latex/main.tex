@@ -9,7 +9,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
-\usepackage{graphicx}
+
 % ── Mise en page ─────────────────────────────────────────────
 \usepackage[top=2.5cm,bottom=2.5cm,left=2.8cm,right=2.8cm]{geometry}
 \usepackage{setspace}
@@ -140,9 +140,6 @@
 % ── Liens hypertextes ────────────────────────────────────────
 \usepackage[hidelinks,colorlinks=true,linkcolor=primary,urlcolor=primary,citecolor=primary]{hyperref}
 
-% ── Bibliographie ────────────────────────────────────────────
-\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
-
 % ── Divers ───────────────────────────────────────────────────
 \usepackage{float}
 \usepackage{caption}
@@ -168,7 +165,6 @@
   \centering
   \vspace*{1cm}
 
-  % Logo / badge projet
   \begin{tikzpicture}
     \node[circle,fill=primary,minimum size=3cm] (logo) {
       \textcolor{white}{\fontsize{40}{40}\selectfont\textbf{A}}
@@ -212,7 +208,6 @@
   {\color{secondary}\today}
 \end{titlepage}
 
-
 % ── Résumé ──────────────────────────────────────────────────
 \chapter*{Résumé}
 \addcontentsline{toc}{chapter}{Résumé}
@@ -231,14 +226,13 @@ qui transmettent leurs données par Wi-Fi à un serveur central.
 
 Ce serveur, développé en Node.js, agrège les flux de données, les enregistre dans un fichier CSV,
 et les transmet à un microservice Python hébergeant un modèle \textit{Isolation Forest} entraînable
-à la volée. La détection d'anomalies repose sur une double logique : seuils métier configurable
+à la volée. La détection d'anomalies repose sur une double logique : seuils métier configurables
 et score d'anomalie statistique. Les résultats sont présentés via un tableau de bord web en temps réel,
 incluant graphiques d'évolution temporelle, alertes colorées et module d'entraînement par upload CSV.
 
 \vspace{0.5cm}
 \textbf{Mots-clés :} ESP32, IoT, aquaculture, détection d'anomalies, Isolation Forest,
 Node.js, Flask, Chart.js, KiCad, PlatformIO.
-
 
 \clearpage
 
@@ -282,9 +276,9 @@ L'équipe est composée de trois étudiants aux compétences complémentaires :
 \section{Problématique industrielle}
 
 L'aquaculture représente une part croissante de la production mondiale de protéines animales.
-Selon la FAO, elle couvre aujourd'hui plus de 50\,\% de la consommation mondiale de poissons.
-La gestion des bassins d'élevage constitue cependant un défi opérationnel majeur : les
-organismes aquatiques sont extrêmement sensibles aux variations de leur environnement.
+Selon la FAO~\cite{fao_aquaculture}, elle couvre aujourd'hui plus de 50\,\% de la consommation
+mondiale de poissons. La gestion des bassins d'élevage constitue cependant un défi opérationnel
+majeur : les organismes aquatiques sont extrêmement sensibles aux variations de leur environnement.
 
 \begin{warningbox}[Risques liés à la surveillance manuelle]
 Un écart de pH de 0,5 unité peut entraîner un stress physiologique significatif chez les
@@ -322,15 +316,122 @@ capable de :
 
 \section{Structure du rapport}
 
-Ce rapport est organisé en sept chapitres. Le \textbf{chapitre~2} présente l'architecture
-générale du système et les choix technologiques. Le \textbf{chapitre~3} décrit le matériel
-électronique et la carte PCB. Le \textbf{chapitre~4} détaille les firmwares ESP32. Le
-\textbf{chapitre~5} présente le serveur Node.js et l'infrastructure logicielle. Le
-\textbf{chapitre~6} développe le module d'intelligence artificielle. Le \textbf{chapitre~7}
-présente le tableau de bord web. Le \textbf{chapitre~8} conclut et ouvre sur les perspectives.
+Ce rapport est organisé en neuf chapitres. Le \textbf{chapitre~2} présente l'état de l'art
+des systèmes IoT de surveillance aquacole et des méthodes de détection d'anomalies. Le
+\textbf{chapitre~3} décrit l'architecture générale du système et les choix technologiques.
+Le \textbf{chapitre~4} présente le matériel électronique et la carte PCB. Le
+\textbf{chapitre~5} détaille les firmwares ESP32. Le \textbf{chapitre~6} présente le serveur
+Node.js et l'infrastructure logicielle. Le \textbf{chapitre~7} développe le module
+d'intelligence artificielle. Le \textbf{chapitre~8} présente le tableau de bord web. Le
+\textbf{chapitre~9} conclut et ouvre sur les perspectives.
 
 % ============================================================
-%  CHAPITRE 2 — ARCHITECTURE GÉNÉRALE
+%  CHAPITRE 2 — ÉTAT DE L'ART
+% ============================================================
+\chapter{État de l'art}
+\label{chap:etat_art}
+
+\section{Surveillance IoT de la qualité de l'eau en aquaculture}
+
+La surveillance continue des paramètres physicochimiques d'un bassin aquacole
+par des systèmes embarqués connectés est un axe de recherche actif depuis le milieu
+des années 2010. Les travaux récents convergent vers une architecture commune :
+des microcontrôleurs à faible consommation équipés de capteurs analogiques ou numériques,
+transmettant leurs données via Wi-Fi ou LoRaWAN vers une plateforme de visualisation
+et d'analyse.
+
+\subsection{Systèmes ESP32 multi-capteurs pour l'aquaculture}
+
+L'article de référence dans ce domaine est celui de Lin \textit{et al.}
+\cite{lin2021aqua}, qui propose un système multi-capteurs intégrant température, pH,
+oxygène dissous (DO) et conductivité électrique (EC) sur un module ESP32 Wi-Fi.
+Les données sont transmises vers la plateforme ThingSpeak et visualisées via une
+application mobile. Les auteurs rapportent une erreur absolue moyenne de
+$0{,}0331$~°C sur la température après calibration, validant la pertinence de
+l'ESP32 pour ce type d'application. Cette architecture est directement comparable
+à celle d'\textbf{aqua-ai-monitor}, avec deux différences principales : notre
+système ajoute un capteur de turbidité (NTU) et un module de détection d'anomalies
+par apprentissage automatique, absents du travail de Lin \textit{et al.}
+
+\subsection{Capteurs bas coût pour la surveillance IoT de l'eau}
+
+Une revue systématique publiée dans \textit{Sensors} par de~Camargo \textit{et al.}
+\cite{camargo2023lowcost} analyse 78~articles portant sur des capteurs bas coût
+intégrés à des systèmes IoT de surveillance de la qualité de l'eau.
+Les auteurs identifient le pH et la turbidité comme les paramètres les plus
+fréquemment mesurés mais aussi les plus sensibles aux dérives de calibration.
+Ils soulignent que les capteurs électrochimiques de pH présentent une dérive
+temporelle non négligeable et nécessitent une recalibration régulière sur deux
+points de référence — constat que corrobore notre expérience avec le module
+PH-4502C (cf.~section~\ref{sec:ph} et tableau~\ref{tab:validation}).
+Cette revue justifie notre choix d'intégrer un \code{PH\_OFFSET} ajustable dans
+\code{config.h} plutôt qu'une formule fixe.
+
+\subsection{Limites de la surveillance par seuils fixes}
+
+Les travaux de El-Shafeiy \textit{et al.} \cite{elshafeiy2023anomaly} montrent
+que la simple vérification de seuils fixes est insuffisante pour détecter les
+anomalies dans des séries temporelles de capteurs eau : les auteurs testent
+plusieurs approches de détection sur des flux multi-capteurs et concluent que
+les méthodes d'apprentissage non supervisé détectent des dégradations progressives
+que les seuils manquent systématiquement. Cette observation motive directement
+le couplage seuils métier + Isolation Forest retenu dans aqua-ai-monitor.
+
+\section{Détection d'anomalies par apprentissage automatique non supervisé}
+
+\subsection{Isolation Forest appliqué aux réseaux de capteurs IoT}
+
+La détection d'anomalies dans les flux de capteurs IoT par Isolation Forest a été
+étudiée dans plusieurs contextes récents. Zhuang \textit{et al.}
+\cite{zhuang2023bsiforest} proposent BS-iForest, une variante améliorée de
+l'algorithme original de Liu \textit{et al.} \cite{liu2008isolation}, appliquée
+aux réseaux de capteurs sans fil. Les auteurs identifient deux limites de
+l'Isolation Forest classique : une forte composante aléatoire entre deux
+entraînements successifs sur le même jeu de données, et des performances dégradées
+sur les données de faible densité. Pour notre application, la faible dimensionnalité
+du problème (2~variables : pH et NTU) atténue ce second problème, et la graine
+aléatoire fixée (\code{random\_state=42}) assure la reproductibilité de
+l'entraînement.
+
+\subsection{Comparaison avec les approches alternatives}
+
+Les autoencodeurs (deep learning) sont régulièrement proposés dans la littérature
+\cite{elshafeiy2023anomaly} mais leurs exigences en données d'entraînement
+(plusieurs milliers de points) et en ressources de calcul les rendent inadaptés
+à un déploiement sur PC local avec une phase de démarrage de quelques dizaines de
+minutes. L'Isolation Forest, de complexité linéaire en $O(n \log n)$, peut
+s'entraîner en moins d'une seconde sur 100~points, ce qui correspond exactement
+à la contrainte opérationnelle du projet. Une comparaison détaillée des algorithmes
+est présentée au tableau~\ref{tab:algos} du chapitre~\ref{chap:ia}.
+
+\section{Positionnement du projet aqua-ai-monitor}
+
+\begin{table}[H]
+\centering
+\caption{Positionnement d'aqua-ai-monitor par rapport aux travaux de l'état de l'art}
+\label{tab:etat_art}
+\begin{tabularx}{\textwidth}{@{}L{4cm}C{2cm}C{2cm}C{2.5cm}C{2.5cm}@{}}
+\toprule
+\textbf{Système} & \textbf{ESP32} & \textbf{Turbidité} & \textbf{Détection IA} & \textbf{Flux vidéo} \\
+\midrule
+Lin \textit{et al.}~\cite{lin2021aqua}               & \cmark & \xmark & \xmark        & \xmark \\
+El-Shafeiy \textit{et al.}~\cite{elshafeiy2023anomaly} & \xmark & \cmark & \cmark (deep) & \xmark \\
+Zhuang \textit{et al.}~\cite{zhuang2023bsiforest}    & \xmark & \xmark & \cmark (IF)   & \xmark \\
+\textbf{aqua-ai-monitor}                             & \cmark & \cmark & \cmark (IF)   & \cmark \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Le tableau~\ref{tab:etat_art} montre qu'aucun des travaux identifiés ne combine
+simultanément une acquisition multi-capteurs sur ESP32, la mesure de turbidité,
+la détection d'anomalies par Isolation Forest entraînable à la volée, et un flux
+vidéo sous-marin. \textbf{aqua-ai-monitor} se positionne donc comme une intégration
+originale de composants validés séparément dans la littérature, adaptée aux
+contraintes opérationnelles et économiques des petites et moyennes exploitations
+aquacoles.
+
+% ============================================================
+%  CHAPITRE 3 — ARCHITECTURE GÉNÉRALE
 % ============================================================
 \chapter{Architecture générale du système}
 
@@ -338,15 +439,13 @@ présente le tableau de bord web. Le \textbf{chapitre~8} conclut et ouvre sur le
 
 Le système aqua-ai-monitor est structuré en trois couches fonctionnelles distinctes,
 conformément au modèle IoT classique :
-% À mettre dans le préambule (avant \begin{document})
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{sch_fonctionnement.png}
-    \caption{Schéma de l'architecture du banc de test}
+    \caption{Schéma de l'architecture du système aqua-ai-monitor}
     \label{fig:sch_fonctionnement}
 \end{figure}
-
 
 \section{Flux de données}
 
@@ -376,7 +475,7 @@ En parallèle, le flux vidéo emprunte :
 \toprule
 \textbf{Composant} & \textbf{Technologie} & \textbf{Justification} \\
 \midrule
-Microcontrôleur & ESP32-WROOM-32 & Wi-Fi intégré, ADC 12 bits, bibliothèques Arduino riches, faible coût \\
+Microcontrôleur & ESP32-WROOM-32 & Wi-Fi intégré, ADC 12 bits, bibliothèques Arduino riches, faible coût~\cite{lin2021aqua} \\
 \addlinespace
 Firmware & C++/PlatformIO & Abstraction Arduino, gestion de projets multi-fichiers, OTA possible \\
 \addlinespace
@@ -386,7 +485,7 @@ Serveur & Node.js/Express & Asynchrone natif, adapté aux flux temps réel, npm 
 \addlinespace
 IA & Python/Flask & Écosystème scikit-learn mature, Flask léger pour microservice \\
 \addlinespace
-Modèle IA & Isolation Forest & Non supervisé, efficace sur peu de variables, interprétable \\
+Modèle IA & Isolation Forest & Non supervisé, efficace sur peu de variables, interprétable~\cite{liu2008isolation} \\
 \addlinespace
 Dashboard & HTML/JS vanilla + Chart.js & Pas de dépendance framework, déploiement immédiat \\
 \addlinespace
@@ -414,7 +513,7 @@ L'ESP32-CAM envoie quant à lui un flux HTTP chunked en \code{Transfer-Encoding:
 dans lequel chaque chunk correspond à une frame JPEG capturée par l'OV2640.
 
 % ============================================================
-%  CHAPITRE 3 — MATÉRIEL ET PCB
+%  CHAPITRE 4 — MATÉRIEL ET PCB
 % ============================================================
 \chapter{Matériel électronique et conception PCB}
 
@@ -441,11 +540,12 @@ Caméra & OV2640 & MIPI CSI & Image JPEG VGA \\
 \end{table}
 
 \section{Capteur de pH — PH-4502C}
+\label{sec:ph}
 
 \subsection{Principe de fonctionnement}
 
 Le capteur PH-4502C est basé sur une électrode de verre combinée. La différence de potentiel
-développée par l'électrode suit l'équation de Nernst :
+développée par l'électrode suit l'équation de Nernst~\cite{ph4502c} :
 
 \begin{equation}
 E = E_0 + \frac{RT}{nF} \ln[\text{H}^+] = E_0 - \frac{RT}{F} \cdot \text{pH}
@@ -458,10 +558,12 @@ où $R = 8{,}314$~J/(mol·K), $T$ la température en Kelvin, $F = 96485$~C/mol e
 
 L'ESP32 lit la tension en sortie du module via son ADC 12 bits (résolution 4095 niveaux,
 plage 0--3{,}3~V après atténuation \code{ADC\_11db}). La conversion tension → pH est réalisée
-par une droite affine étalonnée sur deux points de référence :
+par une droite affine étalonnée sur deux points de référence. Conformément aux
+recommandations de de~Camargo \textit{et al.}~\cite{camargo2023lowcost}, un offset
+ajustable est prévu pour la recalibration terrain :
 
 \begin{equation}
-\text{pH} = 9{,}18 + \frac{0{,}781 - V}{0{,}122} + \text{offset}
+\text{pH} = 9{,}18 + (0{,}781 - V) \times 8{,}5 + \text{offset}
 \label{eq:ph_conv}
 \end{equation}
 
@@ -504,15 +606,15 @@ proche de 0~V.
 \begin{warningbox}[Limite du modèle linéaire]
 La relation linéaire proposée est une approximation. Pour des mesures précises
 au-delà de 500~NTU, une calibration multi-points avec des solutions étalons
-certifiées (normes ISO~7027) est recommandée.
+certifiées (normes ISO~7027) est recommandée~\cite{camargo2023lowcost}.
 \end{warningbox}
 
 \section{Capteur DS18B20}
 
 Le DS18B20 est un capteur de température numérique à protocole OneWire, étanche, utilisé
 pour la mesure de température de l'eau. Sa résolution est configurable de 9 à 12 bits
-(±0,5°C à ±0,0625°C). La bibliothèque \code{DallasTemperature} gère l'intégralité du
-protocole OneWire, permettant un code applicatif simple :
+(±0,5°C à ±0,0625°C)~\cite{ds18b20}. La bibliothèque \code{DallasTemperature} gère
+l'intégralité du protocole OneWire, permettant un code applicatif simple :
 
 \begin{lstlisting}[language=C++,caption={Lecture DS18B20 -- ds18b20\_sensor.cpp}]
 float DS18B20Sensor::read() {
@@ -538,7 +640,7 @@ sur breadboard pour un déploiement fiable en environnement humide.
 \subsection{Schématique électronique}
 
 La figure~\ref{fig:sch_pcb} présente le schéma électronique complet de la carte
-\textit{carte\_aqua}, réalisé sous KiCad~7. On y retrouve les six connecteurs
+\textit{carte\_aqua}, réalisé sous KiCad~7~\cite{kicad}. On y retrouve les six connecteurs
 (J1~à~J6) reliés aux capteurs DS18B20, DHT22, pH, turbidité, écran OLED et
 alimentation Jack-DC, ainsi que la résistance de pull-up R1 sur la ligne OneWire
 du DS18B20, et le microcontrôleur central U1 (DEVKIT\_V1\_ESP32-WROOM-32).
@@ -580,6 +682,7 @@ d'alimentation Jack-DC (J6) en haut à droite.
   \caption{Rendu 3D de la carte aqua-ai-monitor (KiCad 7)}
   \label{fig:3d_pcb}
 \end{figure}
+
 \subsection{Caractéristiques techniques}
 
 \begin{table}[H]
@@ -608,15 +711,16 @@ standard (JLCPCB, PCBWay, etc.). Les couches exportées comprennent :
 \code{B\_Silkscreen} et \code{Edge\_Cuts}.
 
 % ============================================================
-%  CHAPITRE 4 — FIRMWARE ESP32
+%  CHAPITRE 5 — FIRMWARE ESP32
 % ============================================================
 \chapter{Firmware ESP32}
 
 \section{Organisation du projet PlatformIO}
 
-Le firmware est développé avec PlatformIO sous VS Code, ciblant la plateforme
-\code{espressif32} avec le framework Arduino. L'organisation suit le modèle orienté
-objet, avec une classe dédiée par capteur ou sous-système :
+Le firmware est développé avec PlatformIO~\cite{platformio} sous VS Code, ciblant la
+plateforme \code{espressif32} avec le framework Arduino~\cite{espressif_esp32}.
+L'organisation suit le modèle orienté objet, avec une classe dédiée par capteur ou
+sous-système :
 
 \begin{lstlisting}[caption={Structure du firmware esp32\_aqua}]
 esp32_aqua/
@@ -641,9 +745,9 @@ l'utilisation de tâches FreeRTOS tout en maintenant une réactivité suffisante
 
 \begin{lstlisting}[language=C++,caption={Boucle principale non-bloquante -- main.cpp}]
 void loop() {
-  if (dhtSensor.isReady())       lastData    = dhtSensor.read();
-  if (phSensor.isReady())        lastPh      = phSensor.read();
-  if (turbSensor.isReady())      lastNtu     = turbSensor.read();
+  if (dhtSensor.isReady())       lastData      = dhtSensor.read();
+  if (phSensor.isReady())        lastPh        = phSensor.read();
+  if (turbSensor.isReady())      lastNtu       = turbSensor.read();
   if (waterTempSensor.isReady()) lastWaterTemp = waterTempSensor.read();
 
   if (lastData.valid) {
@@ -677,7 +781,7 @@ broches GPIO, intervalles de lecture) sont regroupées dans \code{config.h} :
 Les identifiants Wi-Fi sont actuellement stockés en clair dans \code{config.h}.
 Pour un déploiement en production, il est recommandé d'utiliser le mécanisme
 de provisionnement Wi-Fi d'Espressif (SmartConfig ou BLE provisioning) ou de
-stocker les credentials dans la partition NVS de l'ESP32.
+stocker les credentials dans la partition NVS de l'ESP32~\cite{espressif_esp32}.
 \end{warningbox}
 
 \section{Envoi HTTP}
@@ -745,15 +849,15 @@ bool Streamer::send(camera_fb_t* fb) {
 \end{lstlisting}
 
 % ============================================================
-%  CHAPITRE 5 — SERVEUR NODE.JS
+%  CHAPITRE 6 — SERVEUR NODE.JS
 % ============================================================
 \chapter{Serveur Node.js}
 
 \section{Architecture du serveur}
 
 Le serveur Node.js joue un rôle central d'agrégateur et de proxy. Il est développé
-avec le framework \textbf{Express.js} et expose plusieurs endpoints HTTP sur le
-port~3000 :
+avec le framework \textbf{Express.js}~\cite{nodejs_express} et expose plusieurs
+endpoints HTTP sur le port~3000 :
 
 \begin{table}[H]
 \centering
@@ -763,15 +867,15 @@ port~3000 :
 \toprule
 \textbf{Méthode} & \textbf{Route} & \textbf{Description} \\
 \midrule
-\code{POST} & \code{/data}    & Réception des données JSON de l'ESP32, appel IA, écriture CSV \\
-\code{GET}  & \code{/data}    & Lecture des dernières données pour le dashboard \\
-\code{GET}  & \code{/ai}      & Lecture du dernier résultat d'analyse IA \\
+\code{POST} & \code{/data}      & Réception des données JSON de l'ESP32, appel IA, écriture CSV \\
+\code{GET}  & \code{/data}      & Lecture des dernières données pour le dashboard \\
+\code{GET}  & \code{/ai}        & Lecture du dernier résultat d'analyse IA \\
 \code{GET}  & \code{/ai/status} & Statut du modèle (entraîné/non entraîné, métriques) \\
-\code{POST} & \code{/train}   & Upload CSV multipart → transfert au microservice Flask \\
-\code{GET}  & \code{/csv}     & Téléchargement du fichier de données enregistré \\
-\code{POST} & \code{/stream}  & Réception du flux vidéo chunked de l'ESP32-CAM \\
-\code{GET}  & \code{/video}   & Diffusion MJPEG aux clients (Server-Sent Events) \\
-\code{GET}  & \code{/}        & Service du dashboard HTML statique \\
+\code{POST} & \code{/train}     & Upload CSV multipart → transfert au microservice Flask \\
+\code{GET}  & \code{/csv}       & Téléchargement du fichier de données enregistré \\
+\code{POST} & \code{/stream}    & Réception du flux vidéo chunked de l'ESP32-CAM \\
+\code{GET}  & \code{/video}     & Diffusion MJPEG aux clients (Server-Sent Events) \\
+\code{GET}  & \code{/}          & Service du dashboard HTML statique \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -865,9 +969,10 @@ req.on('data', chunk => {
 \end{lstlisting}
 
 % ============================================================
-%  CHAPITRE 6 — MODULE IA
+%  CHAPITRE 7 — MODULE IA
 % ============================================================
 \chapter{Module d'intelligence artificielle}
+\label{chap:ia}
 
 \section{Problématique de la détection d'anomalies}
 
@@ -891,11 +996,13 @@ contraintes spécifiques :
 
 \subsection{Principe}
 
-L'Isolation Forest \cite{liu2008isolation} est un algorithme de détection d'anomalies
+L'Isolation Forest~\cite{liu2008isolation} est un algorithme de détection d'anomalies
 non supervisé basé sur des arbres de décision aléatoires. Son principe repose sur
 l'observation suivante : les anomalies sont des points \textit{rares} et
 \textit{différents}, donc plus facilement \textit{isolables} par des coupures aléatoires
-de l'espace des features.
+de l'espace des features. Comme démontré par Zhuang \textit{et al.}~\cite{zhuang2023bsiforest},
+cet algorithme présente une complexité linéaire particulièrement adaptée aux contraintes
+des systèmes IoT embarqués.
 
 Pour chaque point $x$, l'algorithme construit un ensemble d'arbres binaires (forêt)
 en séparant récursivement les données par des hyperplans aléatoires. Le score
@@ -922,8 +1029,8 @@ indique un point normal.
 \textbf{Algorithme} & \textbf{Supervisé} & \textbf{Faible dim.} & \textbf{Rapide} & \textbf{Interpréta\-ble} & \textbf{Retenu} \\
 \midrule
 Seuils fixes & Non & \cmark & \cmark & \cmark & Complémen\-taire \\
-Isolation Forest & Non & \cmark & \cmark & \cmark & \cmark \\
-Autoencoder & Non & \xmark & \xmark & \xmark & \xmark \\
+Isolation Forest~\cite{liu2008isolation} & Non & \cmark & \cmark & \cmark & \cmark \\
+Autoencoder~\cite{elshafeiy2023anomaly} & Non & \xmark & \xmark & \xmark & \xmark \\
 One-Class SVM & Non & \cmark & \xmark & \xmark & \xmark \\
 LOF & Non & \cmark & \xmark & \cmark & \xmark \\
 \bottomrule
@@ -948,7 +1055,6 @@ from sklearn.preprocessing import StandardScaler
 
 # 1. Chargement et validation du CSV
 df = pd.read_csv(io.StringIO(file.read().decode("utf-8")))
-# Detection flexible des colonnes ph et ntu
 
 # 2. Nettoyage
 df = df[["ph", "ntu"]].dropna()
@@ -1008,7 +1114,7 @@ def predict():
 
 \section{Persistance du modèle}
 
-Le modèle et le scaler sont sérialisés via \code{joblib} dans les fichiers
+Le modèle et le scaler sont sérialisés via \code{joblib}~\cite{sklearn} dans les fichiers
 \code{model\_aqua.pkl} et \code{scaler\_aqua.pkl}. Au démarrage du service,
 ces fichiers sont rechargés automatiquement s'ils existent, ce qui permet de
 conserver le modèle entraîné entre les redémarrages.
@@ -1026,7 +1132,7 @@ conserver le modèle entraîné entre les redémarrages.
 \end{enumerate}
 
 % ============================================================
-%  CHAPITRE 7 — DASHBOARD WEB
+%  CHAPITRE 8 — DASHBOARD WEB
 % ============================================================
 \chapter{Tableau de bord web}
 
@@ -1034,8 +1140,8 @@ conserver le modèle entraîné entre les redémarrages.
 
 Le dashboard est développé en HTML/CSS/JavaScript vanilla, sans framework, afin
 de minimiser les dépendances et permettre un déploiement immédiat depuis le serveur
-Node.js. La seule dépendance externe est \textbf{Chart.js} (v4.4.1), chargée depuis
-un CDN.
+Node.js. La seule dépendance externe est \textbf{Chart.js}~\cite{chartjs} (v4.4.1),
+chargée depuis un CDN.
 
 \section{Organisation en onglets}
 
@@ -1062,6 +1168,7 @@ pH, turbidité, température eau, température air et humidité. Un sélecteur p
 de choisir la fenêtre d'affichage (30, 60, 120 ou 300 points). Les données sont
 stockées en mémoire dans des buffers côté client (\code{history}) et mises à jour
 toutes les 2 secondes.
+
 \subsection{Captures d'écran du dashboard}
 
 \subsubsection{Onglet Dashboard — vue principale}
@@ -1113,7 +1220,8 @@ setInterval(fetchAI,   2000);  // GET /ai   -> score anomalie
 Le système d'alertes combine deux sources :
 \begin{enumerate}
   \item \textbf{Seuils côté client} : vérification JavaScript des valeurs reçues
-        contre des seuils fixes (pH 6.5--8.5, NTU 0--1000, températures) ;
+        contre des seuils fixes (pH 6,0--9,0, NTU 0--200, températures) — alignés sur
+        les seuils métier du microservice Python ;
   \item \textbf{Résultat IA} : le flag \code{anomalie} retourné par le microservice
         Python déclenche une alerte rouge avec la raison fournie.
 \end{enumerate}
@@ -1126,7 +1234,7 @@ via \code{FormData} en \code{POST /train} et le résultat est affiché en temps 
 (nombre de points d'entraînement, pH et NTU moyens).
 
 % ============================================================
-%  CHAPITRE 8 — RÉSULTATS ET VALIDATION
+%  CHAPITRE 9 — RÉSULTATS ET VALIDATION
 % ============================================================
 \chapter{Résultats et validation}
 
@@ -1153,9 +1261,10 @@ Turbidité & Eau claire & 541~NTU & -- & Capteur hors de l'eau \\
 \end{table}
 
 \begin{warningbox}[Calibration du capteur pH]
-Les valeurs de pH mesurées (~3.5) indiquent que le capteur n'a pas encore été
-calibré avec les solutions tampon appropriées. L'offset \code{PH\_OFFSET} dans
-\code{config.h} doit être ajusté après calibration à pH~4.0 et pH~7.0.
+Les valeurs de pH mesurées ($\approx$3,5) indiquent que le capteur n'a pas encore été
+calibré avec les solutions tampon appropriées. Conformément aux recommandations de
+de~Camargo \textit{et al.}~\cite{camargo2023lowcost}, l'offset \code{PH\_OFFSET} dans
+\code{config.h} doit être ajusté après calibration à pH~4,0 et pH~7,0.
 \end{warningbox}
 
 \section{Tests du modèle IA}
@@ -1196,11 +1305,12 @@ Fréquence d'acquisition & 2~s & Paramétrable dans \code{config.h} \\
 Latence ESP32 → dashboard & < 3~s & Envoi + appel IA + polling \\
 Temps d'entraînement IA (20 pts) & < 0,5~s & Sur PC standard \\
 Temps d'inférence IA & < 50~ms & Appel HTTP local \\
-Débit vidéo MJPEG & ~10~fps & Dépend du réseau Wi-Fi \\
-Consommation ESP32 (mesure) & ~240~mA & En transmission continue \\
+Débit vidéo MJPEG & $\approx$10~fps & Dépend du réseau Wi-Fi \\
+Consommation ESP32 (mesure) & $\approx$240~mA & En transmission continue \\
 \bottomrule
 \end{tabularx}
 \end{table}
+
 \clearpage
 
 \subsection{Réalisation physique du prototype}
@@ -1225,8 +1335,9 @@ jaune/orange~: signal).
   \caption{Vue d'ensemble du banc de test — boîtier positionné sur l'aquarium}
   \label{fig:pcb_irl_2}
 \end{figure}
+
 % ============================================================
-%  CHAPITRE 9 — CONCLUSION ET PERSPECTIVES
+%  CHAPITRE 10 — CONCLUSION ET PERSPECTIVES
 % ============================================================
 \chapter{Conclusion et perspectives}
 
@@ -1235,6 +1346,10 @@ jaune/orange~: signal).
 Le projet aqua-ai-monitor a permis de concevoir et d'implémenter une plateforme
 de surveillance aquacole complète, intégrant les technologies IoT, le développement
 firmware embarqué, l'ingénierie logicielle côté serveur et l'intelligence artificielle.
+Ce travail s'inscrit dans la continuité des approches IoT recensées dans l'état de
+l'art~\cite{lin2021aqua,camargo2023lowcost}, en y ajoutant une couche de détection
+d'anomalies non supervisée~\cite{liu2008isolation,zhuang2023bsiforest} opérationnelle
+dès les premières minutes d'utilisation.
 
 Les objectifs initiaux ont été partiellement atteints :
 
@@ -1280,7 +1395,7 @@ Ce projet a permis de mobiliser et développer des compétences dans plusieurs d
 \begin{itemize}
   \item \textbf{Calibration des capteurs} : acquisition de solutions tampon pH certifiées
         et calibration 2-points du capteur PH-4502C ; étalonnage NTU avec solutions Formazine ;
-  \item \textbf{Sécurité} : externalization des credentials Wi-Fi (NVS ESP32, SmartConfig) ;
+  \item \textbf{Sécurité} : externalisation des credentials Wi-Fi (NVS ESP32, SmartConfig) ;
   \item \textbf{Persistance IA} : amélioration du modèle avec accumulation progressive de
         données réelles du bassin cible.
 \end{itemize}
@@ -1321,7 +1436,31 @@ Ce projet a permis de mobiliser et développer des compétences dans plusieurs d
 \bibitem{liu2008isolation}
 F.~T. Liu, K.~M. Ting, Z.-H. Zhou,
 \textit{Isolation Forest},
-in \textit{Proc. IEEE ICDM}, pp. 413--422, 2008.
+in \textit{Proc. IEEE ICDM}, pp.~413--422, 2008.
+
+\bibitem{lin2021aqua}
+J.-Y.~Lin, H.-L.~Tsai, W.-H.~Lyu,
+\textit{An Integrated Wireless Multi-Sensor System for Monitoring the Water Quality of Aquaculture},
+\textit{Sensors}, vol.~21, no.~24, p.~8179, Dec.~2021.
+DOI: \href{https://doi.org/10.3390/s21248179}{10.3390/s21248179}
+
+\bibitem{camargo2023lowcost}
+E.~T. de~Camargo \textit{et al.},
+\textit{Low-Cost Water Quality Sensors for IoT: A Systematic Review},
+\textit{Sensors}, vol.~23, no.~9, p.~4424, Apr.~2023.
+DOI: \href{https://doi.org/10.3390/s23094424}{10.3390/s23094424}
+
+\bibitem{elshafeiy2023anomaly}
+E.~El-Shafeiy, M.~Alsabaan, M.~I.~Ibrahem, H.~Elwahsh,
+\textit{Real-Time Anomaly Detection for Water Quality Sensor Monitoring Based on Multivariate Deep Learning Technique},
+\textit{Sensors}, vol.~23, no.~20, p.~8613, Oct.~2023.
+DOI: \href{https://doi.org/10.3390/s23208613}{10.3390/s23208613}
+
+\bibitem{zhuang2023bsiforest}
+W.~Zhuang \textit{et al.},
+\textit{An Anomaly Detection Method for Wireless Sensor Networks Based on the Improved Isolation Forest},
+\textit{Applied Sciences}, vol.~13, no.~2, p.~702, Jan.~2023.
+DOI: \href{https://doi.org/10.3390/app13020702}{10.3390/app13020702}
 
 \bibitem{espressif_esp32}
 Espressif Systems,
@@ -1335,9 +1474,9 @@ PlatformIO,
 [Online]. Available: \url{https://platformio.org}
 
 \bibitem{sklearn}
-F. Pedregosa \textit{et al.},
+F.~Pedregosa \textit{et al.},
 \textit{Scikit-learn: Machine Learning in Python},
-\textit{JMLR}, vol. 12, pp. 2825--2830, 2011.
+\textit{JMLR}, vol.~12, pp.~2825--2830, 2011.
 
 \bibitem{kicad}
 KiCad EDA,
@@ -1413,19 +1552,19 @@ OLED SSD1306 & GND & GND     & \\
 
 \begin{itemize}
   \item Node.js $\geq$ 18 (\url{https://nodejs.org})
-  \item Python $\geq$ 3.11 (\url{https://python.org})
+  \item Python $\geq$ 3.11 (\url{https://python.org}) — port du service IA : 5001
   \item PlatformIO (\url{https://platformio.org})
 \end{itemize}
 
 \section{Installation}
 
 \begin{lstlisting}[caption={Installation et démarrage du serveur}]
-# Terminal 1 -- Service IA Python
+# Terminal 1 -- Service IA Python (port 5001)
 cd esp32_cam_stream
 python -m pip install flask flask-cors scikit-learn pandas numpy joblib
 python ai_service.py
 
-# Terminal 2 -- Serveur Node.js
+# Terminal 2 -- Serveur Node.js (port 3000)
 cd esp32_cam_stream
 npm install multer form-data node-fetch@2
 node server.js
