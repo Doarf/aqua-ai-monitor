@@ -1,7 +1,6 @@
 #pragma once
 
-#define WIFI_SSID     "Arthur"
-#define WIFI_PASSWORD "mister95570"
+#include "config_secret.h"
 
 #define SERVER_HOST   "192.168.1.73"
 #define SERVER_PORT   3000

@@ -152,7 +152,7 @@
 
         <div class="left-panel">
           <div class="cam-box">
-            <img src="/video" alt="Caméra">
+            <img id="cam-img" src="/video" alt="Caméra">
             <div class="cam-label">
               <span>OV2640 · VGA</span>
               <div class="cam-live"><div class="cam-live-dot"></div>LIVE</div>
@@ -497,6 +497,15 @@
         }else{fb.textContent=`✗ ${d.error}`;fb.className='train-feedback error';}
       }catch(e){fb.textContent=`✗ ${e.message}`;fb.className='train-feedback error';}
     }
+
+    // ── Watchdog vidéo ────────────────────────────────────────────────────────
+    const camImg = document.getElementById('cam-img');
+    let camRetryTimer = null;
+    function retryCam() { camImg.src = '/video?' + Date.now(); }
+    camImg.onerror = () => {
+      if (camRetryTimer) clearTimeout(camRetryTimer);
+      camRetryTimer = setTimeout(retryCam, 3000);
+    };
 
     // ── Polling ───────────────────────────────────────────────────────────────
     fetchData(); fetchAI(); fetchModelStatus();

@@ -1,11 +1,7 @@
 #pragma once
 
-// ── WiFi ─────────────────────────────────
-#define WIFI_SSID     "Arthur"
-#define WIFI_PASSWORD "mister95570"
+#include "config_secret.h"
 
-// ── Serveur ───────────────────────────────
-#define SERVER_URL "http://192.168.1.73:3000/data"
 // ── DHT22 ────────────────────────────────
 #define DHTPIN     15
 #define DHTTYPE    DHT22
