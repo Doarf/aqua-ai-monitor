@@ -7,10 +7,17 @@
 **Automated monitoring system for aquaculture basins**  
 *IoT · Isolation Forest AI · MJPEG Video · Node.js · Flask · Chart.js*
 
-[![Status](https://img.shields.io/badge/status-operational-brightgreen?style=flat-square)](.)
-[![Platform](https://img.shields.io/badge/platform-ESP32%20%2B%20PC-blue?style=flat-square)](.)
-[![Lang](https://img.shields.io/badge/language-Python%20%7C%20C%2B%2B%20%7C%20JavaScript-informational?style=flat-square)](.)
-[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](.)
+![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-orange?logo=scikitlearn&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-1.x-013243?logo=numpy&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-2.x-150458?logo=pandas&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-3.x-black?logo=flask&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-4.x-black?logo=express&logoColor=white)
+![C++](https://img.shields.io/badge/C++-PlatformIO-00979D?logo=cplusplus&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-4.x-FF6384?logo=chartdotjs&logoColor=white)
+![LaTeX](https://img.shields.io/badge/LaTeX-PDF-green?logo=latex&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
 </div>
 
