@@ -2,9 +2,9 @@
 
 <div align="center">
 
-<img src="docs/banner.svg" alt="aqua-ai-monitor banner" width="800"/>
+<img src="docs/banner.svg" alt="aqua-ai-monitor banner" width="600"/>
 
-**Plateforme de monitoring temps réel pour bassins d'aquaculture**
+**Real-time monitoring platform for aquaculture basins**
 
 [![Status](https://img.shields.io/badge/status-operational-brightgreen?style=flat-square)](.)
 [![Platform](https://img.shields.io/badge/platform-ESP32%20%2B%20PC-blue?style=flat-square)](.)
