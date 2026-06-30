@@ -2,13 +2,14 @@
 
 <div align="center">
 
-**Automated real-time monitoring platform for aquaculture basins**  
-*IoT · Isolation Forest AI · MJPEG Video · Node.js · Flask · Chart.js*
+<img src="docs/banner.svg" alt="aqua-ai-monitor banner" width="800"/>
 
-![Status](https://img.shields.io/badge/status-operational-brightgreen?style=flat-square)
-![Platform](https://img.shields.io/badge/platform-ESP32%20%2B%20PC-blue?style=flat-square)
-![Lang](https://img.shields.io/badge/language-Python%20%7C%20C%2B%2B%20%7C%20JavaScript-informational?style=flat-square)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+**Plateforme de monitoring temps réel pour bassins d'aquaculture**
+
+[![Status](https://img.shields.io/badge/status-operational-brightgreen?style=flat-square)](.)
+[![Platform](https://img.shields.io/badge/platform-ESP32%20%2B%20PC-blue?style=flat-square)](.)
+[![Lang](https://img.shields.io/badge/language-Python%20%7C%20C%2B%2B%20%7C%20JavaScript-informational?style=flat-square)](.)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](.)
 
 </div>
 
@@ -16,7 +17,7 @@
 
 ## About the project
 
-**aqua-ai-monitor** is a fully autonomous embedded platform for real-time aquaculture basin monitoring. It combines physicochemical sensor acquisition, live underwater video streaming, automatic CSV logging, and an on-the-fly trainable **Isolation Forest** anomaly detection model — all accessible from a web dashboard, including remote access via ngrok.
+**aqua-ai-monitor** is a fully autonomous embedded platform for real-time aquaculture basin monitoring. It combines physicochemical sensor acquisition, live underwater video streaming, automatic CSV logging, and an on-the-fly trainable **Isolation Forest** anomaly detection model — all accessible from a web dashboard, with optional remote access via ngrok.
 
 ### The problem
 
@@ -47,9 +48,9 @@ Physical sensors          OV2640 camera
       └──── Wi-Fi HTTP ─────────┘
                   │
                   ▼
-        PC — Node.js (:3000) ◄──► Flask IA (:5001)
-                  │                  │
-                  │ ◄── /predict ─────┘
+        PC — Node.js (:3000) ◄──► Flask AI (:5001)
+                  │                    │
+                  │ ◄── /predict ───────┘
                   │
             data_aqua.csv  (auto-logged)
                   │
@@ -95,7 +96,7 @@ The AI module uses an **Isolation Forest** model, trained on normal basin data c
 
 - **Unsupervised** — no labelled data required
 - **Inputs** — pH and turbidity (NTU)
-- **Double logic** — business rules thresholds + statistical IF score
+- **Double logic** — business rule thresholds + statistical IF score
 - **Score** — normalized 0 (normal) → 1 (highly anomalous)
 - **Trainable on the fly** — upload a CSV from the dashboard, click *Train*
 
@@ -119,25 +120,35 @@ model = IsolationForest(n_estimators=200, contamination=0.05, random_state=42)
 ```bash
 # Terminal 1 — Python AI microservice
 cd esp32_cam_stream
-python -m pip install flask flask-cors scikit-learn pandas numpy joblib
+pip install flask flask-cors scikit-learn pandas numpy joblib
 python ai_service.py          # → http://localhost:5001
 
 # Terminal 2 — Node.js server
 cd esp32_cam_stream
-npm install multer form-data node-fetch@2
+npm install
 node server.js                # → http://localhost:3000
 
 # Terminal 3 — Remote access (optional)
-ngrok http 3000               # → https://xxxxxxxx.ngrok.io
+ngrok http 3000
 ```
 
 ### Flash the ESP32 firmware
 
 ```bash
 cd esp32_code/esp32_aqua
-# Edit src/config.h: WIFI_SSID, WIFI_PASSWORD, SERVER_URL
+# Copy src/config_secret.h.example → src/config_secret.h
+# Fill in your WIFI_SSID, WIFI_PASSWORD, SERVER_URL
 pio run --target upload
 pio device monitor --baud 115200
+```
+
+### Flash the ESP32-CAM
+
+```bash
+cd esp32_cam
+# Copy src/config_secret.h.example → src/config_secret.h
+# Fill in your WIFI_SSID and WIFI_PASSWORD
+pio run --target upload
 ```
 
 ### Train the AI model
@@ -155,34 +166,38 @@ pio device monitor --baud 115200
 ```
 aqua-ai-monitor/
 ├── esp32_code/
-│   └── esp32_aqua/          # Sensor firmware (PlatformIO)
+│   └── esp32_aqua/              # Sensor firmware (PlatformIO)
 │       └── src/
 │           ├── main.cpp
 │           ├── config.h
+│           ├── config_secret.h.example
 │           ├── ph_sensor.cpp/h
 │           ├── turbidity_sensor.cpp/h
 │           ├── ds18b20_sensor.cpp/h
 │           ├── dht_sensor.cpp/h
 │           ├── screen_oled.cpp/h
 │           └── http_sender.cpp/h
-├── esp32_cam/               # Camera firmware (PlatformIO)
+├── esp32_cam/                   # Camera firmware (PlatformIO)
 │   └── src/
 │       ├── main.cpp
 │       ├── camera.cpp/h
 │       ├── streamer.cpp/h
-│       └── config.h
-├── esp32_cam_stream/        # Server + AI + Dashboard
-│   ├── server.js            # Node.js/Express server
-│   ├── ai_service.py        # Flask AI microservice
-│   ├── requirements.txt
+│       ├── config.h
+│       └── config_secret.h.example
+├── esp32_cam_stream/            # Server + AI + Dashboard
+│   ├── server.js                # Node.js/Express server
+│   ├── ai_service.py            # Flask AI microservice
 │   └── public/
-│       └── index.html       # Web dashboard
+│       └── index.html           # Web dashboard
 ├── SEBB_aqua/
-│   └── carte_aqua/          # KiCad PCB project + Gerbers
+│   └── carte_aqua/              # KiCad PCB project + Gerbers
+├── docs/
+│   └── banner.svg
 ├── rapport_aqua_ai_monitor.tex
 └── rapport_aqua_ai_monitor.pdf
 ```
 
+---
 
 <div align="center">
   <sub>SPI Project · aqua-ai-monitor · IoT & AI for aquaculture</sub>
