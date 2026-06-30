@@ -2,9 +2,10 @@
 
 <div align="center">
 
-<img src="docs/banner.svg" alt="aqua-ai-monitor banner" width="600"/>
+<img src="docs/banner.svg" alt="aqua-ai-monitor logo" width="120"/>
 
-**Real-time monitoring platform for aquaculture basins**
+**Real-time monitoring platform for aquaculture basins**  
+*IoT · Isolation Forest AI · MJPEG Video · Node.js · Flask · Chart.js*
 
 [![Status](https://img.shields.io/badge/status-operational-brightgreen?style=flat-square)](.)
 [![Platform](https://img.shields.io/badge/platform-ESP32%20%2B%20PC-blue?style=flat-square)](.)

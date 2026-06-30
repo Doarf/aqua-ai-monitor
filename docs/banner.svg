@@ -1,59 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" width="600" height="140">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0a1f3c"/>
-      <stop offset="100%" stop-color="#0d3260"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 90">
 
-  <!-- Background -->
-  <rect width="600" height="140" fill="url(#bg)"/>
+  <!-- Dorsal fin: row 0 cols 4-5 -->
+  <rect x="66" y="15" width="24" height="12" fill="#d35400"/>
 
-  <!-- ===== PIXEL FISH (pixel=12px, centered at x=300) ===== -->
-  <!-- 10 cols × 5 rows → 120×60px fish, origin ox=240 oy=20  -->
+  <!-- Tail -->
+  <rect x="30" y="15" width="12" height="12" fill="#e74c3c"/>
+  <rect x="18" y="27" width="36" height="12" fill="#e74c3c"/>
+  <rect x="18" y="39" width="36" height="12" fill="#e74c3c"/>
+  <rect x="18" y="51" width="36" height="12" fill="#e74c3c"/>
+  <rect x="30" y="63" width="12" height="12" fill="#e74c3c"/>
 
-  <!-- Dorsal fin: row 0 cols 5-6 → x=300 y=20 w=24 h=12 -->
-  <rect x="300" y="20" width="24" height="12" fill="#d35400"/>
+  <!-- Body -->
+  <rect x="54" y="27" width="36" height="12" fill="#f39c12"/>
+  <rect x="54" y="39" width="36" height="12" fill="#f39c12"/>
+  <rect x="54" y="51" width="36" height="12" fill="#f39c12"/>
 
-  <!-- Tail row 0 (y=20): col 2 -->
-  <rect x="264" y="20" width="12" height="12" fill="#e74c3c"/>
-  <!-- Tail row 1 (y=32): cols 1-3 -->
-  <rect x="252" y="32" width="36" height="12" fill="#e74c3c"/>
-  <!-- Tail row 2 (y=44): cols 0-3 -->
-  <rect x="240" y="44" width="48" height="12" fill="#e74c3c"/>
-  <!-- Tail row 3 (y=56): cols 1-3 -->
-  <rect x="252" y="56" width="36" height="12" fill="#e74c3c"/>
-  <!-- Tail row 4 (y=68): col 2 -->
-  <rect x="264" y="68" width="12" height="12" fill="#e74c3c"/>
+  <!-- Eye -->
+  <rect x="66" y="39" width="12" height="12" fill="#1e272e"/>
+  <rect x="69" y="42" width="4"  height="4"  fill="#ffffff" opacity="0.4"/>
 
-  <!-- Body row 1 (y=32): cols 5-7 -->
-  <rect x="300" y="32" width="36" height="12" fill="#f39c12"/>
-  <!-- Body row 2 (y=44): cols 4-8 -->
-  <rect x="288" y="44" width="60" height="12" fill="#f39c12"/>
-  <!-- Body row 3 (y=56): cols 5-7 -->
-  <rect x="300" y="56" width="36" height="12" fill="#f39c12"/>
+  <!-- Mouth -->
+  <rect x="90" y="39" width="12" height="12" fill="#1e272e"/>
 
-  <!-- Eye: row 2 col 6 → x=312 y=44 -->
-  <rect x="312" y="44" width="12" height="12" fill="#1e272e"/>
-  <rect x="315" y="47" width="4"  height="4"  fill="#ffffff" opacity="0.4"/>
-
-  <!-- Mouth: row 2 col 9 → x=348 y=44 -->
-  <rect x="348" y="44" width="12" height="12" fill="#1e272e"/>
-
-  <!-- Bubbles -->
-  <circle cx="376" cy="37" r="4"   fill="none" stroke="#7ec8e3" stroke-width="1.5" opacity="0.7"/>
-  <circle cx="390" cy="26" r="2.5" fill="none" stroke="#7ec8e3" stroke-width="1.5" opacity="0.5"/>
-  <circle cx="383" cy="54" r="3"   fill="none" stroke="#7ec8e3" stroke-width="1.5" opacity="0.5"/>
-
-  <!-- ===== TEXT ===== -->
-  <text x="300" y="105"
-        text-anchor="middle"
-        font-family="'Courier New',Courier,monospace"
-        font-size="24" font-weight="bold"
-        fill="#a8d8ea">aqua-ai-monitor</text>
-  <text x="300" y="125"
-        text-anchor="middle"
-        font-family="'Courier New',Courier,monospace"
-        font-size="11"
-        fill="#5b8ea6">Real-time monitoring platform for aquaculture basins</text>
 </svg>
